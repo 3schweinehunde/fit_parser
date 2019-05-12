@@ -1,5 +1,7 @@
 import 'package:dart/dart.dart';
 
 main() {
-  print('Hello World!');
+  String path = "./example/assets/Activity.fit";
+  print(FitFile(path: path).metadata.toString());
+
 }
