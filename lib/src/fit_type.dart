@@ -2658,25 +2658,753 @@ class FitType {
       95: 'pressure',
       96: 'vam', },
 
-    '': {
+    'file': {
+      1: 'device',
+      2: 'settings',
+      3: 'sport',
+      4: 'activity',
+      5: 'workout',
+      6: 'course',
+      7: 'schedules',
+      9: 'weight',
+      10: 'totals',
+      11: 'goals',
+      14: 'blood_pressure',
+      15: 'monitoring_a',
+      20: 'activity_summary',
+      28: 'monitoring_daily',
+      32: 'monitoring_b',
+      34: 'segment',
+      35: 'segment_list',
+      40: 'exd_configuration',
+      0xF7: 'mfg_range_min',
+      0xFE: 'mfg_range_max', },
 
-    },
+    'mesg_num': {
+      0: 'file_id',
+      1: 'capabilities',
+      2: 'device_settings',
+      3: 'user_profile',
+      4: 'hrm_profile',
+      5: 'sdm_profile',
+      6: 'bike_profile',
+      7: 'zones_target',
+      8: 'hr_zone',
+      9: 'power_zone',
+      10: 'met_zone',
+      12: 'sport',
+      15: 'goal',
+      18: 'session',
+      19: 'lap',
+      20: 'record',
+      21: 'event',
+      23: 'device_info',
+      26: 'workout',
+      27: 'workout_step',
+      28: 'schedule',
+      30: 'weight_scale',
+      31: 'course',
+      32: 'course_point',
+      33: 'totals',
+      34: 'activity',
+      35: 'software',
+      37: 'file_capabilities',
+      38: 'mesg_capabilities',
+      39: 'field_capabilities',
+      49: 'file_creator',
+      51: 'blood_pressure',
+      53: 'speed_zone',
+      55: 'monitoring',
+      72: 'training_file',
+      78: 'hrv',
+      80: 'ant_rx',
+      81: 'ant_tx',
+      82: 'ant_channel_id',
+      101: 'length',
+      103: 'monitoring_info',
+      105: 'pad',
+      106: 'slave_device',
+      127: 'connectivity',
+      128: 'weather_conditions',
+      129: 'weather_alert',
+      131: 'cadence_zone',
+      132: 'hr',
+      142: 'segment_lap',
+      145: 'memo_glob',
+      148: 'segment_id',
+      149: 'segment_leaderboard_entry',
+      150: 'segment_point',
+      151: 'segment_file',
+      158: 'workout_session',
+      159: 'watchface_settings',
+      160: 'gps_metadata',
+      161: 'camera_event',
+      162: 'timestamp_correlation',
+      164: 'gyroscope_data',
+      165: 'accelerometer_data',
+      167: 'three_d_sensor_calibration',
+      169: 'video_frame',
+      174: 'obdii_data',
+      177: 'nmea_sentence',
+      178: 'aviation_attitude',
+      184: 'video',
+      185: 'video_title',
+      186: 'video_description',
+      187: 'video_clip',
+      188: 'ohr_settings',
+      200: 'exd_screen_configuration',
+      201: 'exd_data_field_configuration',
+      202: 'exd_data_concept_configuration',
+      206: 'field_description',
+      207: 'developer_data_id',
+      208: 'magnetometer_data',
+      209: 'barometer_data',
+      210: 'one_d_sensor_calibration',
+      225: 'set',
+      227: 'stress_level',
+      258: 'dive_settings',
+      259: 'dive_gas',
+      262: 'dive_alarm',
+      264: 'exercise_title',
+      268: 'dive_summary',
+      0xFF00: 'mfg_range_min',
+      0xFFFE: 'mfg_range_max', },
 
-    '': {
+    'display_heart': {
+      0: 'bpm',
+      1: 'max',
+      2: 'reserve', },
 
-    },
+    'display_power': {
+      0: 'watts',
+      1: 'percent_ftp', },
 
-    '': {
+    'display_position': {
+      0: 'degree',
+      1: 'degree_minute',
+      2: 'degree_minute_second',
+      3: 'austrian_grid',
+      4: 'british_grid',
+      5: 'dutch_grid',
+      6: 'hungarian_grid',
+      7: 'finnish_grid',
+      8: 'german_grid',
+      9: 'icelandic_grid',
+      10: 'indonesian_equatorial',
+      11: 'indonesian_irian',
+      12: 'indonesian_southern',
+      13: 'india_zone_0',
+      14: 'india_zone_IA',
+      15: 'india_zone_IB',
+      16: 'india_zone_IIA',
+      17: 'india_zone_IIB',
+      18: 'india_zone_IIIA',
+      19: 'india_zone_IIIB',
+      20: 'india_zone_IVA',
+      21: 'india_zone_IVB',
+      22: 'irish_transverse',
+      23: 'irish_grid',
+      24: 'loran',
+      25: 'maidenhead_grid',
+      26: 'mgrs_grid',
+      27: 'new_zealand_grid',
+      28: 'new_zealand_transverse',
+      29: 'qatar_grid',
+      30: 'modified_swedish_grid',
+      31: 'swedish_grid',
+      32: 'south_african_grid',
+      33: 'swiss_grid',
+      34: 'taiwan_grid',
+      35: 'united_states_grid',
+      36: 'utm_ups_grid',
+      37: 'west_malayan',
+      38: 'borneo_rso',
+      39: 'estonian_grid',
+      40: 'latvian_grid',
+      41: 'swedish_ref_99_grid', },
 
-    },
+    'sport_bits_0' : {
+      0x01: 'generic',
+      0x02: 'running',
+      0x04: 'cycling',
+      0x08: 'transition',
+      0x10: 'fitness_equipment',
+      0x20: 'swimming',
+      0x40: 'basketball',
+      0x80: 'soccer', },
 
-    '': {
+    'sport_bits_1' : {
+      0x01: 'tennis',
+      0x02: 'american_football',
+      0x04: 'training',
+      0x08: 'walking',
+      0x10: 'cross_country_skiing',
+      0x20: 'alpine_skiing',
+      0x40: 'snowboarding',
+      0x80: 'rowing', },
 
-    },
+    'sport_bits_2' : {
+      0x01: 'mountaineering',
+      0x02: 'hiking',
+      0x04: 'multisport',
+      0x08: 'paddling',
+      0x10: 'flying',
+      0x20: 'e_biking',
+      0x40: 'motorcycling',
+      0x80: 'boating', },
 
-    '': {
+    'sport_bits_3' : {
+      0x01: 'driving',
+      0x02: 'golf',
+      0x04: 'hang_gliding',
+      0x08: 'horseback_riding',
+      0x10: 'hunting',
+      0x20: 'fishing',
+      0x40: 'inline_skating',
+      0x80: 'rock_climbing', },
 
-    },
+    'sport_bits_4' : {
+      0x01: 'sailing',
+      0x02: 'ice_skating',
+      0x04: 'sky_diving',
+      0x08: 'snowshoeing',
+      0x10: 'snowmobiling',
+      0x20: 'stand_up_paddleboarding',
+      0x40: 'surfing',
+      0x80: 'wakeboarding', },
 
+    'sport_bits_5' : {
+      0x01: 'water_skiing',
+      0x02: 'kayaking',
+      0x04: 'rafting',
+      0x08: 'windsurfing',
+      0x10: 'kitesurfing',
+      0x20: 'tactical',
+      0x40: 'jumpmaster',
+      0x80: 'boxing', },
+
+    'sport_bits_6' : {
+      0x01: 'floor_climbing', },
+
+    'sport_event' : {
+      0: 'uncategorized',
+      1: 'geocaching',
+      2: 'fitness',
+      3: 'recreation',
+      4: 'race',
+      5: 'special_event',
+      6: 'training',
+      7: 'transportation',
+      8: 'touring', },
+
+    'turn_type' : {
+      0: 'arriving_idx',
+      1: 'arriving_left_idx',
+      2: 'arriving_right_idx',
+      3: 'arriving_via_idx',
+      4: 'arriving_via_left_idx',
+      5: 'arriving_via_right_idx',
+      6: 'bear_keep_left_idx',
+      7: 'bear_keep_right_idx',
+      8: 'continue_idx',
+      9: 'exit_left_idx',
+      10: 'exit_right_idx',
+      11: 'ferry_idx',
+      12: 'roundabout_45_idx',
+      13: 'roundabout_90_idx',
+      14: 'roundabout_135_idx',
+      15: 'roundabout_180_idx',
+      16: 'roundabout_225_idx',
+      17: 'roundabout_270_idx',
+      18: 'roundabout_315_idx',
+      19: 'roundabout_360_idx',
+      20: 'roundabout_neg_45_idx',
+      21: 'roundabout_neg_90_idx',
+      22: 'roundabout_neg_135_idx',
+      23: 'roundabout_neg_180_idx',
+      24: 'roundabout_neg_225_idx',
+      25: 'roundabout_neg_270_idx',
+      26: 'roundabout_neg_315_idx',
+      27: 'roundabout_neg_360_idx',
+      28: 'roundabout_generic_idx',
+      29: 'roundabout_neg_generic_idx',
+      30: 'sharp_turn_left_idx',
+      31: 'sharp_turn_right_idx',
+      32: 'turn_left_idx',
+      33: 'turn_right_idx',
+      34: 'uturn_left_idx',
+      35: 'uturn_right_idx',
+      36: 'icon_inv_idx',
+      37: 'icon_idx_cnt', },
+
+    'activity_subtype' : {
+      0: 'generic',
+      1: 'treadmill',
+      2: 'street',
+      3: 'trail',
+      4: 'track',
+      5: 'spin',
+      6: 'indoor_cycling',
+      7: 'road',
+      8: 'mountain',
+      9: 'downhill',
+      10: 'recumbent',
+      11: 'cyclocross',
+      12: 'hand_cycling',
+      13: 'track_cycling',
+      14: 'indoor_rowing',
+      15: 'elliptical',
+      16: 'stair_climbing',
+      17: 'lap_swimming',
+      18: 'open_water',
+      254: 'all', },
+
+    'activity_level' : {
+      0: 'low',
+      1: 'medium',
+      2: 'high', },
+
+    'day_of_week' : {
+      0: 'sunday',
+      1: 'monday',
+      2: 'tuesday',
+      3: 'wednesday',
+      4: 'thursday',
+      5: 'friday',
+      6: 'saturday', },
+
+    'stroke_type' : {
+      0: 'no_event',
+      1: 'other',
+      2: 'serve',
+      3: 'forehand',
+      4: 'backhand',
+      5: 'smash', },
+
+    'camera_event_type' : {
+      0: 'video_start',
+      1: 'video_split',
+      2: 'video_end',
+      3: 'photo_taken',
+      4: 'video_second_stream_start',
+      5: 'video_second_stream_split',
+      6: 'video_second_stream_end',
+      7: 'video_split_start',
+      8: 'video_second_stream_split_start',
+      11: 'video_pause',
+      12: 'video_second_stream_pause',
+      13: 'video_resume',
+      14: 'video_second_stream_resume', },
+
+    'sensor_type' : {
+      0: 'accelerometer',
+      1: 'gyroscope',
+      2: 'compass',
+      3: 'barometer', },
+
+    'fit_base_type' : {
+      0: 'enum',
+      1: 'sint8',
+      2: 'uint8',
+      131: 'sint16',
+      132: 'uint16',
+      133: 'sint32',
+      134: 'uint32',
+      7: 'string',
+      136: 'float32',
+      137: 'float64',
+      10: 'uint8z',
+      139: 'uint16z',
+      140: 'uint32z',
+      13: 'byte',
+      142: 'sint64',
+      143: 'uint64',
+      144: 'uint64z', },
+
+    'bike_light_beam_angle_mode' : {
+      0: 'manual',
+      1: 'auto', },
+
+    'fit_base_unit' : {
+      0: 'other',
+      1: 'kilogram',
+      2: 'pound', },
+
+    'set_type' : {
+      0: 'rest',
+      1: 'active', },
+
+    'attitude_validity' : {
+      0x0001: 'track_angle_heading_valid',
+      0x0002: 'pitch_valid',
+      0x0004: 'roll_valid',
+      0x0008: 'lateral_body_accel_valid',
+      0x0010: 'normal_body_accel_valid',
+      0x0020: 'turn_rate_valid',
+      0x0040: 'hw_fail',
+      0x0080: 'mag_invalid',
+      0x0100: 'no_gps',
+      0x0200: 'gps_invalid',
+      0x0400: 'solution_coasting',
+      0x0800: 'true_track_angle',
+      0x1000: 'magnetic_heading', },
+
+    'auto_activity_detect' : {
+      0x00000000: 'none',
+      0x00000001: 'running',
+      0x00000002: 'cycling',
+      0x00000004: 'swimming',
+      0x00000008: 'walking',
+      0x00000020: 'elliptical',
+      0x00000400: 'sedentary', },
+
+    'supported_exd_screen_layouts' : {
+      0x00000001: 'full_screen',
+      0x00000002: 'half_vertical',
+      0x00000004: 'half_horizontal',
+      0x00000008: 'half_vertical_right_split',
+      0x00000010: 'half_horizontal_bottom_split',
+      0x00000020: 'full_quarter_split',
+      0x00000040: 'half_vertical_left_split',
+      0x00000080: 'half_horizontal_top_split', },
+
+    'user_local_id' : {
+      0x0000: 'local_min',
+      0x000F: 'local_max',
+      0x0010: 'stationary_min',
+      0x00FF: 'stationary_max',
+      0x0100: 'portable_min',
+      0xFFFE: 'portable_max', },
+
+    'course_capabilities' : {
+      0x00000001: 'processed',
+      0x00000002: 'valid',
+      0x00000004: 'time',
+      0x00000008: 'distance',
+      0x00000010: 'position',
+      0x00000020: 'heart_rate',
+      0x00000040: 'power',
+      0x00000080: 'cadence',
+      0x00000100: 'training',
+      0x00000200: 'navigation',
+      0x00000400: 'bikeway', },
+
+    'workout_capabilities' : {
+      0x00000001: 'interval',
+      0x00000002: 'custom',
+      0x00000004: 'fitness_equipment',
+      0x00000008: 'firstbeat',
+      0x00000010: 'new_leaf',
+      0x00000020: 'tcx',
+      0x00000080: 'speed',
+      0x00000100: 'heart_rate',
+      0x00000200: 'distance',
+      0x00000400: 'cadence',
+      0x00000800: 'power',
+      0x00001000: 'grade',
+      0x00002000: 'resistance',
+      0x00004000: 'protected', },
+
+    'course_point' : {
+      0: 'generic',
+      1: 'summit',
+      2: 'valley',
+      3: 'water',
+      4: 'food',
+      5: 'danger',
+      6: 'left',
+      7: 'right',
+      8: 'straight',
+      9: 'first_aid',
+      10: 'fourth_category',
+      11: 'third_category',
+      12: 'second_category',
+      13: 'first_category',
+      14: 'hors_category',
+      15: 'sprint',
+      16: 'left_fork',
+      17: 'right_fork',
+      18: 'middle_fork',
+      19: 'slight_left',
+      20: 'sharp_left',
+      21: 'slight_right',
+      22: 'sharp_right',
+      23: 'u_turn',
+      24: 'segment_start',
+      25: 'segment_end', },
+
+    'autolap_trigger' : {
+      0: 'time',
+      1: 'distance',
+      2: 'position_start',
+      3: 'position_lap',
+      4: 'position_waypoint',
+      5: 'position_marked',
+      6: 'off', },
+
+    'time_mode' : {
+      0: 'hour12',
+      1: 'hour24',
+      2: 'military',
+      3: 'hour_12_with_seconds',
+      4: 'hour_24_with_seconds',
+      5: 'utc', },
+
+    'backlight_mode' : {
+      0: 'off',
+      1: 'manual',
+      2: 'key_and_messages',
+      3: 'auto_brightness',
+      4: 'smart_notifications',
+      5: 'key_and_messages_night',
+      6: 'key_and_messages_and_smart_notifications', },
+
+    'wkt_step_duration' : {
+      0: 'time',
+      1: 'distance',
+      2: 'hr_less_than',
+      3: 'hr_greater_than',
+      4: 'calories',
+      5: 'open',
+      6: 'repeat_until_steps_cmplt',
+      7: 'repeat_until_time',
+      8: 'repeat_until_distance',
+      9: 'repeat_until_calories',
+      10: 'repeat_until_hr_less_than',
+      11: 'repeat_until_hr_greater_than',
+      12: 'repeat_until_power_less_than',
+      13: 'repeat_until_power_greater_than',
+      14: 'power_less_than',
+      15: 'power_greater_than',
+      16: 'training_peaks_tss',
+      17: 'repeat_until_power_last_lap_less_than',
+      18: 'repeat_until_max_power_last_lap_less_than',
+      19: 'power_3s_less_than',
+      20: 'power_10s_less_than',
+      21: 'power_30s_less_than',
+      22: 'power_3s_greater_than',
+      23: 'power_10s_greater_than',
+      24: 'power_30s_greater_than',
+      25: 'power_lap_less_than',
+      26: 'power_lap_greater_than',
+      27: 'repeat_until_training_peaks_tss',
+      28: 'repetition_time',
+      29: 'reps', },
+
+    'wkt_step_target' : {
+      0: 'speed',
+      1: 'heart_rate',
+      2: 'open',
+      3: 'cadence',
+      4: 'power',
+      5: 'grade',
+      6: 'resistance',
+      7: 'power_3s',
+      8: 'power_10s',
+      9: 'power_30s',
+      10: 'power_lap',
+      11: 'swim_stroke',
+      12: 'speed_lap',
+      13: 'heart_rate_lap', },
+
+    'goal' : {
+      0: 'time',
+      1: 'distance',
+      2: 'calories',
+      3: 'frequency',
+      4: 'steps',
+      5: 'ascent',
+      6: 'active_minutes', },
+
+    'goal_recurrence' : {
+      0: 'off',
+      1: 'daily',
+      2: 'weekly',
+      3: 'monthly',
+      4: 'yearly',
+      5: 'custom', },
+
+    'bp_status' : {
+      0: 'no_error',
+      1: 'error_incomplete_data',
+      2: 'error_no_measurement',
+      3: 'error_data_out_of_range',
+      4: 'error_irregular_heart_rate', },
+
+    'segment_leaderboard_type' : {
+      0: 'overall',
+      1: 'personal_best',
+      2: 'connections',
+      3: 'group',
+      4: 'challenger',
+      5: 'kom',
+      6: 'qom',
+      7: 'pr',
+      8: 'goal',
+      9: 'rival',
+      10: 'club_leader', },
+
+    'display_orientation' : {
+      0: 'auto',
+      1: 'portrait',
+      2: 'landscape',
+      3: 'portrait_flipped',
+      4: 'landscape_flipped', },
+
+    'workout_equipment' : {
+      0: 'none',
+      1: 'swim_fins',
+      2: 'swim_kickboard',
+      3: 'swim_paddles',
+      4: 'swim_pull_buoy',
+      5: 'swim_snorkel', },
+
+    'watchface_mode' : {
+      0: 'digital',
+      1: 'analog',
+      2: 'connect_iq',
+      3: 'disabled', },
+
+    'digital_watchface_layout' : {
+      0: 'traditional',
+      1: 'modern',
+      2: 'bold', },
+
+    'analog_watchface_layout' : {
+      0: 'minimal',
+      1: 'traditional',
+      2: 'modern', },
+
+    'power_phase_type' : {
+      0: 'power_phase_start_angle',
+      1: 'power_phase_end_angle',
+      2: 'power_phase_arc_length',
+      3: 'power_phase_center', },
+
+    'bike_light_network_config_type' : {
+      0: 'auto',
+      4: 'individual',
+      5: 'high_visibility',
+      6: 'trail', },
+
+    'camera_orientation_type' : {
+      0: 'camera_orientation_0',
+      1: 'camera_orientation_90',
+      2: 'camera_orientation_180',
+      3: 'camera_orientation_270', },
+
+    'attitude_stage' : {
+      0: 'failed',
+      1: 'aligning',
+      2: 'degraded',
+      3: 'valid', },
+
+    'auto_sync_frequency' : {
+      0: 'never',
+      1: 'occasionally',
+      2: 'frequent',
+      3: 'once_a_day',
+      4: 'remote', },
+
+    'segment_selection_type' : {
+      0: 'starred',
+      1: 'suggested', },
+
+    'segment_delete_status' : {
+      0: 'do_not_delete',
+      1: 'delete_one',
+      2: 'delete_all', },
+
+    'checksum' : {
+      0: 'clear',
+      1: 'ok', },
+
+    'gender' : {
+      0: 'female',
+      1: 'male', },
+
+    'switch' : {
+      0: 'off',
+      1: 'on',
+      2: 'auto', },
+
+    'tone' : {
+      0: 'off',
+      1: 'tone',
+      2: 'vibrate',
+      3: 'tone_and_vibrate', },
+
+    'autoscroll' : {
+      0: 'none',
+      1: 'slow',
+      2: 'medium',
+      3: 'fast', },
+
+    'activity_class' : {
+      0x7F: 'level',
+      100: 'level_max',
+      0x80: 'athlete', },
+
+    'file_flags' : {
+      0x02: 'read',
+      0x04: 'write',
+      0x08: 'erase', },
+
+    'mesg_count' : {
+      0: 'num_per_file',
+      1: 'max_per_file',
+      2: 'max_per_file_type', },
+
+    'date_mode' : {
+      0: 'day_month',
+      1: 'month_day', },
+
+    'date_time' : {
+      0x10000000: 'min', },
+
+    'local_date_time' : {
+      0x10000000: 'min', },
+
+    'hr_zone_calc' : {
+      0: 'custom',
+      1: 'percent_max_hr',
+      2: 'percent_hrr', },
+
+    'goal_source' : {
+      0: 'auto',
+      1: 'community',
+      2: 'user', },
+
+    'backlight_timeout' : {
+      0: 'infinite', },
+
+    'pwr_zone_calc' : {
+      0: 'custom',
+      1: 'percent_ftp', },
+
+    'schedule' : {
+      0: 'workout',
+      1: 'course', },
+
+    'hr_type' : {
+      0: 'normal',
+      1: 'irregular', },
+
+    'weight' : {
+      0xFFFE: 'calculating', },
+
+    'workout_hr' : {
+      100: 'bpm_offset', },
+
+    'workout_power' : {
+      1000: 'watts_offset', },
+
+    'side' : {
+      0: 'right',
+      1: 'left', },
+
+    'segment_lap_status' : {
+      0: 'end',
+      1: 'fail', },
   };
 }
