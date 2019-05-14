@@ -272,5 +272,11 @@ class FitMessage {
       20: {'field_name': 'stroke_count', 'data_type': 'uint16', 'unit': 'counts', },
       21: {'field_name': 'zone_count', 'data_type': 'uint16', 'unit': 'counts', },
     },
+
+    'hrv': {
+      0: {'field_name': 'time', 'data_type': 'uint16', 'scale': 1000, 'unit': 's',},
+    },
+
+    
   };
 }
