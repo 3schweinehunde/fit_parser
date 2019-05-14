@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/fit_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fit_message.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/fit_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fit_type.dart" afterDir="false" />
     </list>
@@ -19,24 +18,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
+        <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="27" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="757">
+              <caret line="722" selection-start-line="722" selection-end-line="722" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/fit_message.dart">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
+        <entry file="file://$PROJECT_DIR$/lib/src/fit_message.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="776">
-              <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+            <state relative-caret-position="354">
+              <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -55,6 +49,7 @@
       <find>stride</find>
       <find>|</find>
       <find>field_type</find>
+      <find>speeddist</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -74,8 +69,8 @@
         <option value="$PROJECT_DIR$/lib/src/fit_file.dart" />
         <option value="$PROJECT_DIR$/test/dart_test.dart" />
         <option value="$PROJECT_DIR$/lib/dart.dart" />
-        <option value="$PROJECT_DIR$/lib/src/fit_message.dart" />
         <option value="$PROJECT_DIR$/lib/src/fit_type.dart" />
+        <option value="$PROJECT_DIR$/lib/src/fit_message.dart" />
       </list>
     </option>
   </component>
@@ -266,13 +261,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fit_message.dart">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="776">
-          <caret line="83" column="1" lean-forward="true" selection-start-line="83" selection-start-column="1" selection-end-line="83" selection-end-column="1" />
+        <state relative-caret-position="757">
+          <caret line="722" selection-start-line="722" selection-end-line="722" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fit_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="303" column="54" lean-forward="true" selection-start-line="303" selection-start-column="54" selection-end-line="303" selection-end-column="54" />
         </state>
       </provider>
     </entry>

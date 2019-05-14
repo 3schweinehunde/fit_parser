@@ -299,7 +299,9 @@ class FitMessage {
       5: {'field_name': 'distance', 'data_type': 'uint32', 'scale': 100, 'unit': 'm', },
       6: {'field_name': 'speed', 'data_type': 'uint16', 'scale': 1000, 'unit': 'm/s', },
       7: {'field_name': 'power', 'data_type': 'uint16', 'unit': 'watts', },
-      8: {'field_name': 'compressed_speed_distance', 'field_type': 'speeddistance', 'scale': [100, 16, ], 'unit': ['m/s', 'm', ]},
+      8: {'field_name': 'compressed_speed_distance', 'data_type': 'byte', 'array': true, 'fields': {
+        'speed': {'scale': 100, 'unit': 'm/s', 'bits': 12},
+        'distance': {'scale': 16, 'unit': 'm', 'bits': 12}, }, },
       9: {'field_name': 'grade', 'data_type': 'sint16', 'scale': 100, 'unit': '%', },
       10: {'field_name': 'resistance', 'data_type': 'uint8', },
       11: {'field_name': 'time_from_course', 'data_type': 'sint32', 'scale': 1000, 'unit': 's', },
