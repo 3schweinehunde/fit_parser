@@ -4,5 +4,4 @@
 //       2) import in fit_message.dart
 
 Map _fields = {
-
 };

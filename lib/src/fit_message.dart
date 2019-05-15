@@ -1,4 +1,5 @@
 import 'package:dart/src/fields/accelerometer_data.dart';
+import 'package:dart/src/fields/barometer_data.dart';
 import 'package:dart/src/fields/camera_event.dart';
 import 'package:dart/src/fields/device_info.dart';
 import 'package:dart/src/fields/event.dart';
@@ -9,9 +10,15 @@ import 'package:dart/src/fields/gyroscope_data.dart';
 import 'package:dart/src/fields/hrv.dart';
 import 'package:dart/src/fields/lap.dart';
 import 'package:dart/src/fields/length.dart';
+import 'package:dart/src/fields/magnetometer_data.dart';
 import 'package:dart/src/fields/record.dart';
 import 'package:dart/src/fields/session.dart';
+import 'package:dart/src/fields/set.dart';
 import 'package:dart/src/fields/training_file.dart';
+import 'package:dart/src/fields/video.dart';
+import 'package:dart/src/fields/video_clip.dart';
+import 'package:dart/src/fields/video_description.dart';
+import 'package:dart/src/fields/video_title.dart';
 import 'package:dart/src/fields/weather_alert.dart';
 import 'package:dart/src/fields/weather_conditions.dart';
 
@@ -33,5 +40,12 @@ class FitMessage {
     'camera_event': camera_event_fields,
     'gyroscope_data': gyroscope_data_fields,
     'accelerometer_data': accelerometer_data_fields,
+    'magnetometer_data': magnetometer_data_fields,
+    'barometer_data': barometer_data_fields,
+    'set': set_fields,
+    'video_clip': video_clip_fields,
+    'video_description': video_description_fields,
+    'video_title': video_title_fields,
+    'video': video_fields,
   };
 }
