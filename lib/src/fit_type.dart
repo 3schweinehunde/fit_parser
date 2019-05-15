@@ -2707,7 +2707,7 @@ class FitType {
       32: 'course_point',
       33: 'totals',
       34: 'activity',
-      35: 'software',
+      35: 'software.dart',
       37: 'file_capabilities',
       38: 'mesg_capabilities',
       39: 'field_capabilities',
