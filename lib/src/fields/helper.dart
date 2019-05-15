@@ -5,8 +5,3 @@
 
 Map _fields = {
 };
-
-class File {
-  Map messages = {
-  };
-}
