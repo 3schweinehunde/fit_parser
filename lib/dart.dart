@@ -12,5 +12,7 @@ export 'package:dart/src/file_types/course_file.dart';
 export 'package:dart/src/file_types/segment_file.dart';
 export 'package:dart/src/file_types/segment_list_file.dart';
 export 'package:dart/src/file_types/totals_file.dart';
+export 'package:dart/src/file_types/workout_file.dart';
+export 'package:dart/src/file_types/schedule_file.dart';
 
 export 'src/fit_type.dart';
