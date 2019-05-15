@@ -5,6 +5,5 @@ main() {
   print(FitFile(path: path).metadata.toString());
 
 
-  print(FitMessage().messages);
+  print(ActivityFile().messages);
 }
-
