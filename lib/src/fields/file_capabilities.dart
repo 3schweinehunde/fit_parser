@@ -1,15 +1,15 @@
 Map file_capabilities_fields = {
   254: {
     'field_name': 'message_index',
-    'file_type': 'message_index',
+    'field_type': 'message_index',
   },
   0: {
     'field_name': 'type',
-    'file_type': 'file',
+    'field_type': 'file',
   },
   1: {
     'field_name': 'flags',
-    'file_type': 'file_flags',
+    'field_type': 'file_flags',
   },
   2: {
     'field_name': 'directory',

@@ -1,11 +1,11 @@
 Map file_id_fields = {
   0: {
     'field_name': 'type',
-    'file_type': 'file',
+    'field_type': 'file',
   },
   1: {
     'field_name': 'manufacturer',
-    'file_type': 'manufacturer',
+    'field_type': 'manufacturer',
   },
   2: {
     'field_name': 'product',
