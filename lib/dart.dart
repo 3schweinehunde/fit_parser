@@ -7,5 +7,10 @@ export 'package:dart/src/file_types/device_file.dart';
 export 'package:dart/src/file_types/settings_file.dart';
 export 'package:dart/src/file_types/weight_scale_file.dart';
 export 'package:dart/src/file_types/sport_settings_file.dart';
+export 'package:dart/src/file_types/goals_file.dart';
+export 'package:dart/src/file_types/course_file.dart';
+export 'package:dart/src/file_types/segment_file.dart';
+export 'package:dart/src/file_types/segment_list_file.dart';
+export 'package:dart/src/file_types/totals_file.dart';
 
 export 'src/fit_type.dart';
