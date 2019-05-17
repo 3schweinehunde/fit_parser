@@ -1,4 +1,12 @@
+import 'package:dart/src/values/activity_values.dart';
+import 'package:dart/src/values/bike_light_beam_angle_mode_values.dart';
+import 'package:dart/src/values/checksum_values.dart';
 import 'package:dart/src/values/course_point_values.dart';
+import 'package:dart/src/values/date_mode_values.dart';
+import 'package:dart/src/values/display_heart_values.dart';
+import 'package:dart/src/values/display_power_values.dart';
+import 'package:dart/src/values/dive_alarm_type_values.dart';
+import 'package:dart/src/values/dive_backlight_mode_values.dart';
 import 'package:dart/src/values/dive_gas_status_values.dart';
 import 'package:dart/src/values/activity_class_values.dart';
 import 'package:dart/src/values/activity_level_values.dart';
@@ -53,12 +61,14 @@ import 'package:dart/src/values/fit_base_unit_values.dart';
 import 'package:dart/src/values/fitness_equipment_state_values.dart';
 import 'package:dart/src/values/flye_exercise_name_values.dart';
 import 'package:dart/src/values/garmin_product_values.dart';
+import 'package:dart/src/values/gender_values.dart';
 import 'package:dart/src/values/goal_recurrence_values.dart';
 import 'package:dart/src/values/goal_source_values.dart';
 import 'package:dart/src/values/goal_values.dart';
 import 'package:dart/src/values/hip_raise_exercise_name_values.dart';
 import 'package:dart/src/values/hip_stability_exercise_name_values.dart';
 import 'package:dart/src/values/hip_swing_exercise_name_values.dart';
+import 'package:dart/src/values/hr_type_values.dart';
 import 'package:dart/src/values/hr_zone_calc_values.dart';
 import 'package:dart/src/values/hyperextension_exercise_name_values.dart';
 import 'package:dart/src/values/intensity_values.dart';
@@ -70,8 +80,11 @@ import 'package:dart/src/values/language_bits_4_values.dart';
 import 'package:dart/src/values/language_values.dart';
 import 'package:dart/src/values/lap_trigger_values.dart';
 import 'package:dart/src/values/lateral_raise_exercise_name_values.dart';
+import 'package:dart/src/values/left_right_balance_100_values.dart';
+import 'package:dart/src/values/left_right_balance_values.dart';
 import 'package:dart/src/values/leg_curl_exercise_name_values.dart';
 import 'package:dart/src/values/leg_raise_exercise_name_values.dart';
+import 'package:dart/src/values/length_type_values.dart';
 import 'package:dart/src/values/lunge_exercise_name_values.dart';
 import 'package:dart/src/values/manufacturer_values.dart';
 import 'package:dart/src/values/mesg_count_values.dart';
@@ -89,12 +102,16 @@ import 'package:dart/src/values/row_exercise_name_values.dart';
 import 'package:dart/src/values/run_exercise_name_values.dart';
 import 'package:dart/src/values/schedule_values.dart';
 import 'package:dart/src/values/segment_delete_status_values.dart';
+import 'package:dart/src/values/segment_lap_status_values.dart';
 import 'package:dart/src/values/segment_leaderboard_type_values.dart';
+import 'package:dart/src/values/segment_selection_type_values.dart';
 import 'package:dart/src/values/sensor_type_values.dart';
 import 'package:dart/src/values/session_trigger_values.dart';
+import 'package:dart/src/values/set_type_values.dart';
 import 'package:dart/src/values/shoulder_press_exercise_name_values.dart';
 import 'package:dart/src/values/shoulder_stability_exercise_name_values.dart';
 import 'package:dart/src/values/shrug_exercise_name_values.dart';
+import 'package:dart/src/values/side_values.dart';
 import 'package:dart/src/values/sit_up_exercise_name_values.dart';
 import 'package:dart/src/values/source_type_values.dart';
 import 'package:dart/src/values/sport_bits_0_values.dart';
@@ -134,6 +151,7 @@ import 'package:dart/src/values/workout_equipment_values.dart';
 class FitType {
   Map type = {
 // A
+    'activity': activity_values,
     'activity_class': activity_class_values,
     'activity_level': activity_level_values,
     'activity_subtype': activity_subtype_values,
@@ -152,6 +170,7 @@ class FitType {
     'backlight_timeout': {0: 'infinite', },
     'battery_status': battery_status_values,
     'bench_press_exercise_name': bench_press_exercise_name_values,
+    'bike_light_beam_angle_mode': bike_light_beam_angle_mode_values,
     'bike_light_network_config_type': bike_light_network_config_type_values,
     'body_location': body_location_values,
     'bp_status': bp_status_values,
@@ -161,6 +180,7 @@ class FitType {
     'camera_orientation_type': camera_orientation_type_values,
     'cardio_exercise_name': cardio_exercise_name_values,
     'carry_exercise_name': carry_exercise_name_values,
+    'checksum': checksum_values,
     'chop_exercise_name': chop_exercise_name_values,
     'comm_timeout_type': comm_timeout_type_values,
     'connectivity_capabilities': connectivity_capabilities_values,
@@ -170,14 +190,19 @@ class FitType {
     'crunch_exercise_name': crunch_exercise_name_values,
     'curl_exercise_name': curl_exercise_name_values,
 // D
+    'date_mode': date_mode_values,
     'date_time': {0x10000000: 'min', },
     'day_of_week': day_of_week_values,
     'deadlift_exercise_name': deadlift_exercise_name_values,
     'device_index': {0: 'creator', },
     'digital_watchface_layout': digital_watchface_layout_values,
+    'display_heart': display_heart_values,
     'display_measure': display_measure_values,
     'display_orientation': display_orientation_values,
     'display_position': display_position_values,
+    'display_power': display_power_values,
+    'dive_alarm_type': dive_alarm_type_values,
+    'dive_backlight_mode': dive_backlight_mode_values,
     'dive_gas_status': dive_gas_status_values,
 // E
     'event': event_values,
@@ -198,6 +223,7 @@ class FitType {
     'flye_exercise_name': flye_exercise_name_values,
 // G
     'garmin_product': garmin_product_values,
+    'gender': gender_values,
     'goal': goal_values,
     'goal_recurrence': goal_recurrence_values,
     'goal_source': goal_source_values,
@@ -205,6 +231,7 @@ class FitType {
     'hip_raise_exercise_name': hip_raise_exercise_name_values,
     'hip_stability_exercise_name': hip_stability_exercise_name_values,
     'hip_swing_exercise_name': hip_swing_exercise_name_values,
+    'hr_type': hr_type_values,
     'hr_zone_calc': hr_zone_calc_values,
     'hyperextension_exercise_name': hyperextension_exercise_name_values,
 // I
@@ -218,8 +245,11 @@ class FitType {
     'language_bits_4': language_bits_4_values,
     'lap_trigger': lap_trigger_values,
     'lateral_raise_exercise_name': lateral_raise_exercise_name_values,
+    'left_right_balance': left_right_balance_values,
+    'left_right_balance_100': left_right_balance_100_values,
     'leg_curl_exercise_name': leg_curl_exercise_name_values,
     'leg_raise_exercise_name': leg_raise_exercise_name_values,
+    'length_type': length_type_values,
     'local_date_time': {0x10000000: 'min', },
     'lunge_exercise_name': lunge_exercise_name_values,
 // M
@@ -243,12 +273,16 @@ class FitType {
 // S
     'schedule': schedule_values,
     'segment_delete_status': segment_delete_status_values,
+    'segment_lap_status': segment_lap_status_values,
     'segment_leaderboard_type': segment_leaderboard_type_values,
+    'segment_selection_type': segment_selection_type_values,
     'sensor_type': sensor_type_values,
     'session_trigger': session_trigger_values,
+    'set_type': set_type_values,
     'shoulder_press_exercise_name': shoulder_press_exercise_name_values,
     'shoulder_stability_exercise_name': shoulder_stability_exercise_name_values,
     'shrug_exercise_name': shrug_exercise_name_values,
+    'side': side_values,
     'sit_up_exercise_name': sit_up_exercise_name_values,
     'source_type': source_type_values,
     'sport': sport_values,
@@ -292,76 +326,5 @@ class FitType {
     'workout_equipment': workout_equipment_values,
     'workout_hr': {100: 'bpm_offset', },
     'workout_power': {1000: 'watts_offset', },
-
-////////////////////////////////
-
-    'hr_type': {
-      0: 'normal',
-      1: 'irregular', },
-
-    'side': {
-      0: 'right',
-      1: 'left', },
-
-    'segment_lap_status': {
-      0: 'end',
-      1: 'fail', },
-
-    'left_right_balance': {
-      0x7F: 'mask',
-      0x80: 'right', },
-
-    'left_right_balance_100': {
-      0x3FFF: 'mask',
-      0x8000: 'right', },
-
-    'activity': {
-      0: 'manual',
-      1: 'auto_multi_sport', },
-
-    'length_type': {
-      0: 'idle',
-      1: 'active', },
-
-    'dive_backlight_mode': {
-      0: 'at_depth',
-      1: 'always_on', },
-
-    'dive_alarm_type': {
-      0: 'depth',
-      1: 'time', },
-
-    'display_heart': {
-      0: 'bpm',
-      1: 'max',
-      2: 'reserve', },
-
-    'display_power': {
-      0: 'watts',
-      1: 'percent_ftp', },
-
-    'bike_light_beam_angle_mode': {
-      0: 'manual',
-      1: 'auto', },
-
-    'set_type': {
-      0: 'rest',
-      1: 'active', },
-
-    'segment_selection_type': {
-      0: 'starred',
-      1: 'suggested', },
-
-    'checksum': {
-      0: 'clear',
-      1: 'ok', },
-
-    'gender': {
-      0: 'female',
-      1: 'male', },
-
-    'date_mode': {
-      0: 'day_month',
-      1: 'month_day', },
   };
 }
