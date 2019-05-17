@@ -1,6 +1,5 @@
-import 'package:dart/src/fields/course_point_fields.dart';
-import 'package:dart/src/fields/dive_gas_fields.dart';
-import 'package:dart/src/fields/exercise_title_fields.dart';
+import 'package:dart/src/values/course_point_values.dart';
+import 'package:dart/src/values/dive_gas_status_values.dart';
 import 'package:dart/src/values/activity_class_values.dart';
 import 'package:dart/src/values/activity_level_values.dart';
 import 'package:dart/src/values/activity_subtype_values.dart';
@@ -38,7 +37,6 @@ import 'package:dart/src/values/digital_watchface_layout_values.dart';
 import 'package:dart/src/values/display_measure_values.dart';
 import 'package:dart/src/values/display_orientation_values.dart';
 import 'package:dart/src/values/display_position_values.dart';
-import 'package:dart/src/values/dive_gas_status_values.dart';
 import 'package:dart/src/values/event_type_values.dart';
 import 'package:dart/src/values/event_values.dart';
 import 'package:dart/src/values/exd_data_units_values.dart';
@@ -140,6 +138,7 @@ class FitType {
     'activity_level': activity_level_values,
     'activity_subtype': activity_subtype_values,
     'activity_type': activity_type_values,
+    'analog_watchface_layout': analog_watchface_layout_values,
     'ant_network': ant_network_values,
     'antplus_device_type': antplus_device_type_values,
     'attitude_stage': attitude_stage_values,
@@ -167,7 +166,7 @@ class FitType {
     'connectivity_capabilities': connectivity_capabilities_values,
     'core_exercise_name': core_exercise_name_values,
     'course_capabilities': course_capabilities_values,
-    'course_point': course_point_fields,
+    'course_point': course_point_values,
     'crunch_exercise_name': crunch_exercise_name_values,
     'curl_exercise_name': curl_exercise_name_values,
 // D

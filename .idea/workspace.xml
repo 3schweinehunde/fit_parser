@@ -2,66 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/src/values/activity_class_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/activity_subtype_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/activity_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/analog_watchface_layout_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/ant_network_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/attitude_stage_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/attitude_validity_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/auto_activity_detect_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/auto_sync_frequency_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/autolap_trigger_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/autoscroll_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/backlight_mode_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/battery_status_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/bike_light_network_config_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/bp_status_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/camera_event_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/camera_orientation_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/comm_timeout_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/course_capabilities_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/course_point_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/day_of_week_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/digital_watchface_layout_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/display_measure_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/display_orientation_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/dive_gas_status_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/event_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/file_flags_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/fit_base_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/fit_base_unit_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/fitness_equipment_state_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/goal_recurrence_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/goal_source_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/goal_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/hr_zone_calc_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/intensity_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/lap_trigger_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/mesg_count_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/message_index_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/power_phase_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/rider_position_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/segment_delete_status_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/segment_leaderboard_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/sensor_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/session_trigger_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/source_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/sport_event_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/stroke_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/supported_exd_screen_layouts_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/swim_stroke_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/time_mode_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/timer_trigger_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/tone_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/user_local_id_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/watchface_mode_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/water_type_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/wkt_step_duration_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/wkt_step_target_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/workout_capabilities_values.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/src/values/workout_equipment_values.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/fit_type.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fit_type.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -79,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="852">
-              <caret line="314" column="31" lean-forward="true" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
+            <state>
+              <caret lean-forward="true" />
               <folding>
                 <element signature="e#0#58#0" expanded="true" />
               </folding>
@@ -121,10 +61,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/src/values/course_capabilities_values.dart" />
-        <option value="$PROJECT_DIR$/lib/src/values/workout_capabilities_values.dart" />
-        <option value="$PROJECT_DIR$/lib/src/values/course_point_values.dart" />
-        <option value="$PROJECT_DIR$/lib/src/values/wkt_step_duration_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/wkt_step_target_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/goal_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/goal_recurrence_values.dart" />
@@ -171,6 +107,10 @@
         <option value="$PROJECT_DIR$/lib/src/values/fit_base_unit_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/message_index_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/dive_gas_status_values.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/activity_level_values.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/switch_values.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/pwr_zone_calc_values.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/schedule_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/fit_type.dart" />
       </list>
     </option>
@@ -338,34 +278,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/src/values/supported_exd_screen_layouts_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/user_local_id_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/course_capabilities_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/workout_capabilities_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/values/course_point_values.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -681,6 +593,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/values/activity_level_values.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/values/switch_values.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/values/pwr_zone_calc_values.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/values/schedule_values.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/values/dive_gas_status_values.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -690,8 +630,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="852">
-          <caret line="314" column="31" lean-forward="true" selection-start-line="314" selection-start-column="31" selection-end-line="314" selection-end-column="31" />
+        <state>
+          <caret lean-forward="true" />
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
