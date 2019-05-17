@@ -1,0 +1,16 @@
+Map wkt_step_target_values = {
+  0: 'speed',
+  1: 'heart_rate',
+  2: 'open',
+  3: 'cadence',
+  4: 'power',
+  5: 'grade',
+  6: 'resistance',
+  7: 'power_3s',
+  8: 'power_10s',
+  9: 'power_30s',
+  10: 'power_lap',
+  11: 'swim_stroke',
+  12: 'speed_lap',
+  13: 'heart_rate_lap',
+};

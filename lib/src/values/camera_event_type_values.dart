@@ -1,0 +1,15 @@
+Map camera_event_type_values = {
+  0: 'video_start',
+  1: 'video_split',
+  2: 'video_end',
+  3: 'photo_taken',
+  4: 'video_second_stream_start',
+  5: 'video_second_stream_split',
+  6: 'video_second_stream_end',
+  7: 'video_split_start',
+  8: 'video_second_stream_split_start',
+  11: 'video_pause',
+  12: 'video_second_stream_pause',
+  13: 'video_resume',
+  14: 'video_second_stream_resume',
+};

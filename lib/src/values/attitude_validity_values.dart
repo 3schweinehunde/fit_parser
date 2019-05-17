@@ -1,0 +1,15 @@
+Map attitude_validity_values = {
+  0x0001: 'track_angle_heading_valid',
+  0x0002: 'pitch_valid',
+  0x0004: 'roll_valid',
+  0x0008: 'lateral_body_accel_valid',
+  0x0010: 'normal_body_accel_valid',
+  0x0020: 'turn_rate_valid',
+  0x0040: 'hw_fail',
+  0x0080: 'mag_invalid',
+  0x0100: 'no_gps',
+  0x0200: 'gps_invalid',
+  0x0400: 'solution_coasting',
+  0x0800: 'true_track_angle',
+  0x1000: 'magnetic_heading',
+};
