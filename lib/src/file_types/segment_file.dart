@@ -1,7 +1,7 @@
-import 'package:dart/src/fields/segment_id.dart';
-import 'package:dart/src/fields/segment_lap.dart';
-import 'package:dart/src/fields/segment_leaderboard_entry.dart';
-import 'package:dart/src/fields/segment_point.dart';
+import 'package:dart/src/fields/segment_id_fields.dart';
+import 'package:dart/src/fields/segment_lap_fields.dart';
+import 'package:dart/src/fields/segment_leaderboard_entry_fields.dart';
+import 'package:dart/src/fields/segment_point_fields.dart';
 
 class SegmentFile {
   Map messages = {

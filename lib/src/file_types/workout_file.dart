@@ -1,7 +1,7 @@
-import 'package:dart/src/fields/exercise_title.dart';
-import 'package:dart/src/fields/workout.dart';
-import 'package:dart/src/fields/workout_session.dart';
-import 'package:dart/src/fields/workout_step.dart';
+import 'package:dart/src/fields/exercise_title_fields.dart';
+import 'package:dart/src/fields/workout_fields.dart';
+import 'package:dart/src/fields/workout_session_fields.dart';
+import 'package:dart/src/fields/workout_step_fields.dart';
 
 class WorkoutFile {
   Map messages = {

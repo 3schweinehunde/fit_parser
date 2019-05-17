@@ -1,6 +1,6 @@
-import 'package:dart/src/fields/file_creator.dart';
-import 'package:dart/src/fields/file_id.dart';
-import 'package:dart/src/fields/timestamp_correlation.dart';
+import 'package:dart/src/fields/file_creator_fields.dart';
+import 'package:dart/src/fields/file_id_fields.dart';
+import 'package:dart/src/fields/timestamp_correlation_fields.dart';
 
 class CommonFile {
   Map messages = {

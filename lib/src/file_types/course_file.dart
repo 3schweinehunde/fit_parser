@@ -1,5 +1,5 @@
-import 'package:dart/src/fields/course.dart';
-import 'package:dart/src/fields/course_point.dart';
+import 'package:dart/src/fields/course_fields.dart';
+import 'package:dart/src/fields/course_point_fields.dart';
 
 class CourseFile {
   Map messages = {

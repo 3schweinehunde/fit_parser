@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/schedule.dart';
+import 'package:dart/src/fields/schedule_fields.dart';
 
 class ScheduleFile {
   Map messages = {

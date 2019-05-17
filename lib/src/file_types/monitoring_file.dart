@@ -1,7 +1,7 @@
-import 'package:dart/src/fields/hr.dart';
-import 'package:dart/src/fields/monitoring.dart';
-import 'package:dart/src/fields/monitoring_info.dart';
-import 'package:dart/src/fields/stress_level.dart';
+import 'package:dart/src/fields/hr_fields.dart';
+import 'package:dart/src/fields/monitoring_fields.dart';
+import 'package:dart/src/fields/monitoring_info_fields.dart';
+import 'package:dart/src/fields/stress_level_fields.dart';
 
 class MonitoringFile {
   Map messages = {

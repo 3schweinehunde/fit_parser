@@ -1,0 +1,15 @@
+Map total_body_exercise_name_values = {
+  0: 'burpee',
+  1: 'weighted_burpee',
+  2: 'burpee_box_jump',
+  3: 'weighted_burpee_box_jump',
+  4: 'high_pull_burpee',
+  5: 'man_makers',
+  6: 'one_arm_burpee',
+  7: 'squat_thrusts',
+  8: 'weighted_squat_thrusts',
+  9: 'squat_plank_push_up',
+  10: 'weighted_squat_plank_push_up',
+  11: 'standing_t_rotation_balance',
+  12: 'weighted_standing_t_rotation_balance',
+};

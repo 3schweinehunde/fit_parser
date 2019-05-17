@@ -1,9 +1,9 @@
-import 'package:dart/src/fields/capabilities.dart';
-import 'package:dart/src/fields/field_capabilities.dart';
-import 'package:dart/src/fields/file_capabilities.dart';
-import 'package:dart/src/fields/mesg_capabilities.dart';
-import 'package:dart/src/fields/slave_device.dart';
-import 'package:dart/src/fields/software.dart';
+import 'package:dart/src/fields/capabilities_fields.dart';
+import 'package:dart/src/fields/field_capabilities_fields.dart';
+import 'package:dart/src/fields/file_capabilities_fields.dart';
+import 'package:dart/src/fields/mesg_capabilities_fields.dart';
+import 'package:dart/src/fields/slave_device_fields.dart';
+import 'package:dart/src/fields/software_fields.dart';
 
 class DeviceFile {
   Map messages = {
