@@ -149,7 +149,7 @@ import 'package:dart/src/values/workout_capabilities_values.dart';
 import 'package:dart/src/values/workout_equipment_values.dart';
 
 class FitType {
-  Map type = {
+  static Map type = {
 // A
     'activity': activity_values,
     'activity_class': activity_class_values,
