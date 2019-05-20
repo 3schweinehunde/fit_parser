@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/lib/src/fields/base_types.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data_message.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/src/definition_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/definition_message.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fit_file.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fit_file.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,31 +19,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
+        <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#17#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="399">
+              <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
-              <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="48" selection-start-line="48" selection-end-line="48" />
+            <state relative-caret-position="513">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="25" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -71,11 +58,13 @@
       <find>into_</find>
       <find>field_type</find>
       <find>_</find>
+      <find>base_t</find>
     </findStrings>
     <replaceStrings>
       <replace />
     </replaceStrings>
     <dirStrings>
+      <dir>$PROJECT_DIR$/lib</dir>
       <dir>$PROJECT_DIR$/lib/src/fields</dir>
     </dirStrings>
   </component>
@@ -85,9 +74,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/src/values/session_trigger_values.dart" />
-        <option value="$PROJECT_DIR$/lib/src/values/comm_timeout_type_values.dart" />
-        <option value="$PROJECT_DIR$/lib/src/values/attitude_stage_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/auto_sync_frequency_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/fitness_equipment_state_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/ant_network_values.dart" />
@@ -135,6 +121,9 @@
         <option value="$PROJECT_DIR$/lib/src/fit_type.dart" />
         <option value="$PROJECT_DIR$/lib/src/data_message.dart" />
         <option value="$PROJECT_DIR$/lib/src/fit_file.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/fit_base_type_values.dart" />
+        <option value="$PROJECT_DIR$/lib/src/values/fit_base_type_numbers.dart" />
+        <option value="$PROJECT_DIR$/lib/src/fields/base_types.dart" />
         <option value="$PROJECT_DIR$/lib/src/definition_message.dart" />
       </list>
     </option>
@@ -179,6 +168,13 @@
             <path>
               <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="dart" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fields" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dart" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -192,13 +188,14 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="dart.analysis.tool.window.force.activate" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/file_types" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/src/fields" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/src/fields" />
       <recent name="$PROJECT_DIR$/lib/src/file_types" />
       <recent name="$PROJECT_DIR$/lib/src" />
     </key>
@@ -295,34 +292,6 @@
     </layout>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/src/values/comm_timeout_type_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/attitude_stage_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/auto_sync_frequency_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/fitness_equipment_state_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/values/ant_network_values.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -432,13 +401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
           <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/values/fit_base_unit_values.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -596,16 +558,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/file_types/activity_file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="35" column="8" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fields/activity_fields.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
@@ -627,40 +579,78 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="988">
-          <caret line="149" selection-start-line="149" selection-end-line="149" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="58" column="18" lean-forward="true" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
+        <state relative-caret-position="396">
+          <caret line="57" column="53" lean-forward="true" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
           <folding>
             <element signature="e#0#17#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
+    <entry file="file://$PROJECT_DIR$/lib/src/values/fit_base_unit_values.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state>
+          <caret column="9" selection-start-column="9" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fields/accelerometer_data_fieds.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fields/field_description_fields.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/values/fit_base_type_values.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/file_types/activity_file.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="25" column="32" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fit_type.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="434">
+          <caret line="151" column="17" selection-start-line="151" selection-start-column="13" selection-end-line="151" selection-end-column="17" />
           <folding>
-            <element signature="e#0#25#0" expanded="true" />
+            <element signature="e#0#54#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="36" selection-start-line="13" selection-start-column="36" selection-end-line="13" selection-end-column="36" />
+        <state relative-caret-position="399">
+          <caret line="21" column="17" lean-forward="true" selection-start-line="21" selection-start-column="17" selection-end-line="21" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fields/base_types.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="93" column="22" selection-start-line="93" selection-start-column="18" selection-end-line="93" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
