@@ -1,8 +1,10 @@
-import 'package:dart/dart.dart';
 import 'package:dart/src/definition_message.dart';
 import 'package:dart/src/file_types/common_file.dart';
+import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
 import 'package:dart/src/value.dart';
+
+import 'file_types/activity_file.dart';
 
 class DataMessage{
   bool compressedHeader;
@@ -18,7 +20,7 @@ class DataMessage{
     print("time_offset: $timeOffset");
   }
 
-  DataMessage({fitFile, recordHeader}) {
+  DataMessage({FitFile fitFile, int recordHeader}) {
     compressedHeader = recordHeader & 128 == 128;
     if (compressedHeader) {
       localMessageType = recordHeader & 96;
@@ -40,8 +42,11 @@ class DataMessage{
 
       Map message_type_field = message_type_fields[field_type];
 
-      Value value = Value(message_type_field: message_type_field,
-                          field: field);
+      Value value = Value(
+          fitFile: fitFile,
+          message_type_field: message_type_field,
+          field: field,
+      );
     });
 
     // TODO developerFields
