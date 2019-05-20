@@ -20,7 +20,7 @@ class FitFile {
   ByteData _byteData;
   int _pointer;
 
-  List<DefinitionMessage> definitionMessages = List();
+  Map definitionMessages;
   List<DataMessage> data_messages = List();
 
   parse() {
@@ -64,7 +64,8 @@ class FitFile {
             fitFile: this,
             recordHeader: record_header
         );
-      definitionMessages.add(definition_message);
+
+      definitionMessages[definition_message.localMessageType] = definition_message;
     } else {
       DataMessage data_message =
         DataMessage(

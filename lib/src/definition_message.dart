@@ -1,6 +1,7 @@
 import 'dart:typed_data';
 import 'dart:io';
-import 'package:dart/src/fields/base_types.dart';
+import 'package:dart/src/developer_field.dart';
+import 'package:dart/src/field.dart';
 import 'package:dart/src/fit_type.dart';
 
 
@@ -12,6 +13,7 @@ class DefinitionMessage {
   int numberOfFields;
   int numberOfDeveloperFields;
   Map fields;
+  Map developerFields;
 
   debugPrint() {
     print("=== Definition Message ===");
@@ -44,32 +46,42 @@ class DefinitionMessage {
     fitFile.pointer += 1;
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
-      fields[fieldCounter]["fieldDefinitionNumber"] = fitFile._byteData.getUint8(fitFile.pointer);
+      int definitionNumber = fitFile._byteData.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      fields[fieldCounter]["size"] = fitFile._byteData.getUint8(fitFile.pointer);
+      int size = fitFile._byteData.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      fields[fieldCounter]["baseTypeByte"] = fitFile._byteData.getUint8(fitFile.pointer);
-      fields[fieldCounter]["endianAbility"] = fields[fieldCounter]["baseTypeByte"] & 128 == 128;
-      fields[fieldCounter]["baseTypeNumber"] = fields[fieldCounter]["baseTypeByte"] & 31;
-      fields[fieldCounter]["baseType"] = base_types[fields[fieldCounter]]["type_name"];
+      int baseTypeByte = fitFile._byteData.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
+
+      Field field = Field(
+          fieldDefinitionNumber: definitionNumber,
+          size: size,
+          baseTypeByte: baseTypeByte);
+
+      fields[fieldCounter] = field;
     }
 
     if (developerData) {
       numberOfDeveloperFields = fitFile._byteData.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
-        fields[fieldCounter]["fieldNumber"] = fitFile._byteData.getUint8(fitFile.pointer);
+      for (var developerFieldCounter = 1; developerFieldCounter <= numberOfFields; developerFieldCounter++){
+        int fieldNumber = fitFile._byteData.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
-        fields[fieldCounter]["size"] = fitFile._byteData.getUint8(fitFile.pointer);
+        int size = fitFile._byteData.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
-        fields[fieldCounter]["developerDataIndex"] = fitFile._byteData.getUint8(fitFile.pointer);
+        int developerDataIndex = fitFile._byteData.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
+
+        DeveloperField developerField = DeveloperField(
+            fieldNumber: fieldNumber,
+            size: size,
+            developerDataIndex: developerDataIndex);
+        developerFields[developerFieldCounter] = developerField;
       }
     }
 

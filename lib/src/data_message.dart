@@ -1,7 +1,15 @@
+import 'package:dart/dart.dart';
+import 'package:dart/src/definition_message.dart';
+import 'package:dart/src/file_types/common_file.dart';
+import 'package:dart/src/fit_type.dart';
+import 'package:dart/src/value.dart';
+
 class DataMessage{
   bool compressedHeader;
   int localMessageType;
   int timeOffset;
+  DefinitionMessage definitionMessage;
+  Map fields;
 
   debugPrint() {
     print("=== Data Message ===");
@@ -18,6 +26,25 @@ class DataMessage{
     } else {
       localMessageType = recordHeader & 15;
     }
+
+    definitionMessage = fitFile.definitionMessages[localMessageType];
+
+    fields = definitionMessage.fields;
+    fields.forEach((key, field) {
+      String message_type_name = FitType.type['mesg_num_values'][definitionMessage.globalMessageNumber];
+
+      Map message_type_fields =  CommonFile().messages[message_type_name];
+      message_type_fields ??= ActivityFile().messages[message_type_name];
+
+      int field_type = field.fieldDefinitionNumber;
+
+      Map message_type_field = message_type_fields[field_type];
+
+      Value value = Value(message_type_field: message_type_field,
+                          field: field);
+    });
+
+    // TODO developerFields
 
     debugPrint();
   }
