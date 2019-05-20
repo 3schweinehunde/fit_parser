@@ -12,6 +12,7 @@ class DataMessage{
   int timeOffset;
   DefinitionMessage definitionMessage;
   Map fields;
+  Map developerFields;
 
   debugPrint() {
     print("=== Data Message ===");
@@ -35,7 +36,7 @@ class DataMessage{
     fields.forEach((key, field) {
       String message_type_name = FitType.type['mesg_num_values'][definitionMessage.globalMessageNumber];
 
-      Map message_type_fields =  CommonFile().messages[message_type_name];
+      Map message_type_fields = CommonFile().messages[message_type_name];
       message_type_fields ??= ActivityFile().messages[message_type_name];
 
       int field_type = field.fieldDefinitionNumber;
@@ -47,9 +48,15 @@ class DataMessage{
           message_type_field: message_type_field,
           field: field,
       );
+
+      // TODO debugPrint
     });
 
-    // TODO developerFields
+    developerFields = definitionMessage.developerFields;
+    fields.forEach((key, field) {
+      // TODO developerFields
+    });
+
 
     debugPrint();
   }
