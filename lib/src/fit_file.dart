@@ -20,7 +20,7 @@ class FitFile {
   ByteData byteData;
   int pointer;
 
-  Map definitionMessages;
+  Map definitionMessages = Map();
   List<DataMessage> data_messages = List();
 
   parse() {
@@ -55,22 +55,22 @@ class FitFile {
   }
 
   get_next_record({debug = false}) {
-    int record_header = byteData.getUint8(pointer);
+    int recordHeader = byteData.getUint8(pointer);
     pointer += 1;
 
-    if (record_header & 64 == 64) {
-      DefinitionMessage definition_message =
+    if (recordHeader & 64 == 64) {
+      DefinitionMessage definitionMessage =
         DefinitionMessage(
             fitFile: this,
-            recordHeader: record_header
+            recordHeader: recordHeader,
         );
 
-      definitionMessages[definition_message.localMessageType] = definition_message;
+      definitionMessages[definitionMessage.localMessageType] = definitionMessage;
     } else {
       DataMessage data_message =
         DataMessage(
             fitFile: this,
-            recordHeader: record_header
+            recordHeader: recordHeader
         );
       data_messages.add(data_message);
     };

@@ -2,7 +2,6 @@ import 'package:dart/src/definition_message.dart';
 import 'package:dart/src/file_types/common_file.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
-import 'package:dart/src/prettify.dart';
 import 'package:dart/src/value.dart';
 
 import 'file_types/activity_file.dart';
@@ -14,14 +13,6 @@ class DataMessage{
   DefinitionMessage definitionMessage;
   Map fields = Map();
   Map developerFields = Map();
-
-  toString() {
-    return prettify({
-      "compressedHeader": compressedHeader,
-      "localMessageType": localMessageType,
-      "timeOffset": timeOffset,
-    });
-  }
 
   DataMessage({FitFile fitFile, int recordHeader}) {
     compressedHeader = recordHeader & 128 == 128;
@@ -36,7 +27,7 @@ class DataMessage{
 
     fields = definitionMessage.fields;
     fields.forEach((key, field) {
-      String message_type_name = FitType.type['mesg_num_values'][definitionMessage.globalMessageNumber];
+      String message_type_name = FitType.type['mesg_num'][definitionMessage.globalMessageNumber];
 
       Map message_type_fields = CommonFile().messages[message_type_name];
       message_type_fields ??= ActivityFile().messages[message_type_name];

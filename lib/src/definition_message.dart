@@ -1,9 +1,8 @@
 import 'dart:typed_data';
-import 'dart:io';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
+import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
-import 'package:dart/src/prettify.dart';
 
 class DefinitionMessage {
   bool developerData;
@@ -17,16 +16,7 @@ class DefinitionMessage {
 
   get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
 
-  toString() {
-    return prettify({
-      'developerData': developerData,
-      'localMessageType': localMessageType,
-      'globalMessageNumber': globalMessageNumber,
-      'globalMessageName': globalMessageName,
-    });
-  }
-
-  DefinitionMessage({fitFile, recordHeader}) {
+  DefinitionMessage({FitFile fitFile, int recordHeader}) {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
     ByteData data = fitFile.byteData;
@@ -88,8 +78,5 @@ class DefinitionMessage {
         developerFields[developerFieldCounter] = developerField;
       }
     }
-
-    print(this.fields);
-    exit(0);
   }
 }

@@ -1,9 +1,7 @@
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
-
 import 'package:dart/src/fit_type.dart';
-import 'package:dart/src/prettify.dart';
 
 class Value {
   String field_name;
@@ -20,19 +18,6 @@ class Value {
   int get baseTypeNumber => baseTypeByte & 31;
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
-
-  toString(){
-    return prettify({
-      "field_name": field_name,
-      "field_type": field_type,
-      "data_type": data_type,
-      "_numeric_value": _numeric_value,
-      "scale": scale,
-      "offset": scale,
-      "value": value,
-      "unit": unit,
-    });
-  }
 
   dynamic get value {
     if (data_type != null) {
