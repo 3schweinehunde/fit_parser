@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fit_type.dart';
-
+import 'package:dart/src/prettify.dart';
 
 class DefinitionMessage {
   bool developerData;
@@ -12,48 +12,52 @@ class DefinitionMessage {
   int globalMessageNumber;
   int numberOfFields;
   int numberOfDeveloperFields;
-  Map fields;
-  Map developerFields;
+  Map fields = Map();
+  Map developerFields = Map();
 
-  debugPrint() {
-    print("=== Definition Message ===");
-    print("develper_data: $developerData");
-    print("local_message_type: $localMessageType");
-    print("global_message_number: $globalMessageNumber - ${FitType.type["mesg_num"][globalMessageNumber]}");
-    print('fields: $fields');
+  get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
+
+  toString() {
+    return prettify({
+      'developerData': developerData,
+      'localMessageType': localMessageType,
+      'globalMessageNumber': globalMessageNumber,
+      'globalMessageName': globalMessageName,
+    });
   }
 
   DefinitionMessage({fitFile, recordHeader}) {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
+    ByteData data = fitFile.byteData;
+    int pointer = fitFile.pointer;
 
     // Reserved Byte, we skip it
-    fitFile.pointer += 1;
+    pointer += 1;
 
-    if (fitFile._byteData.getUint8(fitFile.pointer) == 1) {
+    if (data.getUint8(pointer) == 1) {
       architecture = Endian.big;
     } else {
       architecture = Endian.little;
     }
     fitFile.endianness = architecture;
-    fitFile._pointer += 1;
+    pointer += 1;
 
-    globalMessageNumber =
-        fitFile._byteData.getUint16(fitFile.pointer, fitFile.endianness);
-    fitFile.pointer += 2;
+    globalMessageNumber = data.getUint16(pointer, fitFile.endianness);
+    pointer += 2;
 
-    numberOfFields = fitFile._byteData.getUint8(fitFile.pointer);
-    fitFile.pointer += 1;
+    numberOfFields = data.getUint8(pointer);
+    pointer += 1;
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
-      int definitionNumber = fitFile._byteData.getUint8(fitFile.pointer);
-      fitFile.pointer += 1;
+      int definitionNumber = data.getUint8(pointer);
+      pointer += 1;
 
-      int size = fitFile._byteData.getUint8(fitFile.pointer);
-      fitFile.pointer += 1;
+      int size = data.getUint8(pointer);
+      pointer += 1;
 
-      int baseTypeByte = fitFile._byteData.getUint8(fitFile.pointer);
-      fitFile.pointer += 1;
+      int baseTypeByte = data.getUint8(pointer);
+      pointer+= 1;
 
       Field field = Field(
           fieldDefinitionNumber: definitionNumber,
@@ -64,18 +68,18 @@ class DefinitionMessage {
     }
 
     if (developerData) {
-      numberOfDeveloperFields = fitFile._byteData.getUint8(fitFile.pointer);
-      fitFile.pointer += 1;
+      numberOfDeveloperFields = data.getUint8(pointer);
+      pointer += 1;
 
       for (var developerFieldCounter = 1; developerFieldCounter <= numberOfFields; developerFieldCounter++){
-        int fieldNumber = fitFile._byteData.getUint8(fitFile.pointer);
-        fitFile.pointer += 1;
+        int fieldNumber = data.getUint8(pointer);
+        pointer += 1;
 
-        int size = fitFile._byteData.getUint8(fitFile.pointer);
-        fitFile.pointer += 1;
+        int size = data.getUint8(pointer);
+        pointer += 1;
 
-        int developerDataIndex = fitFile._byteData.getUint8(fitFile.pointer);
-        fitFile.pointer += 1;
+        int developerDataIndex = data.getUint8(pointer);
+        pointer += 1;
 
         DeveloperField developerField = DeveloperField(
             fieldNumber: fieldNumber,
@@ -85,7 +89,7 @@ class DefinitionMessage {
       }
     }
 
-    debugPrint();
+    print(this.fields);
     exit(0);
   }
 }
