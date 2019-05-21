@@ -11,8 +11,8 @@ class DefinitionMessage {
   int globalMessageNumber;
   int numberOfFields;
   int numberOfDeveloperFields;
-  Map fields = Map();
-  Map developerFields = Map();
+  List fields = List();
+  List developerFields = List();
 
   get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
 
@@ -20,62 +20,61 @@ class DefinitionMessage {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
     ByteData data = fitFile.byteData;
-    int pointer = fitFile.pointer;
 
     // Reserved Byte, we skip it
-    pointer += 1;
+    fitFile.pointer += 1;
 
-    if (data.getUint8(pointer) == 1) {
+    if (data.getUint8(fitFile.pointer) == 1) {
       architecture = Endian.big;
     } else {
       architecture = Endian.little;
     }
     fitFile.endianness = architecture;
-    pointer += 1;
+    fitFile.pointer += 1;
 
-    globalMessageNumber = data.getUint16(pointer, fitFile.endianness);
-    pointer += 2;
+    globalMessageNumber = data.getUint16(fitFile.pointer, fitFile.endianness);
+    fitFile.pointer += 2;
 
-    numberOfFields = data.getUint8(pointer);
-    pointer += 1;
+    numberOfFields = data.getUint8(fitFile.pointer);
+    fitFile.pointer += 1;
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
-      int definitionNumber = data.getUint8(pointer);
-      pointer += 1;
+      int definitionNumber = data.getUint8(fitFile.pointer);
+      fitFile.pointer += 1;
 
-      int size = data.getUint8(pointer);
-      pointer += 1;
+      int size = data.getUint8(fitFile.pointer);
+      fitFile.pointer += 1;
 
-      int baseTypeByte = data.getUint8(pointer);
-      pointer+= 1;
+      int baseTypeByte = data.getUint8(fitFile.pointer);
+      fitFile.pointer+= 1;
 
       Field field = Field(
           fieldDefinitionNumber: definitionNumber,
           size: size,
           baseTypeByte: baseTypeByte);
 
-      fields[fieldCounter] = field;
+      fields.add(field);
     }
 
     if (developerData) {
-      numberOfDeveloperFields = data.getUint8(pointer);
-      pointer += 1;
+      numberOfDeveloperFields = data.getUint8(fitFile.pointer);
+      fitFile.pointer += 1;
 
       for (var developerFieldCounter = 1; developerFieldCounter <= numberOfFields; developerFieldCounter++){
-        int fieldNumber = data.getUint8(pointer);
-        pointer += 1;
+        int fieldNumber = data.getUint8(fitFile.pointer);
+        fitFile.pointer += 1;
 
-        int size = data.getUint8(pointer);
-        pointer += 1;
+        int size = data.getUint8(fitFile.pointer);
+        fitFile.pointer += 1;
 
-        int developerDataIndex = data.getUint8(pointer);
-        pointer += 1;
+        int developerDataIndex = data.getUint8(fitFile.pointer);
+        fitFile.pointer += 1;
 
         DeveloperField developerField = DeveloperField(
             fieldNumber: fieldNumber,
             size: size,
             developerDataIndex: developerDataIndex);
-        developerFields[developerFieldCounter] = developerField;
+        developerFields.add(developerField);
       }
     }
   }

@@ -1,27 +1,31 @@
+import 'package:dart/src/field.dart';
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
 
 class Value {
-  String field_name;
-  String field_type;
-  String data_type;
+  String fieldName;
+  String fieldType;
+  String dataType;
   int size;
   int baseTypeByte;
   FitFile fitFile;
-  dynamic _numeric_value;
+  dynamic _numericValue;
   double scale;
   double offset;
   String unit;
+  dynamic value;
+  Field field;
+  Map messageTypeField;
 
   int get baseTypeNumber => baseTypeByte & 31;
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
 
-  dynamic get value {
-    if (data_type != null) {
-      switch (data_type) {
+  dynamic setValue() {
+    if (dataType != null) {
+      switch (dataType) {
         case "sint8":
           return getIntegers(signed: true, data_type_size: 1);
         case "byte":
@@ -38,6 +42,7 @@ class Value {
 
         case "sint32":
           return getIntegers(signed: true, data_type_size: 4);
+        case "date_time":
         case "uint32":
         case "uint32z":
           return getIntegers(signed: false, data_type_size: 4);
@@ -56,12 +61,13 @@ class Value {
         case "string":
           return getString();
       }
-    } else if (field_type != null) {
-      if (FitType.type[field_type]) {
-        _numeric_value = getInt(signed: false, data_type_size: size);
-        return FitType.type[field_type][_numeric_value];
+    } else if (fieldType != null) {
+      if (FitType.type[fieldType] != null) {
+        // TODO resolve references (product -> garmin_product)
+        _numericValue = getInt(signed: false, data_type_size: size);
+        return FitType.type[fieldType][_numericValue];
       } else {
-        throw "Field type $field_type not available";
+        throw "Field type $fieldType not available";
       }
     } else {
       throw "Neither data type nor field type available!";
@@ -76,14 +82,15 @@ class Value {
       List values = [];
       for (int counter = 1; counter <= duplicity; counter++) {
         value = getInt(signed: signed, data_type_size: data_type_size);
-        value = (scale != null) ? value / scale : value;
+        value = value ~/ scale - offset.round();
         values.add(value);
         fitFile.pointer += data_type_size;
       }
       ;
       return values;
     } else {
-      getInt(signed: signed, data_type_size: data_type_size);
+      value = getInt(signed: signed, data_type_size: data_type_size);
+      value = value ~/ scale - offset.round();
       fitFile.pointer += data_type_size;
       return value;
     }
@@ -91,19 +98,19 @@ class Value {
 
   int getInt({signed, data_type_size}) {
     switch (data_type_size) {
-      case 8:
+      case 1:
         return signed
             ? fitFile.byteData.getInt8(fitFile.pointer)
             : fitFile.byteData.getUint8(fitFile.pointer);
-      case 16:
+      case 2:
         return signed
             ? fitFile.byteData.getInt16(fitFile.pointer)
             : fitFile.byteData.getUint16(fitFile.pointer);
-      case 32:
+      case 4:
         return signed
             ? fitFile.byteData.getInt32(fitFile.pointer)
             : fitFile.byteData.getUint32(fitFile.pointer);
-      case 64:
+      case 8:
         return signed
             ? fitFile.byteData.getInt64(fitFile.pointer)
             : fitFile.byteData.getUint64(fitFile.pointer);
@@ -119,14 +126,16 @@ class Value {
     if (duplicity > 1) {
       List values = [];
       for (int counter = 1; counter <= duplicity; counter++) {
-        getFloat(data_type_size: data_type_size);
+        value = getFloat(data_type_size: data_type_size);
+        value = value / scale - offset;
         values.add(value);
         fitFile.pointer += data_type_size;
       }
       ;
       return values;
     } else {
-      getFloat(data_type_size: data_type_size);
+      value = getFloat(data_type_size: data_type_size);
+      value = value / scale - offset;
       fitFile.pointer += data_type_size;
       return value;
     }
@@ -134,9 +143,9 @@ class Value {
 
   double getFloat({signed, data_type_size}) {
     switch (data_type_size) {
-      case 32:
+      case 4:
         return fitFile.byteData.getFloat32(fitFile.pointer, fitFile.endianness);
-      case 64:
+      case 8:
         return fitFile.byteData.getFloat64(fitFile.pointer, fitFile.endianness);
       default:
         throw ("No valid data type size in getFloat");
@@ -150,14 +159,15 @@ class Value {
     return value;
   }
 
-  Value({FitFile fitFile, message_type_field, field}) {
-    field_name = message_type_field["name"];
-    field_type = message_type_field["field_type"];
-    data_type = message_type_field["data_type"];
-    scale = double.parse(message_type_field["scale"]);
-    offset = double.parse(message_type_field["unit"]);
-    unit = message_type_field["unit"];
+  Value({this.fitFile, this.messageTypeField, this.field}) {
+    fieldName = messageTypeField["name"];
+    fieldType = messageTypeField["field_type"];
+    dataType = messageTypeField["data_type"];
+    scale = (messageTypeField["scale"] != null) ? double.parse(messageTypeField["scale"]) : 1;
+    offset = (messageTypeField["offset"] != null) ? double.parse(messageTypeField["offset"]) : 0;
+    unit = messageTypeField["unit"];
     size = field.size;
     baseTypeByte = field.baseTypeByte;
+    value = setValue();
   }
 }

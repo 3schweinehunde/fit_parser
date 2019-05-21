@@ -21,7 +21,7 @@ class FitFile {
   int pointer;
 
   Map definitionMessages = Map();
-  List<DataMessage> data_messages = List();
+  List<DataMessage> dataMessages = List();
 
   parse() {
     File file = File(path);
@@ -67,12 +67,14 @@ class FitFile {
 
       definitionMessages[definitionMessage.localMessageType] = definitionMessage;
     } else {
-      DataMessage data_message =
+      DataMessage dataMessage =
         DataMessage(
             fitFile: this,
             recordHeader: recordHeader
         );
-      data_messages.add(data_message);
+
+      dataMessages.add(dataMessage);
+      print(dataMessage);
     };
   }
 }
