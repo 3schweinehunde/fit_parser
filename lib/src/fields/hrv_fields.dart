@@ -3,6 +3,6 @@ Map hrv_fields = {
     'field_name': 'time',
     'data_type': 'uint16',
     'scale': 1000,
-    'unit': 's',
+    'units': 's',
   },
 };

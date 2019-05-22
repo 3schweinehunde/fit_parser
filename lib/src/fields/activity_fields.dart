@@ -8,7 +8,7 @@ Map activity_fields = {
     'field_name': 'total_timer_time',
     'data_type': 'uint32',
     'scale': 1000,
-    'unit': 's',
+    'units': 's',
   },
   1: {
     'field_name': 'num_sessions',

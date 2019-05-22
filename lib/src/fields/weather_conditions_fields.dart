@@ -10,7 +10,7 @@ Map weather_condition_fields = {
   1: {
     'field_name': 'temperature',
     'data_type': 'sint8',
-    'unit': 'C',
+    'units': 'C',
   },
   2: {
     'field_name': 'condition',
@@ -19,13 +19,13 @@ Map weather_condition_fields = {
   3: {
     'field_name': 'wind_direction',
     'data_type': 'uint16',
-    'unit': 'degrees',
+    'units': 'degrees',
   },
   4: {
     'field_name': 'wind_speed',
     'data_type': 'uint16',
     'scale': 1000,
-    'unit': 'm/s',
+    'units': 'm/s',
   },
   5: {
     'field_name': 'precipitation_probability',
@@ -34,7 +34,7 @@ Map weather_condition_fields = {
   6: {
     'field_name': 'temperature_feels_like',
     'data_type': 'sint8',
-    'unit': 'C',
+    'units': 'C',
   },
   7: {
     'field_name': 'relative_humidity',
@@ -51,12 +51,12 @@ Map weather_condition_fields = {
   10: {
     'field_name': 'observed_location_lat',
     'data_type': 'sint32',
-    'unit': 'semicircles',
+    'units': 'semicircles',
   },
   11: {
     'field_name': 'observed_location_long',
     'data_type': 'sint32',
-    'unit': 'semicircles',
+    'units': 'semicircles',
   },
   12: {
     'field_name': 'day_of_week',
@@ -65,11 +65,11 @@ Map weather_condition_fields = {
   13: {
     'field_name': 'high_temperature',
     'data_type': 'sint8',
-    'unit': 'C',
+    'units': 'C',
   },
   14: {
     'field_name': 'low_temperature',
     'data_type': 'sint8',
-    'unit': 'C',
+    'units': 'C',
   },
 };

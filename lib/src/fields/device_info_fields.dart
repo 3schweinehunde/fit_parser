@@ -2,7 +2,7 @@ Map device_info_fields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',
-    'unit': 's',
+    'units': 's',
   },
   0: {
     'field_name': 'device_index',
@@ -63,13 +63,13 @@ Map device_info_fields = {
   7: {
     'field_name': 'cum_operating_time',
     'data_type': 'uint32',
-    'unit': 's',
+    'units': 's',
   },
   10: {
     'field_name': 'battery_voltage',
     'data_type': 'uint16',
     'scale': 256,
-    'unit': 'V',
+    'units': 'V',
   },
   11: {
     'field_name': 'battery_status',

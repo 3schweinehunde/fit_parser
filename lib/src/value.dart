@@ -14,7 +14,7 @@ class Value {
   dynamic _numericValue;
   double scale;
   double offset;
-  String unit;
+  String units;
   dynamic value;
   Field field;
   Map messageTypeField;
@@ -27,25 +27,37 @@ class Value {
     String referenceFieldName = messageTypeField['reference_field_name'];
     Value referenceValue;
 
+    // Reference field replacement
     if (referenceFieldName != null) {
-      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeField["field_name"] == referenceFieldName);
-      messageTypeField['reference_field_value'].forEach((referenceFieldValue, value) {
-        if (referenceValue.value == referenceFieldValue) {
-          fieldName = messageTypeField["reference_field_value"][referenceValue.value]['field_name'];
-          fieldType = messageTypeField["reference_field_value"][referenceValue.value]['field_type'];;
-        };
-      });
-    };
+      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeField["field_name"] == referenceFieldName, orElse: () => null);
+      if (referenceValue != null) {
+        Map reference = messageTypeField["reference_field_value"][referenceValue.value];
 
+        messageTypeField['reference_field_value'].forEach((referenceFieldValue,value) {
+          if (referenceValue.value == referenceFieldValue) {
+            fieldName = reference['field_name'] ?? fieldName;
+            fieldType = reference['field_type'] ?? fieldType;
+            dataType = reference['data_type'] ?? dataType;
+            units = reference['data_type'] ?? units;
+            scale = reference['scale'] ?? scale;
+            offset = reference['offset'] ?? offset;
+          }
+        });
+      }
+    }
+
+    // Data parsing
     if (fieldType != null) {
       if (FitType.type[fieldType] != null) {
-
+        // fieldType parsing
         _numericValue = getInt(signed: false, data_type_size: size);
+        fitFile.pointer += size;
         return FitType.type[fieldType][_numericValue];
       } else {
         throw "Field type $fieldType not available";
       }
     } else if (dataType != null) {
+      // dataType parsing
       switch (dataType) {
         case "sint8":
           return getIntegers(signed: true, data_type_size: 1);
@@ -179,7 +191,7 @@ class Value {
     dataType = messageTypeField["data_type"];
     scale = (messageTypeField["scale"] != null) ? double.parse(messageTypeField["scale"]) : 1;
     offset = (messageTypeField["offset"] != null) ? double.parse(messageTypeField["offset"]) : 0;
-    unit = messageTypeField["unit"];
+    units = messageTypeField["units"];
     size = field.size;
     baseTypeByte = field.baseTypeByte;
     value = setValue(valuesSoFar: valuesSoFar);
