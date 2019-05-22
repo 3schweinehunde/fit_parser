@@ -11,8 +11,8 @@ class DefinitionMessage {
   int globalMessageNumber;
   int numberOfFields;
   int numberOfDeveloperFields;
-  List fields = List();
-  List developerFields = List();
+  List<Field> fields = List();
+  List<DeveloperField> developerFields = List();
 
   get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
 

@@ -23,8 +23,29 @@ class Value {
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
 
-  dynamic setValue() {
-    if (dataType != null) {
+  dynamic setValue({List<Value> valuesSoFar}) {
+    String referenceFieldName = messageTypeField['reference_field_name'];
+    Value referenceValue;
+
+    if (referenceFieldName != null) {
+      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeField["field_name"] == referenceFieldName);
+      messageTypeField['reference_field_value'].forEach((referenceFieldValue, value) {
+        if (referenceValue.value == referenceFieldValue) {
+          fieldName = messageTypeField["reference_field_value"][referenceValue.value]['field_name'];
+          fieldType = messageTypeField["reference_field_value"][referenceValue.value]['field_type'];;
+        };
+      });
+    };
+
+    if (fieldType != null) {
+      if (FitType.type[fieldType] != null) {
+
+        _numericValue = getInt(signed: false, data_type_size: size);
+        return FitType.type[fieldType][_numericValue];
+      } else {
+        throw "Field type $fieldType not available";
+      }
+    } else if (dataType != null) {
       switch (dataType) {
         case "sint8":
           return getIntegers(signed: true, data_type_size: 1);
@@ -61,14 +82,7 @@ class Value {
         case "string":
           return getString();
       }
-    } else if (fieldType != null) {
-      if (FitType.type[fieldType] != null) {
-        // TODO resolve references (product -> garmin_product)
-        _numericValue = getInt(signed: false, data_type_size: size);
-        return FitType.type[fieldType][_numericValue];
-      } else {
-        throw "Field type $fieldType not available";
-      }
+
     } else {
       throw "Neither data type nor field type available!";
     }
@@ -159,7 +173,7 @@ class Value {
     return value;
   }
 
-  Value({this.fitFile, this.messageTypeField, this.field}) {
+  Value({this.fitFile, this.messageTypeField, this.field, List<Value> valuesSoFar}) {
     fieldName = messageTypeField["name"];
     fieldType = messageTypeField["field_type"];
     dataType = messageTypeField["data_type"];
@@ -168,6 +182,6 @@ class Value {
     unit = messageTypeField["unit"];
     size = field.size;
     baseTypeByte = field.baseTypeByte;
-    value = setValue();
+    value = setValue(valuesSoFar: valuesSoFar);
   }
 }

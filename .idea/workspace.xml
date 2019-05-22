@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/example/assets/.~lock.Activity.csv#" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/ant_rx_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/ant_rx_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/ant_tx_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/ant_tx_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/event_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/event_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/exd_data_concept_configuration_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/exd_data_concept_configuration_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/exd_data_field_configuration_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/exd_data_field_configuration_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/hr_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/hr_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/monitoring_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/monitoring_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/record_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/record_fields.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data_message.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/definition_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/definition_message.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/value.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/value.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -24,7 +17,7 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -113,9 +106,6 @@
         <option value="$PROJECT_DIR$/lib/src/prettify.dart" />
         <option value="$PROJECT_DIR$/lib/src/field.dart" />
         <option value="$PROJECT_DIR$/lib/src/fit_file.dart" />
-        <option value="$PROJECT_DIR$/lib/src/definition_message.dart" />
-        <option value="$PROJECT_DIR$/lib/src/data_message.dart" />
-        <option value="$PROJECT_DIR$/lib/src/value.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/hr_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/exd_data_concept_configuration_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/exd_data_field_configuration_fields.dart" />
@@ -124,6 +114,9 @@
         <option value="$PROJECT_DIR$/lib/src/fields/monitoring_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/event_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/record_fields.dart" />
+        <option value="$PROJECT_DIR$/lib/src/data_message.dart" />
+        <option value="$PROJECT_DIR$/lib/src/definition_message.dart" />
+        <option value="$PROJECT_DIR$/lib/src/value.dart" />
       </list>
     </option>
   </component>
@@ -141,7 +134,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -168,20 +161,13 @@
             <path>
               <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="dart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="fields" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -258,7 +244,7 @@
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1025" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18697916" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18697916" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -268,7 +254,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.28913045" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4597826" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.40869564" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -292,58 +278,70 @@
     </layout>
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="Dart">
+          <url>file://$PROJECT_DIR$/lib/src/value.dart</url>
+          <line>33</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="DartCommandLineRunConfigurationType">
-        <watch expression="definitionMessage" language="Dart" />
-        <watch expression="fitFile.pointer" language="Dart" />
-        <watch expression="fields" language="Dart" />
+        <watch expression="fieldName" language="Dart" />
       </configuration>
     </watches-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="watch">
       <expression>
-        <expression-string>fields</expression-string>
+        <expression-string>fieldName</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>fitFile.pointer</expression-string>
+        <expression-string>messageTypeField[&quot;reference_field_value&quot;][referenceValue.value]</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>definitionMessage</expression-string>
+        <expression-string>messageTypeField[&quot;reference_field_value&quot;]</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>offset</expression-string>
+        <expression-string>messageTypeField[&quot;reference_field_value&quot;][referenceValue.value]['field_name']</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>scale</expression-string>
+        <expression-string>messageTypeField</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>data_type_size</expression-string>
+        <expression-string>messageTypeField[&quot;refererce_field_value&quot;]</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>fitFile</expression-string>
+        <expression-string>value</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>fieldCounter</expression-string>
+        <expression-string>messageTypeField[&quot;refererce_field_value&quot;][referenceValue]['field_name']</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
       <expression>
-        <expression-string>numberOfFields</expression-string>
+        <expression-string>this</expression-string>
+        <language-id>Dart</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>referenceFieldName</expression-string>
         <language-id>Dart</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
@@ -544,46 +542,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="703">
-          <caret line="60" column="27" lean-forward="true" selection-start-line="60" selection-start-column="27" selection-end-line="60" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/value.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="65" column="62" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fields/hr_fields.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="448">
@@ -657,6 +615,46 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="584">
           <caret line="46" column="29" lean-forward="true" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="556">
+          <caret line="80" column="1" lean-forward="true" selection-start-line="80" selection-start-column="1" selection-end-line="80" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="29" column="10" selection-start-line="29" selection-start-column="4" selection-end-line="29" selection-end-column="10" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/value.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="37" column="6" lean-forward="true" selection-start-line="37" selection-start-column="6" selection-end-line="37" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

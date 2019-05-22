@@ -1,4 +1,6 @@
 import 'package:dart/src/definition_message.dart';
+import 'package:dart/src/developer_field.dart';
+import 'package:dart/src/field.dart';
 import 'package:dart/src/file_types/common_file.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
@@ -10,9 +12,9 @@ class DataMessage{
   int localMessageType;
   int timeOffset;
   DefinitionMessage definitionMessage;
-  List fields = List();
-  List values = List();
-  List developerFields = List();
+  List<Field> fields = List();
+  List<Value> values = List();
+  List<DeveloperField> developerFields = List();
 
   DataMessage({FitFile fitFile, int recordHeader}) {
     compressedHeader = recordHeader & 128 == 128;
@@ -40,6 +42,7 @@ class DataMessage{
           fitFile: fitFile,
           messageTypeField: messageTypeField,
           field: field,
+          valuesSoFar: values,
       );
       print(value);
       values.add(value);
