@@ -17,23 +17,23 @@ class Value {
   String units;
   dynamic value;
   Field field;
-  Map messageTypeField;
+  Map messageTypeFields;
 
   int get baseTypeNumber => baseTypeByte & 31;
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
 
   dynamic setValue({List<Value> valuesSoFar}) {
-    String referenceFieldName = messageTypeField['reference_field_name'];
+    String referenceFieldName = messageTypeFields['reference_field_name'];
     Value referenceValue;
 
     // Reference field replacement
     if (referenceFieldName != null) {
-      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeField["field_name"] == referenceFieldName, orElse: () => null);
+      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeFields["field_name"] == referenceFieldName, orElse: () => null);
       if (referenceValue != null) {
-        Map reference = messageTypeField["reference_field_value"][referenceValue.value];
+        Map reference = messageTypeFields["reference_field_value"][referenceValue.value];
 
-        messageTypeField['reference_field_value'].forEach((referenceFieldValue,value) {
+        messageTypeFields['reference_field_value'].forEach((referenceFieldValue,value) {
           if (referenceValue.value == referenceFieldValue) {
             fieldName = reference['field_name'] ?? fieldName;
             fieldType = reference['field_type'] ?? fieldType;
@@ -185,13 +185,14 @@ class Value {
     return value;
   }
 
-  Value({this.fitFile, this.messageTypeField, this.field, List<Value> valuesSoFar}) {
-    fieldName = messageTypeField["name"];
-    fieldType = messageTypeField["field_type"];
-    dataType = messageTypeField["data_type"];
-    scale = (messageTypeField["scale"] != null) ? double.parse(messageTypeField["scale"]) : 1;
-    offset = (messageTypeField["offset"] != null) ? double.parse(messageTypeField["offset"]) : 0;
-    units = messageTypeField["units"];
+  Value({this.fitFile, this.field, List<Value> valuesSoFar}) {
+    messageTypeFields = field.messageTypeFields;
+    fieldName = field.fieldName;
+    fieldType = field.fieldType;
+    dataType = field.dataType;
+    scale = field.scale;
+    offset = field.offset;
+    units = field.units;
     size = field.size;
     baseTypeByte = field.baseTypeByte;
     value = setValue(valuesSoFar: valuesSoFar);

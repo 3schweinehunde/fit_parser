@@ -74,7 +74,6 @@ class FitFile {
         );
 
       dataMessages.add(dataMessage);
-      print(dataMessage);
     };
   }
 }

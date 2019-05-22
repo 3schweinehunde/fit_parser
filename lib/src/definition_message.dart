@@ -38,6 +38,7 @@ class DefinitionMessage {
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
 
+    print("===");
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
       int definitionNumber = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
@@ -51,10 +52,13 @@ class DefinitionMessage {
       Field field = Field(
           fieldDefinitionNumber: definitionNumber,
           size: size,
-          baseTypeByte: baseTypeByte);
+          baseTypeByte: baseTypeByte,
+          globalMessageNumber: globalMessageNumber);
 
       fields.add(field);
+      print(field);
     }
+    print("===");
 
     if (developerData) {
       numberOfDeveloperFields = data.getUint8(fitFile.pointer);

@@ -1,11 +1,13 @@
+import 'dart:io';
+
 import 'package:dart/src/definition_message.dart';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/file_types/common_file.dart';
+import 'package:dart/src/file_types/activity_file.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
 import 'package:dart/src/value.dart';
-import 'file_types/activity_file.dart';
 
 class DataMessage{
   bool compressedHeader;
@@ -29,28 +31,20 @@ class DataMessage{
 
     fields = definitionMessage.fields;
     fields.forEach((field) {
-      String messageTypeName = FitType.type['mesg_num'][definitionMessage.globalMessageNumber];
-
-      Map messageTypeFields = CommonFile().messages[messageTypeName];
-      messageTypeFields ??= ActivityFile().messages[messageTypeName];
-
-      int field_type = field.fieldDefinitionNumber;
-
-      Map messageTypeField = messageTypeFields[field_type];
-
       Value value = Value(
           fitFile: fitFile,
-          messageTypeField: messageTypeField,
           field: field,
           valuesSoFar: values,
       );
-      print(value);
       values.add(value);
+      stdout.write("${value.fieldName}: ${value.value}, ");
     });
 
     developerFields = definitionMessage.developerFields;
     developerFields.forEach((developerField) {
       // TODO developerFields
     });
+
+    print("");
   }
 }
