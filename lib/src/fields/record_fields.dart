@@ -51,8 +51,7 @@ Map record_fields = {
   8: {
     'field_name': 'compressed_speed_distance',
     'data_type': 'byte',
-    'array': true,
-    'fields': {
+    'components': {
       'speed': {'scale': 100, 'unit': 'm/s', 'bits': 12},
       'distance': {'scale': 16, 'unit': 'm', 'bits': 12},
     },

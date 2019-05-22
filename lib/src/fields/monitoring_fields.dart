@@ -120,6 +120,14 @@ Map monitoring_fields = {
   24: {
     'field_name': 'current_activity_type_intensity',
     'data_type': 'byte',
+    'components': [
+      {
+        'activity_type': {'bits': 5}
+      },
+      {
+        'intensity': {'bits': 3}
+      },
+    ]
   },
   25: {
     'field_name': 'timestamp_min_8',

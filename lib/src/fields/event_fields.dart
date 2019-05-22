@@ -108,10 +108,70 @@ Map event_fields = {
       'sport_point': {
         'field_name': 'sport_point',
         'data_type': 'uint32',
+        'components': [
+          {
+            'score': {
+              'bits': 16,
+            }
+          },
+          {
+            'opponent_score': {
+              'bits': 16,
+            }
+          },
+        ]
       },
-      'front_gear_change, rear_gear_change': {
+      'front_gear_change': {
         'field_name': 'gear_change_data',
         'data_type': 'uint32',
+        'components': [
+          {
+            'rear_gear_num': {
+              'bits': 8,
+            }
+          },
+          {
+            'rear_gear': {
+              'bits': 8,
+            }
+          },
+          {
+            'front_gear_num': {
+              'bits': 8,
+            }
+          },
+          {
+            'front_gear': {
+              'bits': 8,
+            }
+          },
+        ],
+      },
+      'rear_gear_change': {
+        'field_name': 'gear_change_data',
+        'data_type': 'uint32',
+        'components': [
+          {
+            'rear_gear_num': {
+              'bits': 8,
+            }
+          },
+          {
+            'rear_gear': {
+              'bits': 8,
+            }
+          },
+          {
+            'front_gear_num': {
+              'bits': 8,
+            }
+          },
+          {
+            'front_gear': {
+              'bits': 8,
+            }
+          },
+        ],
       },
       'rider_position_change': {
         'field_name': 'rider_position',

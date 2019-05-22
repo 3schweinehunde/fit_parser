@@ -17,14 +17,57 @@ Map ant_tx_fields = {
   2: {
     'field_name': 'mesg_data',
     'data_type': 'byte',
+    'components': [
+      {
+        'channel_number': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+      {
+        'data': {
+          'bits': 8,
+        }
+      },
+    ]
   },
   3: {
     'field_name': 'channel_number',
     'data_type': 'uint8',
   },
-  4: {
-    'field_name': 'data',
-    'data_type': 'byte',
-    'bits': 8
-  },
+  4: {'field_name': 'data', 'data_type': 'byte', 'bits': 8},
 };

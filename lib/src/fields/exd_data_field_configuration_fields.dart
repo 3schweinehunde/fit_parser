@@ -6,6 +6,18 @@ Map exd_data_field_configuration_fields = {
   1: {
     'field_name': 'concept_field',
     'data_type': 'byte',
+    'components': [
+      {
+        'field_id': {
+          'bits': 4,
+        }
+      },
+      {
+        'concept_index': {
+          'bits': 4,
+        }
+      },
+    ]
   },
   2: {
     'field_name': 'field_id',
