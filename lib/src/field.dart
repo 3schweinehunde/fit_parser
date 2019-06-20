@@ -44,6 +44,9 @@ class Field {
       "dataType": dataType,
       "fieldType": fieldType,
       "messageTypeName": messageTypeName,
+      'size': size,
+      'baseTypeByte': baseTypeByte,
+      'globalMessageNumber': globalMessageNumber,
     }.toString();
   }
 }

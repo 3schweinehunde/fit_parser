@@ -3,5 +3,5 @@ class DeveloperField {
   int size;
   int developerDataIndex;
 
-  DeveloperField({fieldNumber, size, developerDataIndex}) {}
+  DeveloperField({fieldNumber, size, developerDataIndex});
 }

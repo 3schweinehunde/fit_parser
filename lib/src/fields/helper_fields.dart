@@ -3,5 +3,5 @@
 // Note: 1) change data_type to field_type manually, if necessary
 //       2) import in activity_file.dart
 
-Map _fields = {
-};
+// Map _fields = {
+//};

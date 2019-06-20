@@ -3,6 +3,7 @@ import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
+import 'dart:developer';
 
 class Value {
   String fieldName;
@@ -23,17 +24,21 @@ class Value {
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
 
-  dynamic setValue({List<Value> valuesSoFar}) {
+  Value resolveReference({List<Value> values}) {
     String referenceFieldName = messageTypeFields['reference_field_name'];
     Value referenceValue;
 
     // Reference field replacement
     if (referenceFieldName != null) {
-      referenceValue = valuesSoFar.firstWhere((value) => value.messageTypeFields["field_name"] == referenceFieldName, orElse: () => null);
+      referenceValue = values.firstWhere((value) => value
+          .messageTypeFields["field_name"] == referenceFieldName,
+          orElse: () => null);
       if (referenceValue != null) {
-        Map reference = messageTypeFields["reference_field_value"][referenceValue.value];
+        Map reference = messageTypeFields["reference_field_value"][referenceValue
+            .value];
 
-        messageTypeFields['reference_field_value'].forEach((referenceFieldValue,value) {
+        messageTypeFields['reference_field_value'].forEach((referenceFieldValue,
+            value) {
           if (referenceValue.value == referenceFieldValue) {
             fieldName = reference['field_name'] ?? fieldName;
             fieldType = reference['field_type'] ?? fieldType;
@@ -45,8 +50,13 @@ class Value {
         });
       }
     }
+    return this;
+  }
 
+  dynamic setValue() {
     // Data parsing
+    debugger(when: fitFile.pointer > 70);
+
     if (fieldType != null) {
       if (FitType.type[fieldType] != null) {
         // fieldType parsing
@@ -112,11 +122,10 @@ class Value {
         values.add(value);
         fitFile.pointer += data_type_size;
       }
-      ;
       return values;
     } else {
-      value = getInt(signed: signed, data_type_size: data_type_size);
-      value = value ~/ scale - offset.round();
+      _numericValue = getInt(signed: signed, data_type_size: data_type_size);
+      value = _numericValue ~/ scale - offset.round();
       fitFile.pointer += data_type_size;
       return value;
     }
@@ -157,7 +166,6 @@ class Value {
         values.add(value);
         fitFile.pointer += data_type_size;
       }
-      ;
       return values;
     } else {
       value = getFloat(data_type_size: data_type_size);
@@ -185,7 +193,7 @@ class Value {
     return value;
   }
 
-  Value({this.fitFile, this.field, List<Value> valuesSoFar}) {
+  Value({this.fitFile, this.field}) {
     messageTypeFields = field.messageTypeFields;
     fieldName = field.fieldName;
     fieldType = field.fieldType;
@@ -195,6 +203,6 @@ class Value {
     units = field.units;
     size = field.size;
     baseTypeByte = field.baseTypeByte;
-    value = setValue(valuesSoFar: valuesSoFar);
+    value = setValue();
   }
 }

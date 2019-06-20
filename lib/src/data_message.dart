@@ -3,13 +3,10 @@ import 'dart:io';
 import 'package:dart/src/definition_message.dart';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
-import 'package:dart/src/file_types/common_file.dart';
-import 'package:dart/src/file_types/activity_file.dart';
 import 'package:dart/src/fit_file.dart';
-import 'package:dart/src/fit_type.dart';
 import 'package:dart/src/value.dart';
 
-class DataMessage{
+class DataMessage {
   bool compressedHeader;
   int localMessageType;
   int timeOffset;
@@ -32,12 +29,10 @@ class DataMessage{
     fields = definitionMessage.fields;
     fields.forEach((field) {
       Value value = Value(
-          fitFile: fitFile,
-          field: field,
-          valuesSoFar: values,
+        fitFile: fitFile,
+        field: field,
       );
       values.add(value);
-      stdout.write("${value.fieldName}: ${value.value}, ");
     });
 
     developerFields = definitionMessage.developerFields;
@@ -45,6 +40,10 @@ class DataMessage{
       // TODO developerFields
     });
 
-    print("");
+    values = values.map((value) => value.resolveReference(values: values)).toList();
+
+    print("<=< Data Message:");
+    values.forEach((value) => stdout.write("${value.fieldName}: ${value.value}, "));
+    print(">=>");
   }
 }

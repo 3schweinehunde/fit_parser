@@ -7,7 +7,6 @@ Map event_fields = {
   0: {
     'field_name': 'event',
     'field_type': 'event',
-    'units': 'watts',
   },
   1: {
     'field_name': 'event_type',
