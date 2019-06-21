@@ -3,7 +3,6 @@ import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
-import 'dart:developer';
 
 class Value {
   String fieldName;
@@ -19,35 +18,40 @@ class Value {
   dynamic value;
   Field field;
   Map messageTypeFields;
+  int pointer;
 
   int get baseTypeNumber => baseTypeByte & 31;
   int get baseType => base_types[baseTypeNumber]["type_name"];
   int get baseTypeSize => base_types[baseTypeNumber]["size"];
 
   Value resolveReference({List<Value> values}) {
-    String referenceFieldName = messageTypeFields['reference_field_name'];
-    Value referenceValue;
+    if (messageTypeFields != null) {
+      String referenceFieldName = messageTypeFields['reference_field_name'];
+      Value referenceValue;
 
-    // Reference field replacement
-    if (referenceFieldName != null) {
-      referenceValue = values.firstWhere((value) => value
-          .messageTypeFields["field_name"] == referenceFieldName,
-          orElse: () => null);
-      if (referenceValue != null) {
-        Map reference = messageTypeFields["reference_field_value"][referenceValue
-            .value];
+      // Reference field replacement
+      if (referenceFieldName != null) {
+        referenceValue = values.firstWhere((currentValue) {
+          return (currentValue.messageTypeFields != null) && (currentValue.messageTypeFields["field_name"] == referenceFieldName);
+        },
+            orElse: () => null);
+        if (referenceValue != null) {
+          Map reference = messageTypeFields["reference_field_value"][referenceValue
+              .value];
 
-        messageTypeFields['reference_field_value'].forEach((referenceFieldValue,
-            value) {
-          if (referenceValue.value == referenceFieldValue) {
-            fieldName = reference['field_name'] ?? fieldName;
-            fieldType = reference['field_type'] ?? fieldType;
-            dataType = reference['data_type'] ?? dataType;
-            units = reference['data_type'] ?? units;
-            scale = reference['scale'] ?? scale;
-            offset = reference['offset'] ?? offset;
-          }
-        });
+          messageTypeFields['reference_field_value'].forEach((
+              referenceFieldValue,
+              value) {
+            if (referenceValue.value == referenceFieldValue) {
+              fieldName = reference['field_name'] ?? fieldName;
+              fieldType = reference['field_type'] ?? fieldType;
+              dataType = reference['data_type'] ?? dataType;
+              units = reference['data_type'] ?? units;
+              scale = reference['scale'] ?? scale;
+              offset = reference['offset'] ?? offset;
+            }
+          });
+        }
       }
     }
     return this;
@@ -55,14 +59,14 @@ class Value {
 
   dynamic setValue() {
     // Data parsing
-    debugger(when: fitFile.pointer > 70);
-
     if (fieldType != null) {
       if (FitType.type[fieldType] != null) {
         // fieldType parsing
         _numericValue = getInt(signed: false, data_type_size: size);
         fitFile.pointer += size;
         return FitType.type[fieldType][_numericValue];
+      } else if (fieldType == "unknown") {
+        dataType = "string";
       } else {
         throw "Field type $fieldType not available";
       }
@@ -194,6 +198,7 @@ class Value {
   }
 
   Value({this.fitFile, this.field}) {
+    pointer = fitFile.pointer;
     messageTypeFields = field.messageTypeFields;
     fieldName = field.fieldName;
     fieldType = field.fieldType;
