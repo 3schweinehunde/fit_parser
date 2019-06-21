@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/data_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data_message.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/definition_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/definition_message.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/developer_field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/developer_field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/field.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/event_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/event_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/fields/helper_fields.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fields/helper_fields.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/src/value.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/value.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/dart_test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/test/dart_test.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -150,7 +142,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,13 +163,6 @@
             <path>
               <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="dart" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="values" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
-              <item name="dart" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -186,6 +170,7 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,7 +256,7 @@
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1025" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25133404" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25667024" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
