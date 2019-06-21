@@ -29,12 +29,21 @@ class Field {
                      ?? ActivityFile().messages[messageTypeName];
 
     messageTypeFields = fileTypeFields[fieldDefinitionNumber];
-    fieldName = messageTypeFields["field_name"];
-    fieldType = messageTypeFields["field_type"];
-    dataType = messageTypeFields["data_type"];
-    scale = (messageTypeFields["scale"] != null) ? double.parse(messageTypeFields["scale"]) : 1;
-    offset = (messageTypeFields["offset"] != null) ? double.parse(messageTypeFields["offset"]) : 0;
-    units = messageTypeFields["units"];
+    if (messageTypeFields!= null) {
+      fieldName = messageTypeFields["field_name"];
+      fieldType = messageTypeFields["field_type"];
+      dataType = messageTypeFields["data_type"];
+      scale = (messageTypeFields["scale"] != null) ? double.parse(messageTypeFields["scale"]) : 1;
+      offset = (messageTypeFields["offset"] != null) ? double.parse(messageTypeFields["offset"]) : 0;
+      units = messageTypeFields["units"];
+    } else {
+      fieldName = "unknown";
+      fieldType = "unknown";
+      dataType = "unknown";
+      scale = 1;
+      offset = 0;
+      units = "unknown";
+    }
   }
 
   toString() {

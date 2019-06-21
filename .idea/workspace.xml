@@ -3,6 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="b53f0006-9326-4f0a-89a6-a4422837d03b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/example/dart_example.dart" beforeDir="false" afterPath="$PROJECT_DIR$/example/dart_example.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/data_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/data_message.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/definition_message.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/definition_message.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/field.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/field.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/src/fit_file.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/src/fit_file.dart" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,7 +20,186 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#17#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/assets/without_stryd.csv">
+          <provider editor-type-id="csv-text-editor" />
+          <provider selected="true" editor-type-id="csv-table-editor">
+            <state showInfoPanel="false" fixedHeaders="false" rowLines="3">
+              <column index="0" width="100" />
+              <column index="1" width="100" />
+              <column index="2" width="100" />
+              <column index="3" width="100" />
+              <column index="4" width="100" />
+              <column index="5" width="100" />
+              <column index="6" width="100" />
+              <column index="7" width="100" />
+              <column index="8" width="100" />
+              <column index="9" width="100" />
+              <column index="10" width="100" />
+              <column index="11" width="100" />
+              <column index="12" width="100" />
+              <column index="13" width="100" />
+              <column index="14" width="100" />
+              <column index="15" width="100" />
+              <column index="16" width="100" />
+              <column index="17" width="100" />
+              <column index="18" width="100" />
+              <column index="19" width="100" />
+              <column index="20" width="100" />
+              <column index="21" width="100" />
+              <column index="22" width="100" />
+              <column index="23" width="100" />
+              <column index="24" width="100" />
+              <column index="25" width="100" />
+              <column index="26" width="100" />
+              <column index="27" width="100" />
+              <column index="28" width="100" />
+              <column index="29" width="100" />
+              <column index="30" width="100" />
+              <column index="31" width="100" />
+              <column index="32" width="100" />
+              <column index="33" width="100" />
+              <column index="34" width="100" />
+              <column index="35" width="100" />
+              <column index="36" width="100" />
+              <column index="37" width="100" />
+              <column index="38" width="100" />
+              <column index="39" width="100" />
+              <column index="40" width="100" />
+              <column index="41" width="100" />
+              <column index="42" width="100" />
+              <column index="43" width="100" />
+              <column index="44" width="100" />
+              <column index="45" width="100" />
+              <column index="46" width="100" />
+              <column index="47" width="100" />
+              <column index="48" width="100" />
+              <column index="49" width="100" />
+              <column index="50" width="100" />
+              <column index="51" width="100" />
+              <column index="52" width="100" />
+              <column index="53" width="100" />
+              <column index="54" width="100" />
+              <column index="55" width="100" />
+              <column index="56" width="100" />
+              <column index="57" width="100" />
+              <column index="58" width="100" />
+              <column index="59" width="100" />
+              <column index="60" width="100" />
+              <column index="61" width="100" />
+              <column index="62" width="100" />
+              <column index="63" width="100" />
+              <column index="64" width="100" />
+              <column index="65" width="100" />
+              <column index="66" width="100" />
+              <column index="67" width="100" />
+              <column index="68" width="100" />
+              <column index="69" width="100" />
+              <column index="70" width="100" />
+              <column index="71" width="100" />
+              <column index="72" width="100" />
+              <column index="73" width="100" />
+              <column index="74" width="100" />
+              <column index="75" width="100" />
+              <column index="76" width="100" />
+              <column index="77" width="100" />
+              <column index="78" width="100" />
+              <column index="79" width="100" />
+              <column index="80" width="100" />
+              <column index="81" width="100" />
+              <column index="82" width="100" />
+              <column index="83" width="100" />
+              <column index="84" width="100" />
+              <column index="85" width="100" />
+              <column index="86" width="100" />
+              <column index="87" width="100" />
+              <column index="88" width="100" />
+              <column index="89" width="100" />
+              <column index="90" width="100" />
+              <column index="91" width="100" />
+              <column index="92" width="100" />
+              <column index="93" width="100" />
+              <column index="94" width="100" />
+              <column index="95" width="100" />
+              <column index="96" width="100" />
+              <column index="97" width="100" />
+              <column index="98" width="100" />
+              <column index="99" width="100" />
+              <column index="100" width="100" />
+              <column index="101" width="100" />
+              <column index="102" width="100" />
+              <column index="103" width="100" />
+              <column index="104" width="100" />
+              <column index="105" width="100" />
+              <column index="106" width="100" />
+              <column index="107" width="100" />
+              <column index="108" width="100" />
+              <column index="109" width="100" />
+              <column index="110" width="100" />
+              <column index="111" width="100" />
+              <column index="112" width="100" />
+              <column index="113" width="100" />
+              <column index="114" width="100" />
+              <column index="115" width="100" />
+              <column index="116" width="100" />
+              <column index="117" width="100" />
+              <column index="118" width="100" />
+              <column index="119" width="100" />
+              <column index="120" width="100" />
+              <column index="121" width="100" />
+              <column index="122" width="100" />
+              <column index="123" width="100" />
+              <column index="124" width="100" />
+              <column index="125" width="100" />
+              <column index="126" width="100" />
+              <column index="127" width="100" />
+              <column index="128" width="100" />
+              <column index="129" width="100" />
+              <column index="130" width="100" />
+              <column index="131" width="100" />
+              <column index="132" width="100" />
+              <column index="133" width="100" />
+              <column index="134" width="100" />
+              <column index="135" width="100" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/src/field.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="217">
+              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#49#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/src/fields/file_id_fields.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="44" selection-start-line="44" selection-end-line="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -74,7 +258,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/src/values/activity_level_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/switch_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/pwr_zone_calc_values.dart" />
         <option value="$PROJECT_DIR$/lib/src/values/schedule_values.dart" />
@@ -101,7 +284,6 @@
         <option value="$PROJECT_DIR$/lib/src/fields/base_types.dart" />
         <option value="$PROJECT_DIR$/lib/src/file_types/common_file.dart" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.dart" />
-        <option value="$PROJECT_DIR$/example/dart_example.dart" />
         <option value="$PROJECT_DIR$/lib/src/pretty_print.dart" />
         <option value="$PROJECT_DIR$/lib/src/prettify.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/hr_fields.dart" />
@@ -113,18 +295,20 @@
         <option value="$PROJECT_DIR$/lib/src/fields/record_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/activity_fields.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/session_fields.dart" />
-        <option value="$PROJECT_DIR$/lib/src/fit_file.dart" />
         <option value="$PROJECT_DIR$/lib/person.dart" />
         <option value="$PROJECT_DIR$/lib/dart.dart" />
         <option value="$PROJECT_DIR$/pubspec.yaml" />
-        <option value="$PROJECT_DIR$/lib/src/definition_message.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/event_fields.dart" />
-        <option value="$PROJECT_DIR$/lib/src/data_message.dart" />
         <option value="$PROJECT_DIR$/lib/src/value.dart" />
         <option value="$PROJECT_DIR$/lib/src/developer_field.dart" />
         <option value="$PROJECT_DIR$/test/dart_test.dart" />
         <option value="$PROJECT_DIR$/lib/src/fields/helper_fields.dart" />
+        <option value="$PROJECT_DIR$/lib/src/data_message.dart" />
+        <option value="$PROJECT_DIR$/lib/src/definition_message.dart" />
+        <option value="$PROJECT_DIR$/lib/src/fit_file.dart" />
+        <option value="$PROJECT_DIR$/example/dart_example.dart" />
         <option value="$PROJECT_DIR$/lib/src/field.dart" />
+        <option value="$PROJECT_DIR$/lib/src/fields/file_id_fields.dart" />
       </list>
     </option>
   </component>
@@ -152,6 +336,11 @@
             <path>
               <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="dart" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
+              <item name="dart" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -163,7 +352,9 @@
             <path>
               <item name="fit-parser" type="b2602c69:ProjectViewProjectNode" />
               <item name="dart" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="fields" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -255,8 +446,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="28" width="1922" height="1025" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25667024" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20384204" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -265,7 +457,7 @@
       <window_info id="UI Designer" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934782" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3645485" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3645485" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.40356743" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -377,28 +569,8 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/src/fields/goal_fields.dart">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/fields/file_creator_fields.dart">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fields/activity_fields.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="16" lean-forward="true" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/file_types/activity_file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="494">
-          <caret line="41" column="15" selection-start-line="41" selection-start-column="15" selection-end-line="41" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/values/leg_raise_exercise_name_values.dart">
       <provider selected="true" editor-type-id="text-editor">
@@ -591,13 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/dart_example.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="2" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../flutter/bin/cache/dart-sdk/lib/collection/maps.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -612,13 +777,6 @@
           <folding>
             <element signature="e#0#58#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fields/file_id_fields.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="26" selection-start-line="10" selection-start-column="19" selection-end-line="10" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -640,16 +798,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="70" column="8" selection-start-line="70" selection-start-column="8" selection-end-line="70" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/developer_field.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
@@ -667,42 +815,12 @@
     <entry file="file://$PROJECT_DIR$/test/dart_test.dart">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/value.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="253">
           <caret line="67" column="7" lean-forward="true" selection-start-line="67" selection-start-column="7" selection-end-line="67" selection-end-column="7" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/field.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="454">
-          <caret line="48" column="49" selection-start-line="48" selection-start-column="49" selection-end-line="48" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="48" column="22" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -730,6 +848,225 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/src/values/timer_trigger_values.dart">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/dart_example.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/file_types/activity_file.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="81">
+          <caret line="34" column="22" lean-forward="true" selection-start-line="34" selection-start-column="22" selection-end-line="34" selection-end-column="22" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fields/activity_fields.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="29" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/definition_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="57" column="32" selection-start-line="57" selection-start-column="32" selection-end-line="57" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/data_message.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="438">
+          <caret line="45" column="30" selection-start-line="45" selection-start-column="30" selection-end-line="45" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/assets/without_stryd.csv">
+      <provider editor-type-id="csv-text-editor" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="52" selection-start-line="9" selection-start-column="52" selection-end-line="9" selection-end-column="52" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="csv-table-editor">
+        <state showInfoPanel="false" fixedHeaders="false" rowLines="3">
+          <column index="0" width="100" />
+          <column index="1" width="100" />
+          <column index="2" width="100" />
+          <column index="3" width="100" />
+          <column index="4" width="100" />
+          <column index="5" width="100" />
+          <column index="6" width="100" />
+          <column index="7" width="100" />
+          <column index="8" width="100" />
+          <column index="9" width="100" />
+          <column index="10" width="100" />
+          <column index="11" width="100" />
+          <column index="12" width="100" />
+          <column index="13" width="100" />
+          <column index="14" width="100" />
+          <column index="15" width="100" />
+          <column index="16" width="100" />
+          <column index="17" width="100" />
+          <column index="18" width="100" />
+          <column index="19" width="100" />
+          <column index="20" width="100" />
+          <column index="21" width="100" />
+          <column index="22" width="100" />
+          <column index="23" width="100" />
+          <column index="24" width="100" />
+          <column index="25" width="100" />
+          <column index="26" width="100" />
+          <column index="27" width="100" />
+          <column index="28" width="100" />
+          <column index="29" width="100" />
+          <column index="30" width="100" />
+          <column index="31" width="100" />
+          <column index="32" width="100" />
+          <column index="33" width="100" />
+          <column index="34" width="100" />
+          <column index="35" width="100" />
+          <column index="36" width="100" />
+          <column index="37" width="100" />
+          <column index="38" width="100" />
+          <column index="39" width="100" />
+          <column index="40" width="100" />
+          <column index="41" width="100" />
+          <column index="42" width="100" />
+          <column index="43" width="100" />
+          <column index="44" width="100" />
+          <column index="45" width="100" />
+          <column index="46" width="100" />
+          <column index="47" width="100" />
+          <column index="48" width="100" />
+          <column index="49" width="100" />
+          <column index="50" width="100" />
+          <column index="51" width="100" />
+          <column index="52" width="100" />
+          <column index="53" width="100" />
+          <column index="54" width="100" />
+          <column index="55" width="100" />
+          <column index="56" width="100" />
+          <column index="57" width="100" />
+          <column index="58" width="100" />
+          <column index="59" width="100" />
+          <column index="60" width="100" />
+          <column index="61" width="100" />
+          <column index="62" width="100" />
+          <column index="63" width="100" />
+          <column index="64" width="100" />
+          <column index="65" width="100" />
+          <column index="66" width="100" />
+          <column index="67" width="100" />
+          <column index="68" width="100" />
+          <column index="69" width="100" />
+          <column index="70" width="100" />
+          <column index="71" width="100" />
+          <column index="72" width="100" />
+          <column index="73" width="100" />
+          <column index="74" width="100" />
+          <column index="75" width="100" />
+          <column index="76" width="100" />
+          <column index="77" width="100" />
+          <column index="78" width="100" />
+          <column index="79" width="100" />
+          <column index="80" width="100" />
+          <column index="81" width="100" />
+          <column index="82" width="100" />
+          <column index="83" width="100" />
+          <column index="84" width="100" />
+          <column index="85" width="100" />
+          <column index="86" width="100" />
+          <column index="87" width="100" />
+          <column index="88" width="100" />
+          <column index="89" width="100" />
+          <column index="90" width="100" />
+          <column index="91" width="100" />
+          <column index="92" width="100" />
+          <column index="93" width="100" />
+          <column index="94" width="100" />
+          <column index="95" width="100" />
+          <column index="96" width="100" />
+          <column index="97" width="100" />
+          <column index="98" width="100" />
+          <column index="99" width="100" />
+          <column index="100" width="100" />
+          <column index="101" width="100" />
+          <column index="102" width="100" />
+          <column index="103" width="100" />
+          <column index="104" width="100" />
+          <column index="105" width="100" />
+          <column index="106" width="100" />
+          <column index="107" width="100" />
+          <column index="108" width="100" />
+          <column index="109" width="100" />
+          <column index="110" width="100" />
+          <column index="111" width="100" />
+          <column index="112" width="100" />
+          <column index="113" width="100" />
+          <column index="114" width="100" />
+          <column index="115" width="100" />
+          <column index="116" width="100" />
+          <column index="117" width="100" />
+          <column index="118" width="100" />
+          <column index="119" width="100" />
+          <column index="120" width="100" />
+          <column index="121" width="100" />
+          <column index="122" width="100" />
+          <column index="123" width="100" />
+          <column index="124" width="100" />
+          <column index="125" width="100" />
+          <column index="126" width="100" />
+          <column index="127" width="100" />
+          <column index="128" width="100" />
+          <column index="129" width="100" />
+          <column index="130" width="100" />
+          <column index="131" width="100" />
+          <column index="132" width="100" />
+          <column index="133" width="100" />
+          <column index="134" width="100" />
+          <column index="135" width="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/field.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#49#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fit_file.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="71" column="26" selection-start-line="71" selection-start-column="26" selection-end-line="71" selection-end-column="26" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/src/fields/file_id_fields.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="44" selection-start-line="44" selection-end-line="44" />
+        </state>
+      </provider>
     </entry>
   </component>
   <component name="masterDetails">

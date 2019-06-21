@@ -42,8 +42,8 @@ class DataMessage {
 
     values = values.map((value) => value.resolveReference(values: values)).toList();
 
-    print("<=< Data Message:");
-    values.forEach((value) => stdout.write("${value.fieldName}: ${value.value}, "));
-    print(">=>");
+    values.asMap().forEach((number, value) {
+      print("    ${number + 1} ${value.fieldName}: ${value.value}");
+    });
   }
 }

@@ -12,6 +12,7 @@ class FitFile {
   int protocolVersion;
   int profileVersion;
   int dataSize;
+  int lineNumber = 0;
   String dataType;
   int crc;
 
@@ -57,22 +58,23 @@ class FitFile {
   get_next_record({debug = false}) {
     int recordHeader = byteData.getUint8(pointer);
     pointer += 1;
+    lineNumber += 1;
 
     if (recordHeader & 64 == 64) {
+      print("${lineNumber} DefinitionMessage");
       DefinitionMessage definitionMessage =
         DefinitionMessage(
             fitFile: this,
             recordHeader: recordHeader,
         );
-
       definitionMessages[definitionMessage.localMessageType] = definitionMessage;
     } else {
+      print("${lineNumber} DataMessage");
       DataMessage dataMessage =
         DataMessage(
             fitFile: this,
             recordHeader: recordHeader
         );
-
       dataMessages.add(dataMessage);
     };
   }
