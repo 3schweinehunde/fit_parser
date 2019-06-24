@@ -2,6 +2,7 @@ import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/file_types/common_file.dart';
 import 'package:dart/src/file_types/activity_file.dart';
 import 'package:dart/src/fit_type.dart';
+import 'dart:typed_data';
 
 class Field {
   int fieldDefinitionNumber;
@@ -22,7 +23,12 @@ class Field {
   int get baseTypeNumber => baseTypeByte & 31;
   String get baseType => base_types[baseTypeNumber]["type_name"];
 
-  Field({this.fieldDefinitionNumber, this.size, this.baseTypeByte, this.globalMessageNumber}) {
+  Field({
+    this.fieldDefinitionNumber,
+    this.size,
+    this.baseTypeByte,
+    this.globalMessageNumber
+  }) {
     messageTypeName = FitType.type['mesg_num'][globalMessageNumber];
 
     fileTypeFields = CommonFile().messages[messageTypeName]

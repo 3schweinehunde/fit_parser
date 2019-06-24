@@ -3,6 +3,7 @@ import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
+import 'dart:typed_data';
 
 class Value {
   String fieldName;
@@ -19,6 +20,7 @@ class Value {
   Field field;
   Map messageTypeFields;
   int pointer;
+  Endian architecture;
 
   int get baseTypeNumber => baseTypeByte & 31;
   int get baseType => base_types[baseTypeNumber]["type_name"];
@@ -66,7 +68,7 @@ class Value {
         fitFile.pointer += size;
         return FitType.type[fieldType][_numericValue];
       } else if (fieldType == "unknown") {
-        dataType = "string";
+        fitFile.pointer += size;
       } else {
         throw "Field type $fieldType not available";
       }
@@ -143,16 +145,16 @@ class Value {
             : fitFile.byteData.getUint8(fitFile.pointer);
       case 2:
         return signed
-            ? fitFile.byteData.getInt16(fitFile.pointer)
-            : fitFile.byteData.getUint16(fitFile.pointer);
+            ? fitFile.byteData.getInt16(fitFile.pointer, architecture)
+            : fitFile.byteData.getUint16(fitFile.pointer, architecture);
       case 4:
         return signed
-            ? fitFile.byteData.getInt32(fitFile.pointer)
-            : fitFile.byteData.getUint32(fitFile.pointer);
+            ? fitFile.byteData.getInt32(fitFile.pointer, architecture)
+            : fitFile.byteData.getUint32(fitFile.pointer, architecture);
       case 8:
         return signed
-            ? fitFile.byteData.getInt64(fitFile.pointer)
-            : fitFile.byteData.getUint64(fitFile.pointer);
+            ? fitFile.byteData.getInt64(fitFile.pointer, architecture)
+            : fitFile.byteData.getUint64(fitFile.pointer, architecture);
       default:
         throw ("No valid data type size in getInt");
     }
@@ -182,9 +184,9 @@ class Value {
   double getFloat({signed, data_type_size}) {
     switch (data_type_size) {
       case 4:
-        return fitFile.byteData.getFloat32(fitFile.pointer, fitFile.endianness);
+        return fitFile.byteData.getFloat32(fitFile.pointer, architecture);
       case 8:
-        return fitFile.byteData.getFloat64(fitFile.pointer, fitFile.endianness);
+        return fitFile.byteData.getFloat64(fitFile.pointer, architecture);
       default:
         throw ("No valid data type size in getFloat");
     }
@@ -197,7 +199,11 @@ class Value {
     return value;
   }
 
-  Value({this.fitFile, this.field}) {
+  Value({
+    this.fitFile,
+    this.field,
+    this.architecture
+  }) {
     pointer = fitFile.pointer;
     messageTypeFields = field.messageTypeFields;
     fieldName = field.fieldName;

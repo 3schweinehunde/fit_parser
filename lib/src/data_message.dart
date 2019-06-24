@@ -31,6 +31,7 @@ class DataMessage {
       Value value = Value(
         fitFile: fitFile,
         field: field,
+        architecture: definitionMessage.architecture,
       );
       values.add(value);
     });

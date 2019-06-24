@@ -29,6 +29,7 @@ class DefinitionMessage {
     } else {
       architecture = Endian.little;
     }
+
     fitFile.endianness = architecture;
     fitFile.pointer += 1;
 
@@ -37,6 +38,10 @@ class DefinitionMessage {
 
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
+
+    print("  developerData: ${developerData}, localMessageType: ${localMessageType}, "
+          "architecture: ${architecture == Endian.little ? "little" : "big"}, "
+          "globalMessageNumber: ${globalMessageNumber}, numberOfFields: ${numberOfFields}");
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
       int definitionNumber = data.getUint8(fitFile.pointer);
@@ -55,7 +60,7 @@ class DefinitionMessage {
           globalMessageNumber: globalMessageNumber);
 
       fields.add(field);
-      print("    ${fieldCounter} ${field}");
+      print("    ${fieldCounter} ${field} / pointer_after: ${fitFile.pointer}");
     }
 
     if (developerData) {
