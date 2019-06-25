@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
@@ -38,40 +40,40 @@ class Value {
         },
             orElse: () => null);
         if (referenceValue != null) {
-          Map reference = messageTypeFields["reference_field_value"][referenceValue
-              .value];
-
-          messageTypeFields['reference_field_value'].forEach((
-              referenceFieldValue,
-              value) {
-            if (referenceValue.value == referenceFieldValue) {
-              fieldName = reference['field_name'] ?? fieldName;
-              fieldType = reference['field_type'] ?? fieldType;
-              dataType = reference['data_type'] ?? dataType;
-              units = reference['data_type'] ?? units;
-              scale = reference['scale'] ?? scale;
-              offset = reference['offset'] ?? offset;
-            }
-          });
+          Map reference = messageTypeFields["reference_field_value"][referenceValue.value];
+          if(reference != null) {
+            fieldName = reference['field_name'] ?? fieldName;
+            fieldType = reference['field_type'] ?? fieldType;
+            dataType = reference['data_type'] ?? dataType;
+            units = reference['data_type'] ?? units;
+            scale = reference['scale'] ?? scale;
+            offset = reference['offset'] ?? offset;
+            value = fieldType != null ? lookupValue() : value;
+          }
         }
       }
     }
     return this;
   }
 
-  dynamic setValue() {
+  dynamic lookupValue() {
+    if (FitType.type[fieldType] != null) {
+      // fieldType parsing
+      _numericValue ??= getInt(signed: false, data_type_size: size);
+      return FitType.type[fieldType][_numericValue];
+    } else if (fieldType == "unknown") {
+      return null;
+    } else {
+      throw "Field type $fieldType not available";
+    }
+  }
+
+  dynamic determineValue() {
     // Data parsing
     if (fieldType != null) {
-      if (FitType.type[fieldType] != null) {
-        // fieldType parsing
-        _numericValue = getInt(signed: false, data_type_size: size);
-        fitFile.pointer += size;
-        return FitType.type[fieldType][_numericValue];
-      } else if (fieldType == "unknown") {
-        fitFile.pointer += size;
-      } else {
-        throw "Field type $fieldType not available";
-      }
+      dynamic lookedUpValue = lookupValue();
+      fitFile.pointer += size;
+      return lookedUpValue;
     } else if (dataType != null) {
       // dataType parsing
       switch (dataType) {
@@ -110,9 +112,10 @@ class Value {
         case "string":
           return getString();
       }
-
     } else {
-      throw "Neither data type nor field type available!";
+      // Neither data type nor field type available!
+      fitFile.pointer += size;
+      return null;
     }
   }
 
@@ -214,6 +217,6 @@ class Value {
     units = field.units;
     size = field.size;
     baseTypeByte = field.baseTypeByte;
-    value = setValue();
+    value = determineValue();
   }
 }

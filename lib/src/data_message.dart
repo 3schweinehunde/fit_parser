@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:dart/src/definition_message.dart';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';

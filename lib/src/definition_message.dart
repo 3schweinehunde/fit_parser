@@ -39,9 +39,12 @@ class DefinitionMessage {
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
 
-    print("  developerData: ${developerData}, localMessageType: ${localMessageType}, "
+    print("  developerData: ${developerData}, "
+          "localMessageType: ${localMessageType}, "
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
-          "globalMessageNumber: ${globalMessageNumber}, numberOfFields: ${numberOfFields}");
+          "globalMessageNumber: ${globalMessageNumber}, "
+          "globalMessageName: ${globalMessageName}, "
+          "numberOfFields: ${numberOfFields}");
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
       int definitionNumber = data.getUint8(fitFile.pointer);

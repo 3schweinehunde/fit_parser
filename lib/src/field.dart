@@ -2,7 +2,6 @@ import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/file_types/common_file.dart';
 import 'package:dart/src/file_types/activity_file.dart';
 import 'package:dart/src/fit_type.dart';
-import 'dart:typed_data';
 
 class Field {
   int fieldDefinitionNumber;
@@ -31,24 +30,30 @@ class Field {
   }) {
     messageTypeName = FitType.type['mesg_num'][globalMessageNumber];
 
-    fileTypeFields = CommonFile().messages[messageTypeName]
-                     ?? ActivityFile().messages[messageTypeName];
+    if (messageTypeName != null) {
+      fileTypeFields = CommonFile().messages[messageTypeName]
+          ?? ActivityFile().messages[messageTypeName];
 
-    messageTypeFields = fileTypeFields[fieldDefinitionNumber];
-    if (messageTypeFields!= null) {
-      fieldName = messageTypeFields["field_name"];
-      fieldType = messageTypeFields["field_type"];
-      dataType = messageTypeFields["data_type"];
-      scale = (messageTypeFields["scale"] != null) ? double.parse(messageTypeFields["scale"]) : 1;
-      offset = (messageTypeFields["offset"] != null) ? double.parse(messageTypeFields["offset"]) : 0;
-      units = messageTypeFields["units"];
-    } else {
-      fieldName = "unknown";
-      fieldType = "unknown";
-      dataType = "unknown";
-      scale = 1;
-      offset = 0;
-      units = "unknown";
+      messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      if (messageTypeFields != null) {
+        fieldName = messageTypeFields["field_name"];
+        fieldType = messageTypeFields["field_type"];
+        dataType = messageTypeFields["data_type"];
+        scale =
+        (messageTypeFields["scale"] != null) ? messageTypeFields["scale"]
+            .toDouble() : 1;
+        offset =
+        (messageTypeFields["offset"] != null) ? messageTypeFields["offset"]
+            .toDouble() : 0;
+        units = messageTypeFields["units"];
+      } else {
+        fieldName = "unknown";
+        fieldType = "unknown";
+        dataType = "unknown";
+        scale = 1;
+        offset = 0;
+        units = "unknown";
+      }
     }
   }
 
