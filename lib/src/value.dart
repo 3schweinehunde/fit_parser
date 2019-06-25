@@ -77,6 +77,8 @@ class Value {
     } else if (dataType != null) {
       // dataType parsing
       switch (dataType) {
+        case "bool":
+          return getBool();
         case "sint8":
           return getIntegers(signed: true, data_type_size: 1);
         case "byte":
@@ -138,6 +140,17 @@ class Value {
       fitFile.pointer += data_type_size;
       return value;
     }
+  }
+
+  bool getBool() {
+     bool tempValue;
+      if(fitFile.byteData.getInt8(fitFile.pointer) == 0){
+        tempValue = false;
+      } else {
+        tempValue = true;
+      };
+     fitFile.pointer += 1;
+     return tempValue;
   }
 
   int getInt({signed, data_type_size}) {

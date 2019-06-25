@@ -66,7 +66,7 @@ class FitFile {
     lineNumber += 1;
 
     if (recordHeader & 64 == 64) {
-      print("${lineNumber} DefinitionMessage");
+      print("${lineNumber + 1} DefinitionMessage");
       DefinitionMessage definitionMessage =
         DefinitionMessage(
             fitFile: this,
@@ -74,7 +74,7 @@ class FitFile {
         );
       definitionMessages[definitionMessage.localMessageType] = definitionMessage;
     } else {
-      print("${lineNumber} DataMessage");
+      print("${lineNumber + 1} DataMessage");
       DataMessage dataMessage =
         DataMessage(
             fitFile: this,

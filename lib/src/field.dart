@@ -1,6 +1,7 @@
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/file_types/common_file.dart';
 import 'package:dart/src/file_types/activity_file.dart';
+import 'package:dart/src/file_types/garmin_activity_file.dart';
 import 'package:dart/src/fit_type.dart';
 
 class Field {
@@ -32,7 +33,8 @@ class Field {
 
     if (messageTypeName != null) {
       fileTypeFields = CommonFile().messages[messageTypeName]
-          ?? ActivityFile().messages[messageTypeName];
+          ?? ActivityFile().messages[messageTypeName]
+          ?? GarminActivityFile().messages[messageTypeName];
 
       messageTypeFields = fileTypeFields[fieldDefinitionNumber];
       if (messageTypeFields != null) {
