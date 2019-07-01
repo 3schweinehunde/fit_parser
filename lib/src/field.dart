@@ -67,6 +67,9 @@ class Field {
       "fieldType": fieldType,
       "messageTypeName": messageTypeName,
       'size': size,
+      'scale': scale,
+      'offset': offset,
+      'unit': units,
       'baseTypeByte': baseTypeByte,
       'globalMessageNumber': globalMessageNumber,
     }.toString();

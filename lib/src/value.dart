@@ -123,20 +123,20 @@ class Value {
 
   dynamic getIntegers({signed, data_type_size}) {
     int duplicity = size ~/ data_type_size;
-    int value;
+    dynamic value;
 
     if (duplicity > 1) {
       List values = [];
       for (int counter = 1; counter <= duplicity; counter++) {
         value = getInt(signed: signed, data_type_size: data_type_size);
-        value = value ~/ scale - offset.round();
+        value = value / scale - offset.round();
         values.add(value);
         fitFile.pointer += data_type_size;
       }
       return values;
     } else {
       _numericValue = getInt(signed: signed, data_type_size: data_type_size);
-      value = _numericValue ~/ scale - offset.round();
+      value = _numericValue / scale - offset.round();
       fitFile.pointer += data_type_size;
       return value;
     }
