@@ -1,11 +1,10 @@
-import 'dart:developer';
-
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
 import 'dart:typed_data';
+import 'dart:developer';
 
 class Value {
   String fieldName;
@@ -60,7 +59,8 @@ class Value {
     if (FitType.type[fieldType] != null) {
       // fieldType parsing
       _numericValue ??= getInt(signed: false, data_type_size: size);
-      return FitType.type[fieldType][_numericValue];
+      dynamic _lookup = FitType.type[fieldType][_numericValue] ?? _numericValue;
+      return _lookup;
     } else if (fieldType == "unknown") {
       return null;
     } else {
@@ -96,6 +96,7 @@ class Value {
         case "sint32":
           return getIntegers(signed: true, data_type_size: 4);
         case "date_time":
+        case "localtime_into_day":
         case "uint32":
         case "uint32z":
           return getIntegers(signed: false, data_type_size: 4);
@@ -209,8 +210,8 @@ class Value {
   }
 
   String getString() {
-    String value = AsciiDecoder()
-        .convert(fitFile.buffer.asUint8List(fitFile.pointer, size));
+    String value = AsciiCodec()
+        .decode(fitFile.buffer.asUint8List(fitFile.pointer, size), allowInvalid: true);
     fitFile.pointer += size;
     return value;
   }
