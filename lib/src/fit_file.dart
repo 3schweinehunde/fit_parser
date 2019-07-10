@@ -15,8 +15,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
-  int printFrom = 7;
-  int printTo = 100;
+  int printFrom = 2275;
+  int printTo = 8000;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
@@ -37,7 +37,7 @@ class FitFile {
     while (pointer < byteData.lengthInBytes) {
       get_next_record();
     }
-}
+  }
 
   FitFile({String path}) {
     this.path = path;

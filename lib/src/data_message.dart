@@ -43,7 +43,7 @@ class DataMessage {
 
     values.asMap().forEach((number, value) {
       if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print("    ${number + 1} ${value.fieldName}: ${value.value} / pointer: ${value.pointer}");
+        print("    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}");
       };
     });
   }
