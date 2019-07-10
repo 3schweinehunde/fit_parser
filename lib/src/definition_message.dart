@@ -16,7 +16,7 @@ class DefinitionMessage {
 
   get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
 
-  DefinitionMessage({FitFile fitFile, int recordHeader}) {
+  DefinitionMessage({FitFile fitFile, int recordHeader, int lineNumber}) {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
     ByteData data = fitFile.byteData;
@@ -39,12 +39,14 @@ class DefinitionMessage {
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
 
-    print("  developerData: ${developerData}, "
+    if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+      print("  developerData: ${developerData}, "
           "localMessageType: ${localMessageType}, "
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
           "globalMessageNumber: ${globalMessageNumber}, "
           "globalMessageName: ${globalMessageName}, "
           "numberOfFields: ${numberOfFields}");
+    };
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
       int definitionNumber = data.getUint8(fitFile.pointer);
@@ -63,7 +65,9 @@ class DefinitionMessage {
           globalMessageNumber: globalMessageNumber);
 
       fields.add(field);
-      print("    ${fieldCounter} ${field} / pointer_after: ${fitFile.pointer}");
+      if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+        print("    ${fieldCounter} ${field} / pointer_after: ${fitFile.pointer}");
+      };
     }
 
     if (developerData) {

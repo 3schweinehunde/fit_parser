@@ -15,6 +15,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
+  int printFrom = 7;
+  int printTo = 100;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
@@ -66,15 +68,19 @@ class FitFile {
     lineNumber += 1;
 
     if (recordHeader & 64 == 64) {
-      print("${lineNumber + 1} DefinitionMessage");
+      if (lineNumber < printTo && lineNumber >= printFrom - 1) {
+        print("${lineNumber + 1} DefinitionMessage");
+      };
       DefinitionMessage definitionMessage =
         DefinitionMessage(
             fitFile: this,
-            recordHeader: recordHeader,
+            recordHeader: recordHeader
         );
       definitionMessages[definitionMessage.localMessageType] = definitionMessage;
     } else {
-      print("${lineNumber + 1} DataMessage");
+      if (lineNumber < printTo && lineNumber >= printFrom - 1) {
+        print("${lineNumber + 1} DataMessage");
+      };
       DataMessage dataMessage =
         DataMessage(
             fitFile: this,

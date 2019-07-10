@@ -42,7 +42,9 @@ class DataMessage {
     values = values.map((value) => value.resolveReference(values: values)).toList();
 
     values.asMap().forEach((number, value) {
-      print("    ${number + 1} ${value.fieldName}: ${value.value} / pointer: ${value.pointer}");
+      if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+        print("    ${number + 1} ${value.fieldName}: ${value.value} / pointer: ${value.pointer}");
+      };
     });
   }
 }
