@@ -96,6 +96,7 @@ class Value {
         case "sint32":
           return getIntegers(signed: true, data_type_size: 4);
         case "date_time":
+        case "local_date_time":
         case "localtime_into_day":
         case "uint32":
         case "uint32z":

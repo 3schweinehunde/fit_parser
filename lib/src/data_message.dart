@@ -24,6 +24,10 @@ class DataMessage {
 
     definitionMessage = fitFile.definitionMessages[localMessageType];
 
+    if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+      print("  globalMessageNumber: ${definitionMessage.globalMessageNumber}");
+    };
+
     fields = definitionMessage.fields;
     fields.forEach((field) {
       Value value = Value(

@@ -15,8 +15,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
-  int printFrom = 2275;
-  int printTo = 8000;
+  int printFrom = 2289;
+  int printTo = 2291;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
@@ -34,7 +34,7 @@ class FitFile {
 
     get_file_header();
 
-    while (pointer < byteData.lengthInBytes) {
+    while (pointer < fileHeaderLength + dataSize) {
       get_next_record();
     }
   }
