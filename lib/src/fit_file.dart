@@ -3,6 +3,7 @@ import 'dart:typed_data';
 import 'dart:convert';
 import 'definition_message.dart';
 import 'data_message.dart';
+import 'developer.dart';
 
 class FitFile {
   String path;
@@ -25,7 +26,7 @@ class FitFile {
 
   Map definitionMessages = Map();
   List<DataMessage> dataMessages = List();
-
+  List<Developer> developers = List();
   parse() {
     File file = File(path);
     _fileBytes = file.readAsBytesSync();

@@ -1,8 +1,11 @@
+import 'dart:convert';
 import 'dart:typed_data';
 import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
+
+import 'developer.dart';
 
 class DefinitionMessage {
   bool developerData;
@@ -58,15 +61,28 @@ class DefinitionMessage {
       int baseTypeByte = data.getUint8(fitFile.pointer);
       fitFile.pointer+= 1;
 
-      Field field = Field(
-          fieldDefinitionNumber: definitionNumber,
-          size: size,
-          baseTypeByte: baseTypeByte,
-          globalMessageNumber: globalMessageNumber);
+      if (globalMessageNumber == 207) {
+         String appId = AsciiCodec()
+              .decode(fitFile.buffer.asUint8List(fitFile.pointer, 16), allowInvalid: true);
+         fitFile.pointer += 16;
+         int developerDataIndex = data.getUint8(fitFile.pointer);
+         fitFile.pointer += 1;
 
-      fields.add(field);
-      if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print("    ${fieldCounter} ${field} / pointer_after: ${fitFile.pointer}");
+         Developer developer = Developer(appId: appId, developerDataIndex: developerDataIndex);
+         fitFile.developers.add(developer);
+      } else {
+        Field field = Field(
+            fieldDefinitionNumber: definitionNumber,
+            size: size,
+            baseTypeByte: baseTypeByte,
+            globalMessageNumber: globalMessageNumber);
+
+        fields.add(field);
+        if (fitFile.lineNumber < fitFile.printTo &&
+            fitFile.lineNumber >= fitFile.printFrom - 1) {
+          print("    ${fieldCounter} ${field} / pointer_after: ${fitFile
+              .pointer}");
+        };
       };
     }
 
