@@ -50,8 +50,8 @@ class DataMessage {
           nativeMesgName: valueMap['native_mesg_num'],
           developerDataIndex: valueMap['developer_data_index'].round(),
           fieldNumber: valueMap['field_definition_number'].round(),
-          fieldName: valueMap['field_name'],
-          units: valueMap['units'],
+          fieldName: valueMap['field_name'].replaceAll(String.fromCharCode(0x00000), ''),
+          units: valueMap['units'].replaceAll(String.fromCharCode(0x00000), ''),
           dataType: valueMap['fit_base_type_id'],
           nativeFieldNum: valueMap['native_field_num'].round(),
       );

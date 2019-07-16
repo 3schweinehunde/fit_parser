@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-import 'package:dart/src/developer_field_definition.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/fit_type.dart';
@@ -69,8 +68,8 @@ class DefinitionMessage {
       fields.add(field);
       if (fitFile.lineNumber < fitFile.printTo &&
           fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print("    ${fieldCounter} ${field} / pointer_after: ${fitFile
-            .pointer}");
+        print("    ${fieldCounter} ${field}"
+            " / pointer_after: ${fitFile.pointer}");
       };
     }
 
@@ -78,7 +77,7 @@ class DefinitionMessage {
       numberOfDeveloperFields = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      for (var developerFieldCounter = 1; developerFieldCounter <= numberOfFields; developerFieldCounter++){
+      for (var developerFieldCounter = 1; developerFieldCounter <= numberOfDeveloperFields; developerFieldCounter++){
         int fieldNumber = data.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
@@ -91,8 +90,16 @@ class DefinitionMessage {
         DeveloperField developerField = DeveloperField(
             fieldNumber: fieldNumber,
             size: size,
-            developerDataIndex: developerDataIndex);
+            developerDataIndex: developerDataIndex,
+            fitFile: fitFile,
+            globalMessageName: globalMessageName,
+        );
         developerFields.add(developerField);
+        if (fitFile.lineNumber < fitFile.printTo &&
+            fitFile.lineNumber >= fitFile.printFrom - 1) {
+          print("    dev ${developerFieldCounter} ${developerField}"
+                " / pointer_after: ${fitFile.pointer}");
+        };
       }
     }
   }

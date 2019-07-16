@@ -4,7 +4,6 @@ import 'package:dart/src/fit_file.dart';
 import 'dart:convert';
 import 'package:dart/src/fit_type.dart';
 import 'dart:typed_data';
-import 'dart:developer';
 
 class Value {
   String fieldName;

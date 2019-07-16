@@ -14,5 +14,5 @@ class DeveloperFieldDefinition {
     this.nativeFieldNum,
     this.dataType,
     this.units,
-    this.nativeMesgName}) {}
+    this.nativeMesgName});
 }

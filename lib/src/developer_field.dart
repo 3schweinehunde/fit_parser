@@ -1,3 +1,5 @@
+import 'fit_file.dart';
+
 class DeveloperField {
   int fieldNumber;
   int developerDataIndex;
@@ -10,11 +12,33 @@ class DeveloperField {
 
   DeveloperField({
     this.fieldNumber,
-    this.developerDataIndex,
     this.size,
-    this.fieldName,
-    this.nativeFieldNum,
-    this.dataType,
-    this.units,
-    this.nativeMesgName});
+    this.developerDataIndex,
+    FitFile fitFile,
+    String globalMessageName
+  }) {
+    var developerFieldDefinition = fitFile.developerFieldDefinitions.firstWhere((developerFieldDefinition) =>
+      (developerFieldDefinition.fieldNumber == this.fieldNumber) &&
+      (developerFieldDefinition.developerDataIndex == this.developerDataIndex) &&
+      (developerFieldDefinition.nativeMesgName == globalMessageName)
+    );
+
+    this.fieldName = developerFieldDefinition.fieldName;
+    this.nativeFieldNum = developerFieldDefinition.nativeFieldNum;
+    this.dataType = developerFieldDefinition.dataType;
+    this.units = developerFieldDefinition.units;
+  }
+
+  toString() {
+    return {
+      "fieldNumber": fieldNumber,
+      "fieldName": fieldName,
+      "dataType": dataType,
+      'size': size,
+      'nativeFieldNum': nativeFieldNum,
+      'unit': units,
+      "developerDataIndex": developerDataIndex,
+      "nativeMesgName": nativeMesgName,
+    }.toString();
+  }
 }
