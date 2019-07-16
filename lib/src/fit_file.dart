@@ -17,8 +17,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
-  int printFrom = 44;
-  int printTo = 60;
+  int printFrom = 4996;
+  int printTo = 5000;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
