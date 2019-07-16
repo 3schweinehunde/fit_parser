@@ -1,8 +1,9 @@
 import 'package:dart/src/definition_message.dart';
-import 'package:dart/src/developer_field.dart';
+import 'package:dart/src/developer_field_definition.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fit_file.dart';
 import 'package:dart/src/value.dart';
+import 'developer_field.dart';
 
 class DataMessage {
   bool compressedHeader;
@@ -42,6 +43,20 @@ class DataMessage {
     developerFields.forEach((developerField) {
       // TODO developerFields
     });
+
+    if (definitionMessage.globalMessageNumber == 206) {
+      Map valueMap = Map.fromIterable(values,  key: (value) => value.fieldName, value: (value) => value.value);
+      DeveloperFieldDefinition developerFieldDefinition = DeveloperFieldDefinition(
+          nativeMesgName: valueMap['native_mesg_num'],
+          developerDataIndex: valueMap['developer_data_index'].round(),
+          fieldNumber: valueMap['field_definition_number'].round(),
+          fieldName: valueMap['field_name'],
+          units: valueMap['units'],
+          dataType: valueMap['fit_base_type_id'],
+          nativeFieldNum: valueMap['native_field_num'].round(),
+      );
+      fitFile.developerFieldDefinitions.add(developerFieldDefinition);
+    };
 
     values = values.map((value) => value.resolveReference(values: values)).toList();
 

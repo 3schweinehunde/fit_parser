@@ -4,6 +4,7 @@ import 'dart:convert';
 import 'definition_message.dart';
 import 'data_message.dart';
 import 'developer.dart';
+import 'developer_field_definition.dart';
 
 class FitFile {
   String path;
@@ -16,8 +17,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
-  int printFrom = 2289;
-  int printTo = 2291;
+  int printFrom = 32;
+  int printTo = 99999;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
@@ -25,6 +26,7 @@ class FitFile {
   int pointer;
 
   Map definitionMessages = Map();
+  List<DeveloperFieldDefinition> developerFieldDefinitions = List();
   List<DataMessage> dataMessages = List();
   List<Developer> developers = List();
   parse() {
