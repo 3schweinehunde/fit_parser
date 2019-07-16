@@ -1,3 +1,4 @@
+import 'package:dart/src/developer_field.dart';
 import 'package:dart/src/field.dart';
 import 'package:dart/src/fields/base_types.dart';
 import 'package:dart/src/fit_file.dart';
@@ -18,6 +19,7 @@ class Value {
   String units;
   dynamic value;
   Field field;
+  DeveloperField developerField;
   Map messageTypeFields;
   int pointer;
   Endian architecture;
@@ -231,6 +233,21 @@ class Value {
     units = field.units;
     size = field.size;
     baseTypeByte = field.baseTypeByte;
+    value = determineValue();
+  }
+
+  Value.fromDeveloperField({
+    this.fitFile,
+    this.developerField,
+    this.architecture,
+  }) {
+    pointer = fitFile.pointer;
+    size = developerField.size;
+    dataType = developerField.dataType;
+    units = developerField.units;
+    fieldName = developerField.fieldName;
+    scale = 1;
+    offset = 0;
     value = determineValue();
   }
 }

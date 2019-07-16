@@ -41,7 +41,12 @@ class DataMessage {
 
     developerFields = definitionMessage.developerFields;
     developerFields.forEach((developerField) {
-      // TODO developerFields
+      Value value = Value.fromDeveloperField(
+        fitFile: fitFile,
+        developerField: developerField,
+        architecture: definitionMessage.architecture,
+      );
+      values.add(value);
     });
 
     if (definitionMessage.globalMessageNumber == 206) {
