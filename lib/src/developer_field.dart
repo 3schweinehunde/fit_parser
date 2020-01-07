@@ -10,18 +10,18 @@ class DeveloperField {
   String units;
   String nativeMesgName;
 
-  DeveloperField({
-    this.fieldNumber,
-    this.size,
-    this.developerDataIndex,
-    FitFile fitFile,
-    String globalMessageName
-  }) {
-    var developerFieldDefinition = fitFile.developerFieldDefinitions.firstWhere((developerFieldDefinition) =>
-      (developerFieldDefinition.fieldNumber == fieldNumber) &&
-      (developerFieldDefinition.developerDataIndex == developerDataIndex) &&
-      (developerFieldDefinition.nativeMesgName == globalMessageName)
-    );
+  DeveloperField(
+      {this.fieldNumber,
+      this.size,
+      this.developerDataIndex,
+      FitFile fitFile,
+      String globalMessageName}) {
+    var developerFieldDefinition = fitFile.developerFieldDefinitions.firstWhere(
+        (developerFieldDefinition) =>
+            (developerFieldDefinition.fieldNumber == fieldNumber) &&
+            (developerFieldDefinition.developerDataIndex ==
+                developerDataIndex) &&
+            (developerFieldDefinition.nativeMesgName == globalMessageName));
 
     fieldName = developerFieldDefinition.fieldName;
     nativeFieldNum = developerFieldDefinition.nativeFieldNum;

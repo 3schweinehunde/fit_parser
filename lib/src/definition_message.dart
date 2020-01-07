@@ -40,16 +40,17 @@ class DefinitionMessage {
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
 
-    if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+    if (fitFile.lineNumber < fitFile.printTo &&
+        fitFile.lineNumber >= fitFile.printFrom - 1) {
       print('  developerData: ${developerData}, '
           'localMessageType: ${localMessageType}, '
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
           'globalMessageNumber: ${globalMessageNumber}, '
           'globalMessageName: ${globalMessageName}, '
           'numberOfFields: ${numberOfFields}');
-    };
+    }
 
-    for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
+    for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++) {
       var definitionNumber = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
@@ -57,7 +58,7 @@ class DefinitionMessage {
       fitFile.pointer += 1;
 
       var baseTypeByte = data.getUint8(fitFile.pointer);
-      fitFile.pointer+= 1;
+      fitFile.pointer += 1;
 
       var field = Field(
           fieldDefinitionNumber: definitionNumber,
@@ -70,14 +71,16 @@ class DefinitionMessage {
           fitFile.lineNumber >= fitFile.printFrom - 1) {
         print('    ${fieldCounter} ${field}'
             ' / pointer_after: ${fitFile.pointer}');
-      };
+      }
     }
 
     if (developerData) {
       numberOfDeveloperFields = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      for (var developerFieldCounter = 1; developerFieldCounter <= numberOfDeveloperFields; developerFieldCounter++){
+      for (var developerFieldCounter = 1;
+          developerFieldCounter <= numberOfDeveloperFields;
+          developerFieldCounter++) {
         var fieldNumber = data.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
@@ -88,18 +91,18 @@ class DefinitionMessage {
         fitFile.pointer += 1;
 
         var developerField = DeveloperField(
-            fieldNumber: fieldNumber,
-            size: size,
-            developerDataIndex: developerDataIndex,
-            fitFile: fitFile,
-            globalMessageName: globalMessageName,
+          fieldNumber: fieldNumber,
+          size: size,
+          developerDataIndex: developerDataIndex,
+          fitFile: fitFile,
+          globalMessageName: globalMessageName,
         );
         developerFields.add(developerField);
         if (fitFile.lineNumber < fitFile.printTo &&
             fitFile.lineNumber >= fitFile.printFrom - 1) {
           print('    dev ${developerFieldCounter} ${developerField}'
-                ' / pointer_after: ${fitFile.pointer}');
-        };
+              ' / pointer_after: ${fitFile.pointer}');
+        }
       }
     }
   }

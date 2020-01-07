@@ -29,7 +29,7 @@ class FitFile {
   List<DeveloperFieldDefinition> developerFieldDefinitions = [];
   List<DataMessage> dataMessages = [];
   List<Developer> developers = [];
-  
+
   void parse() {
     var file = File(path);
     _fileBytes = file.readAsBytesSync();
@@ -75,7 +75,6 @@ class FitFile {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
         print('${lineNumber + 1} DefinitionMessage');
       }
-      ;
       var definitionMessage =
           DefinitionMessage(fitFile: this, recordHeader: recordHeader);
       definitionMessages[definitionMessage.localMessageType] =
@@ -84,10 +83,8 @@ class FitFile {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
         print('${lineNumber + 1} DataMessage');
       }
-      ;
-      var dataMessage =
-          DataMessage(fitFile: this, recordHeader: recordHeader);
+      var dataMessage = DataMessage(fitFile: this, recordHeader: recordHeader);
       dataMessages.add(dataMessage);
-    };
+    }
   }
 }

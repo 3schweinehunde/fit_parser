@@ -23,30 +23,29 @@ class Field {
   int get baseTypeNumber => baseTypeByte & 31;
   String get baseType => base_types[baseTypeNumber]['type_name'];
 
-  Field({
-    this.fieldDefinitionNumber,
-    this.size,
-    this.baseTypeByte,
-    this.globalMessageNumber
-  }) {
+  Field(
+      {this.fieldDefinitionNumber,
+      this.size,
+      this.baseTypeByte,
+      this.globalMessageNumber}) {
     messageTypeName = FitType.type['mesg_num'][globalMessageNumber];
 
     if (messageTypeName != null) {
-      fileTypeFields = CommonFile().messages[messageTypeName]
-          ?? ActivityFile().messages[messageTypeName]
-          ?? GarminActivityFile().messages[messageTypeName];
+      fileTypeFields = CommonFile().messages[messageTypeName] ??
+          ActivityFile().messages[messageTypeName] ??
+          GarminActivityFile().messages[messageTypeName];
 
       messageTypeFields = fileTypeFields[fieldDefinitionNumber];
       if (messageTypeFields != null) {
         fieldName = messageTypeFields['field_name'];
         fieldType = messageTypeFields['field_type'];
         dataType = messageTypeFields['data_type'];
-        scale =
-        (messageTypeFields['scale'] != null) ? messageTypeFields['scale']
-            .toDouble() : 1;
-        offset =
-        (messageTypeFields['offset'] != null) ? messageTypeFields['offset']
-            .toDouble() : 0;
+        scale = (messageTypeFields['scale'] != null)
+            ? messageTypeFields['scale'].toDouble()
+            : 1;
+        offset = (messageTypeFields['offset'] != null)
+            ? messageTypeFields['offset'].toDouble()
+            : 0;
         units = messageTypeFields['units'];
       } else {
         fieldName = 'unknown';

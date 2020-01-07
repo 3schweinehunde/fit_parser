@@ -36,12 +36,14 @@ class Value {
       // Reference field replacement
       if (referenceFieldName != null) {
         referenceValue = values.firstWhere((currentValue) {
-          return (currentValue.messageTypeFields != null) && (currentValue.messageTypeFields['field_name'] == referenceFieldName);
-        },
-            orElse: () => null);
+          return (currentValue.messageTypeFields != null) &&
+              (currentValue.messageTypeFields['field_name'] ==
+                  referenceFieldName);
+        }, orElse: () => null);
         if (referenceValue != null) {
-          Map reference = messageTypeFields['reference_field_value'][referenceValue.value];
-          if(reference != null) {
+          Map reference =
+              messageTypeFields['reference_field_value'][referenceValue.value];
+          if (reference != null) {
             fieldName = reference['field_name'] ?? fieldName;
             fieldType = reference['field_type'] ?? fieldType;
             dataType = reference['data_type'] ?? dataType;
@@ -146,14 +148,14 @@ class Value {
   }
 
   bool getBool() {
-     bool tempValue;
-      if(fitFile.byteData.getInt8(fitFile.pointer) == 0){
-        tempValue = false;
-      } else {
-        tempValue = true;
-      };
-     fitFile.pointer += 1;
-     return tempValue;
+    bool tempValue;
+    if (fitFile.byteData.getInt8(fitFile.pointer) == 0) {
+      tempValue = false;
+    } else {
+      tempValue = true;
+    }
+    fitFile.pointer += 1;
+    return tempValue;
   }
 
   int getInt({signed, data_type_size}) {
@@ -212,17 +214,14 @@ class Value {
   }
 
   String getString() {
-    var value = AsciiCodec()
-        .decode(fitFile.buffer.asUint8List(fitFile.pointer, size), allowInvalid: true);
+    var value = AsciiCodec().decode(
+        fitFile.buffer.asUint8List(fitFile.pointer, size),
+        allowInvalid: true);
     fitFile.pointer += size;
     return value;
   }
 
-  Value({
-    this.fitFile,
-    this.field,
-    this.architecture
-  }) {
+  Value({this.fitFile, this.field, this.architecture}) {
     pointer = fitFile.pointer;
     messageTypeFields = field.messageTypeFields;
     fieldName = field.fieldName;

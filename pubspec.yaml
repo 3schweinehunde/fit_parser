@@ -1,6 +1,9 @@
 name: fit_parser
-description: A starting point for Dart libraries or applications.
-version: 0.0.5
+description: "A .fit file format parsing library. fit stands for Flexible and
+             Interoperable Data Transfer. It is a file format for tracking 
+             sports activities and is heavily influenced and used by Garmin 
+             Fitness Trackers, but also by a lot of other brands."
+version: 0.1.0
 homepage: https://github.com/3schweinehunde/fit_parser
 
 environment:

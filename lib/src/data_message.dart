@@ -25,9 +25,10 @@ class DataMessage {
 
     definitionMessage = fitFile.definitionMessages[localMessageType];
 
-    if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
+    if (fitFile.lineNumber < fitFile.printTo &&
+        fitFile.lineNumber >= fitFile.printFrom - 1) {
       print('  globalMessageNumber: ${definitionMessage.globalMessageNumber}');
-    };
+    }
 
     fields = definitionMessage.fields;
     fields.forEach((field) {
@@ -50,25 +51,29 @@ class DataMessage {
     });
 
     if (definitionMessage.globalMessageNumber == 206) {
-      var valueMap = { for (var value in values) value.fieldName : value.value };
+      var valueMap = {for (var value in values) value.fieldName: value.value};
       var developerFieldDefinition = DeveloperFieldDefinition(
-          nativeMesgName: valueMap['native_mesg_num'],
-          developerDataIndex: valueMap['developer_data_index'].round(),
-          fieldNumber: valueMap['field_definition_number'].round(),
-          fieldName: valueMap['field_name'].replaceAll(String.fromCharCode(0x00000), ''),
-          units: valueMap['units'].replaceAll(String.fromCharCode(0x00000), ''),
-          dataType: valueMap['fit_base_type_id'],
-          nativeFieldNum: valueMap['native_field_num'].round(),
+        nativeMesgName: valueMap['native_mesg_num'],
+        developerDataIndex: valueMap['developer_data_index'].round(),
+        fieldNumber: valueMap['field_definition_number'].round(),
+        fieldName:
+            valueMap['field_name'].replaceAll(String.fromCharCode(0x00000), ''),
+        units: valueMap['units'].replaceAll(String.fromCharCode(0x00000), ''),
+        dataType: valueMap['fit_base_type_id'],
+        nativeFieldNum: valueMap['native_field_num'].round(),
       );
       fitFile.developerFieldDefinitions.add(developerFieldDefinition);
-    };
+    }
 
-    values = values.map((value) => value.resolveReference(values: values)).toList();
+    values =
+        values.map((value) => value.resolveReference(values: values)).toList();
 
     values.asMap().forEach((number, value) {
-      if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print('    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}');
-      };
+      if (fitFile.lineNumber < fitFile.printTo &&
+          fitFile.lineNumber >= fitFile.printFrom - 1) {
+        print(
+            '    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}');
+      }
     });
   }
 }
