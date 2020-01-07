@@ -1,8 +1,8 @@
-import 'package:dart/src/fields/base_types.dart';
-import 'package:dart/src/file_types/common_file.dart';
-import 'package:dart/src/file_types/activity_file.dart';
-import 'package:dart/src/file_types/garmin_activity_file.dart';
-import 'package:dart/src/fit_type.dart';
+import 'package:fit_parser/src/fields/base_types.dart';
+import 'package:fit_parser/src/file_types/common_file.dart';
+import 'package:fit_parser/src/file_types/activity_file.dart';
+import 'package:fit_parser/src/file_types/garmin_activity_file.dart';
+import 'package:fit_parser/src/fit_type.dart';
 
 class Field {
   int fieldDefinitionNumber;

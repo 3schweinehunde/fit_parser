@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/segment_file_fields.dart';
+import 'package:fit_parser/src/fields/segment_file_fields.dart';
 
 class SegmentListFile {
   Map messages = {

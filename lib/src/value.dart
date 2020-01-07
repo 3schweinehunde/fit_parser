@@ -1,9 +1,9 @@
-import 'package:dart/src/developer_field.dart';
-import 'package:dart/src/field.dart';
-import 'package:dart/src/fields/base_types.dart';
-import 'package:dart/src/fit_file.dart';
+import 'package:fit_parser/src/developer_field.dart';
+import 'package:fit_parser/src/field.dart';
+import 'package:fit_parser/src/fields/base_types.dart';
+import 'package:fit_parser/src/fit_file.dart';
 import 'dart:convert';
-import 'package:dart/src/fit_type.dart';
+import 'package:fit_parser/src/fit_type.dart';
 import 'dart:typed_data';
 
 class Value {

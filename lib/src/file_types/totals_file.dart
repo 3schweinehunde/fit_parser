@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/totals_fields.dart';
+import 'package:fit_parser/src/fields/totals_fields.dart';
 
 class TotalsFile {
   Map messages = {

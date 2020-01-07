@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/blood_pressure_fields.dart';
+import 'package:fit_parser/src/fields/blood_pressure_fields.dart';
 
 class BloodPressureFile {
   Map messages = {

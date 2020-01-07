@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/weight_scale_fields.dart';
+import 'package:fit_parser/src/fields/weight_scale_fields.dart';
 
 class WeightScaleFile {
   Map messages = {

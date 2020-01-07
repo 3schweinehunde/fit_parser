@@ -1,8 +1,8 @@
-import 'package:dart/src/fields/field_description_fields.dart';
-import 'package:dart/src/fields/file_creator_fields.dart';
-import 'package:dart/src/fields/file_id_fields.dart';
-import 'package:dart/src/fields/timestamp_correlation_fields.dart';
-import 'package:dart/src/fields/developer_data_id_fields.dart';
+import 'package:fit_parser/src/fields/field_description_fields.dart';
+import 'package:fit_parser/src/fields/file_creator_fields.dart';
+import 'package:fit_parser/src/fields/file_id_fields.dart';
+import 'package:fit_parser/src/fields/timestamp_correlation_fields.dart';
+import 'package:fit_parser/src/fields/developer_data_id_fields.dart';
 
 class CommonFile {
   Map messages = {

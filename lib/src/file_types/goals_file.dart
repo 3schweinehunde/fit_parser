@@ -1,4 +1,4 @@
-import 'package:dart/src/fields/goal_fields.dart';
+import 'package:fit_parser/src/fields/goal_fields.dart';
 
 class GoalsFile {
   Map messages = {

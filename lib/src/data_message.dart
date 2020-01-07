@@ -1,8 +1,8 @@
-import 'package:dart/src/definition_message.dart';
-import 'package:dart/src/developer_field_definition.dart';
-import 'package:dart/src/field.dart';
-import 'package:dart/src/fit_file.dart';
-import 'package:dart/src/value.dart';
+import 'package:fit_parser/src/definition_message.dart';
+import 'package:fit_parser/src/developer_field_definition.dart';
+import 'package:fit_parser/src/field.dart';
+import 'package:fit_parser/src/fit_file.dart';
+import 'package:fit_parser/src/value.dart';
 import 'developer_field.dart';
 
 class DataMessage {
