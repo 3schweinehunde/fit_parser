@@ -52,7 +52,7 @@ class FitFile {
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);
     print("protocolVersion: ${protocolVersion}");
-    profileVersion  = byteData.getUint16(2, endianness);
+    profileVersion = byteData.getUint16(2, endianness);
     print("profileVersion: ${profileVersion}");
     dataSize = byteData.getUint32(4, endianness);
     print("dataSize: ${dataSize}");
@@ -73,23 +73,21 @@ class FitFile {
     if (recordHeader & 64 == 64) {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
         print("${lineNumber + 1} DefinitionMessage");
-      };
+      }
+      ;
       DefinitionMessage definitionMessage =
-        DefinitionMessage(
-            fitFile: this,
-            recordHeader: recordHeader
-        );
-      definitionMessages[definitionMessage.localMessageType] = definitionMessage;
+          DefinitionMessage(fitFile: this, recordHeader: recordHeader);
+      definitionMessages[definitionMessage.localMessageType] =
+          definitionMessage;
     } else {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
         print("${lineNumber + 1} DataMessage");
-      };
+      }
+      ;
       DataMessage dataMessage =
-        DataMessage(
-            fitFile: this,
-            recordHeader: recordHeader
-        );
+          DataMessage(fitFile: this, recordHeader: recordHeader);
       dataMessages.add(dataMessage);
-    };
+    }
+    ;
   }
 }

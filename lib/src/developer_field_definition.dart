@@ -7,12 +7,12 @@ class DeveloperFieldDefinition {
   String units;
   String nativeMesgName;
 
-  DeveloperFieldDefinition({
-    this.fieldNumber,
-    this.developerDataIndex,
-    this.fieldName,
-    this.nativeFieldNum,
-    this.dataType,
-    this.units,
-    this.nativeMesgName});
+  DeveloperFieldDefinition(
+      {this.fieldNumber,
+      this.developerDataIndex,
+      this.fieldName,
+      this.nativeFieldNum,
+      this.dataType,
+      this.units,
+      this.nativeMesgName});
 }

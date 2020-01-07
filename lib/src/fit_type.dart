@@ -167,7 +167,9 @@ class FitType {
     'auto_sync_frequency': auto_sync_frequency_values,
 // B
     'backlight_mode': backlight_mode_values,
-    'backlight_timeout': {0: 'infinite', },
+    'backlight_timeout': {
+      0: 'infinite',
+    },
     'battery_status': battery_status_values,
     'bench_press_exercise_name': bench_press_exercise_name_values,
     'bike_light_beam_angle_mode': bike_light_beam_angle_mode_values,
@@ -191,10 +193,14 @@ class FitType {
     'curl_exercise_name': curl_exercise_name_values,
 // D
     'date_mode': date_mode_values,
-    'date_time': {0x10000000: 'min', },
+    'date_time': {
+      0x10000000: 'min',
+    },
     'day_of_week': day_of_week_values,
     'deadlift_exercise_name': deadlift_exercise_name_values,
-    'device_index': {0: 'creator', },
+    'device_index': {
+      0: 'creator',
+    },
     'digital_watchface_layout': digital_watchface_layout_values,
     'display_heart': display_heart_values,
     'display_measure': display_measure_values,
@@ -250,7 +256,9 @@ class FitType {
     'leg_curl_exercise_name': leg_curl_exercise_name_values,
     'leg_raise_exercise_name': leg_raise_exercise_name_values,
     'length_type': length_type_values,
-    'local_date_time': {0x10000000: 'min', },
+    'local_date_time': {
+      0x10000000: 'min',
+    },
     'lunge_exercise_name': lunge_exercise_name_values,
 // M
     'manufacturer': manufacturer_values,
@@ -292,7 +300,9 @@ class FitType {
     'sport_bits_3': sport_bits_3_values,
     'sport_bits_4': sport_bits_4_values,
     'sport_bits_5': sport_bits_5_values,
-    'sport_bits_6': {0x01: 'floor_climbing', },
+    'sport_bits_6': {
+      0x01: 'floor_climbing',
+    },
     'sport_event': sport_event_values,
     'squat_exercise_name': squat_exercise_name_values,
     'stroke_type': stroke_type_values,
@@ -304,7 +314,9 @@ class FitType {
     'time_mode': time_mode_values,
     'time_zone': time_zone_values,
     'timer_trigger': timer_trigger_values,
-    'tissue_model_type': {0: 'zhl_16c', },
+    'tissue_model_type': {
+      0: 'zhl_16c',
+    },
     'tone': tone_values,
     'total_body_exercise_name': total_body_exercise_name_values,
     'triceps_extension_exercise_name': triceps_extension_exercise_name_values,
@@ -319,12 +331,18 @@ class FitType {
     'weather_severe_type': weather_severe_type_values,
     'weather_severity': weather_severity_values,
     'weather_status': weather_status_values,
-    'weight': {0xFFFE: 'calculating', },
+    'weight': {
+      0xFFFE: 'calculating',
+    },
     'wkt_step_duration': wkt_step_duration_values,
     'wkt_step_target': wkt_step_target_values,
     'workout_capabilities': workout_capabilities_values,
     'workout_equipment': workout_equipment_values,
-    'workout_hr': {100: 'bpm_offset', },
-    'workout_power': {1000: 'watts_offset', },
+    'workout_hr': {
+      100: 'bpm_offset',
+    },
+    'workout_power': {
+      1000: 'watts_offset',
+    },
   };
 }
