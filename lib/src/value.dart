@@ -25,8 +25,8 @@ class Value {
   Endian architecture;
 
   int get baseTypeNumber => baseTypeByte & 31;
-  int get baseType => base_types[baseTypeNumber]["type_name"];
-  int get baseTypeSize => base_types[baseTypeNumber]["size"];
+  int get baseType => base_types[baseTypeNumber]['type_name'];
+  int get baseTypeSize => base_types[baseTypeNumber]['size'];
 
   Value resolveReference({List<Value> values}) {
     if (messageTypeFields != null) {
@@ -36,11 +36,11 @@ class Value {
       // Reference field replacement
       if (referenceFieldName != null) {
         referenceValue = values.firstWhere((currentValue) {
-          return (currentValue.messageTypeFields != null) && (currentValue.messageTypeFields["field_name"] == referenceFieldName);
+          return (currentValue.messageTypeFields != null) && (currentValue.messageTypeFields['field_name'] == referenceFieldName);
         },
             orElse: () => null);
         if (referenceValue != null) {
-          Map reference = messageTypeFields["reference_field_value"][referenceValue.value];
+          Map reference = messageTypeFields['reference_field_value'][referenceValue.value];
           if(reference != null) {
             fieldName = reference['field_name'] ?? fieldName;
             fieldType = reference['field_type'] ?? fieldType;
@@ -62,10 +62,10 @@ class Value {
       _numericValue ??= getInt(signed: false, data_type_size: size);
       dynamic _lookup = FitType.type[fieldType][_numericValue] ?? _numericValue;
       return _lookup;
-    } else if (fieldType == "unknown") {
+    } else if (fieldType == 'unknown') {
       return null;
     } else {
-      throw "Field type $fieldType not available";
+      throw 'Field type $fieldType not available';
     }
   }
 
@@ -78,43 +78,43 @@ class Value {
     } else if (dataType != null) {
       // dataType parsing
       switch (dataType) {
-        case "bool":
+        case 'bool':
           return getBool();
-        case "sint8":
+        case 'sint8':
           return getIntegers(signed: true, data_type_size: 1);
-        case "byte":
-        case "enum":
-        case "uint8":
-        case "uint8z":
+        case 'byte':
+        case 'enum':
+        case 'uint8':
+        case 'uint8z':
           return getIntegers(signed: false, data_type_size: 1);
 
-        case "sint16":
+        case 'sint16':
           return getIntegers(signed: true, data_type_size: 2);
-        case "uint16":
-        case "uint16z":
+        case 'uint16':
+        case 'uint16z':
           return getIntegers(signed: false, data_type_size: 2);
 
-        case "sint32":
+        case 'sint32':
           return getIntegers(signed: true, data_type_size: 4);
-        case "date_time":
-        case "local_date_time":
-        case "localtime_into_day":
-        case "uint32":
-        case "uint32z":
+        case 'date_time':
+        case 'local_date_time':
+        case 'localtime_into_day':
+        case 'uint32':
+        case 'uint32z':
           return getIntegers(signed: false, data_type_size: 4);
 
-        case "sint64":
+        case 'sint64':
           return getIntegers(signed: true, data_type_size: 8);
-        case "uint64":
-        case "uint64z":
+        case 'uint64':
+        case 'uint64z':
           return getIntegers(signed: false, data_type_size: 8);
 
-        case "float32":
+        case 'float32':
           return getFloats(data_type_size: 4);
-        case "float64":
+        case 'float64':
           return getFloats(data_type_size: 8);
 
-        case "string":
+        case 'string':
           return getString();
       }
     } else {
@@ -125,12 +125,12 @@ class Value {
   }
 
   dynamic getIntegers({signed, data_type_size}) {
-    int duplicity = size ~/ data_type_size;
+    var duplicity = size ~/ data_type_size;
     dynamic value;
 
     if (duplicity > 1) {
-      List values = [];
-      for (int counter = 1; counter <= duplicity; counter++) {
+      var values = [];
+      for (var counter = 1; counter <= duplicity; counter++) {
         value = getInt(signed: signed, data_type_size: data_type_size);
         value = value / scale - offset.round();
         values.add(value);
@@ -175,17 +175,17 @@ class Value {
             ? fitFile.byteData.getInt64(fitFile.pointer, architecture)
             : fitFile.byteData.getUint64(fitFile.pointer, architecture);
       default:
-        throw ("No valid data type size in getInt");
+        throw ('No valid data type size in getInt');
     }
   }
 
   dynamic getFloats({data_type_size}) {
-    int duplicity = size ~/ data_type_size;
+    var duplicity = size ~/ data_type_size;
     double value;
 
     if (duplicity > 1) {
-      List values = [];
-      for (int counter = 1; counter <= duplicity; counter++) {
+      var values = [];
+      for (var counter = 1; counter <= duplicity; counter++) {
         value = getFloat(data_type_size: data_type_size);
         value = value / scale - offset;
         values.add(value);
@@ -207,12 +207,12 @@ class Value {
       case 8:
         return fitFile.byteData.getFloat64(fitFile.pointer, architecture);
       default:
-        throw ("No valid data type size in getFloat");
+        throw ('No valid data type size in getFloat');
     }
   }
 
   String getString() {
-    String value = AsciiCodec()
+    var value = AsciiCodec()
         .decode(fitFile.buffer.asUint8List(fitFile.pointer, size), allowInvalid: true);
     fitFile.pointer += size;
     return value;

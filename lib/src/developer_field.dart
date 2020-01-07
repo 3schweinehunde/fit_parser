@@ -18,27 +18,28 @@ class DeveloperField {
     String globalMessageName
   }) {
     var developerFieldDefinition = fitFile.developerFieldDefinitions.firstWhere((developerFieldDefinition) =>
-      (developerFieldDefinition.fieldNumber == this.fieldNumber) &&
-      (developerFieldDefinition.developerDataIndex == this.developerDataIndex) &&
+      (developerFieldDefinition.fieldNumber == fieldNumber) &&
+      (developerFieldDefinition.developerDataIndex == developerDataIndex) &&
       (developerFieldDefinition.nativeMesgName == globalMessageName)
     );
 
-    this.fieldName = developerFieldDefinition.fieldName;
-    this.nativeFieldNum = developerFieldDefinition.nativeFieldNum;
-    this.dataType = developerFieldDefinition.dataType;
-    this.units = developerFieldDefinition.units;
+    fieldName = developerFieldDefinition.fieldName;
+    nativeFieldNum = developerFieldDefinition.nativeFieldNum;
+    dataType = developerFieldDefinition.dataType;
+    units = developerFieldDefinition.units;
   }
 
-  toString() {
+  @override
+  String toString() {
     return {
-      "fieldNumber": fieldNumber,
-      "fieldName": fieldName,
-      "dataType": dataType,
+      'fieldNumber': fieldNumber,
+      'fieldName': fieldName,
+      'dataType': dataType,
       'size': size,
       'nativeFieldNum': nativeFieldNum,
       'unit': units,
-      "developerDataIndex": developerDataIndex,
-      "nativeMesgName": nativeMesgName,
+      'developerDataIndex': developerDataIndex,
+      'nativeMesgName': nativeMesgName,
     }.toString();
   }
 }

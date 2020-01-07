@@ -10,9 +10,9 @@ class DataMessage {
   int localMessageType;
   int timeOffset;
   DefinitionMessage definitionMessage;
-  List<Field> fields = List();
-  List<Value> values = List();
-  List<DeveloperField> developerFields = List();
+  List<Field> fields = [];
+  List<Value> values = [];
+  List<DeveloperField> developerFields = [];
 
   DataMessage({FitFile fitFile, int recordHeader}) {
     compressedHeader = recordHeader & 128 == 128;
@@ -26,12 +26,12 @@ class DataMessage {
     definitionMessage = fitFile.definitionMessages[localMessageType];
 
     if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-      print("  globalMessageNumber: ${definitionMessage.globalMessageNumber}");
+      print('  globalMessageNumber: ${definitionMessage.globalMessageNumber}');
     };
 
     fields = definitionMessage.fields;
     fields.forEach((field) {
-      Value value = Value(
+      var value = Value(
         fitFile: fitFile,
         field: field,
         architecture: definitionMessage.architecture,
@@ -41,7 +41,7 @@ class DataMessage {
 
     developerFields = definitionMessage.developerFields;
     developerFields.forEach((developerField) {
-      Value value = Value.fromDeveloperField(
+      var value = Value.fromDeveloperField(
         fitFile: fitFile,
         developerField: developerField,
         architecture: definitionMessage.architecture,
@@ -50,8 +50,8 @@ class DataMessage {
     });
 
     if (definitionMessage.globalMessageNumber == 206) {
-      Map valueMap = Map.fromIterable(values,  key: (value) => value.fieldName, value: (value) => value.value);
-      DeveloperFieldDefinition developerFieldDefinition = DeveloperFieldDefinition(
+      var valueMap = { for (var value in values) value.fieldName : value.value };
+      var developerFieldDefinition = DeveloperFieldDefinition(
           nativeMesgName: valueMap['native_mesg_num'],
           developerDataIndex: valueMap['developer_data_index'].round(),
           fieldNumber: valueMap['field_definition_number'].round(),
@@ -67,7 +67,7 @@ class DataMessage {
 
     values.asMap().forEach((number, value) {
       if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print("    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}");
+        print('    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}');
       };
     });
   }

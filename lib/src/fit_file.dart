@@ -25,15 +25,16 @@ class FitFile {
   ByteData byteData;
   int pointer;
 
-  Map definitionMessages = Map();
-  List<DeveloperFieldDefinition> developerFieldDefinitions = List();
-  List<DataMessage> dataMessages = List();
-  List<Developer> developers = List();
-  parse() {
-    File file = File(path);
+  Map definitionMessages = {};
+  List<DeveloperFieldDefinition> developerFieldDefinitions = [];
+  List<DataMessage> dataMessages = [];
+  List<Developer> developers = [];
+  
+  void parse() {
+    var file = File(path);
     _fileBytes = file.readAsBytesSync();
-    buffer = new Int8List.fromList(_fileBytes).buffer;
-    byteData = new ByteData.view(buffer);
+    buffer = Int8List.fromList(_fileBytes).buffer;
+    byteData = ByteData.view(buffer);
 
     get_file_header();
 
@@ -47,47 +48,46 @@ class FitFile {
     parse();
   }
 
-  get_file_header() {
+  void get_file_header() {
     fileHeaderLength = byteData.getUint8(0);
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);
-    print("protocolVersion: ${protocolVersion}");
+    print('protocolVersion: ${protocolVersion}');
     profileVersion = byteData.getUint16(2, endianness);
-    print("profileVersion: ${profileVersion}");
+    print('profileVersion: ${profileVersion}');
     dataSize = byteData.getUint32(4, endianness);
-    print("dataSize: ${dataSize}");
+    print('dataSize: ${dataSize}');
     dataType = AsciiDecoder().convert(buffer.asUint8List(8, 4));
-    print("dataType: ${dataType}");
+    print('dataType: ${dataType}');
 
     if (fileHeaderLength == 14) {
-      this.crc = byteData.getUint16(12, endianness);
-      print("crc: ${crc}");
+      crc = byteData.getUint16(12, endianness);
+      print('crc: ${crc}');
     }
   }
 
-  get_next_record({debug = false}) {
-    int recordHeader = byteData.getUint8(pointer);
+  void get_next_record({debug = false}) {
+    var recordHeader = byteData.getUint8(pointer);
     pointer += 1;
     lineNumber += 1;
 
     if (recordHeader & 64 == 64) {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
-        print("${lineNumber + 1} DefinitionMessage");
+        print('${lineNumber + 1} DefinitionMessage');
       }
       ;
-      DefinitionMessage definitionMessage =
+      var definitionMessage =
           DefinitionMessage(fitFile: this, recordHeader: recordHeader);
       definitionMessages[definitionMessage.localMessageType] =
           definitionMessage;
     } else {
       if (lineNumber < printTo && lineNumber >= printFrom - 1) {
-        print("${lineNumber + 1} DataMessage");
+        print('${lineNumber + 1} DataMessage');
       }
       ;
-      DataMessage dataMessage =
+      var dataMessage =
           DataMessage(fitFile: this, recordHeader: recordHeader);
       dataMessages.add(dataMessage);
-    }
-    ;
+    };
   }
 }

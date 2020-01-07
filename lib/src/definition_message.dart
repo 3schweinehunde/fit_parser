@@ -12,15 +12,15 @@ class DefinitionMessage {
   int globalMessageNumber;
   int numberOfFields;
   int numberOfDeveloperFields;
-  List<Field> fields = List();
-  List<DeveloperField> developerFields = List();
+  List<Field> fields = [];
+  List<DeveloperField> developerFields = [];
 
-  get globalMessageName => FitType.type["mesg_num"][globalMessageNumber];
+  String get globalMessageName => FitType.type['mesg_num'][globalMessageNumber];
 
   DefinitionMessage({FitFile fitFile, int recordHeader, int lineNumber}) {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
-    ByteData data = fitFile.byteData;
+    var data = fitFile.byteData;
 
     // Reserved Byte, we skip it
     fitFile.pointer += 1;
@@ -41,25 +41,25 @@ class DefinitionMessage {
     fitFile.pointer += 1;
 
     if (fitFile.lineNumber < fitFile.printTo && fitFile.lineNumber >= fitFile.printFrom - 1) {
-      print("  developerData: ${developerData}, "
-          "localMessageType: ${localMessageType}, "
+      print('  developerData: ${developerData}, '
+          'localMessageType: ${localMessageType}, '
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
-          "globalMessageNumber: ${globalMessageNumber}, "
-          "globalMessageName: ${globalMessageName}, "
-          "numberOfFields: ${numberOfFields}");
+          'globalMessageNumber: ${globalMessageNumber}, '
+          'globalMessageName: ${globalMessageName}, '
+          'numberOfFields: ${numberOfFields}');
     };
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++ ){
-      int definitionNumber = data.getUint8(fitFile.pointer);
+      var definitionNumber = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      int size = data.getUint8(fitFile.pointer);
+      var size = data.getUint8(fitFile.pointer);
       fitFile.pointer += 1;
 
-      int baseTypeByte = data.getUint8(fitFile.pointer);
+      var baseTypeByte = data.getUint8(fitFile.pointer);
       fitFile.pointer+= 1;
 
-      Field field = Field(
+      var field = Field(
           fieldDefinitionNumber: definitionNumber,
           size: size,
           baseTypeByte: baseTypeByte,
@@ -68,8 +68,8 @@ class DefinitionMessage {
       fields.add(field);
       if (fitFile.lineNumber < fitFile.printTo &&
           fitFile.lineNumber >= fitFile.printFrom - 1) {
-        print("    ${fieldCounter} ${field}"
-            " / pointer_after: ${fitFile.pointer}");
+        print('    ${fieldCounter} ${field}'
+            ' / pointer_after: ${fitFile.pointer}');
       };
     }
 
@@ -78,16 +78,16 @@ class DefinitionMessage {
       fitFile.pointer += 1;
 
       for (var developerFieldCounter = 1; developerFieldCounter <= numberOfDeveloperFields; developerFieldCounter++){
-        int fieldNumber = data.getUint8(fitFile.pointer);
+        var fieldNumber = data.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
-        int size = data.getUint8(fitFile.pointer);
+        var size = data.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
-        int developerDataIndex = data.getUint8(fitFile.pointer);
+        var developerDataIndex = data.getUint8(fitFile.pointer);
         fitFile.pointer += 1;
 
-        DeveloperField developerField = DeveloperField(
+        var developerField = DeveloperField(
             fieldNumber: fieldNumber,
             size: size,
             developerDataIndex: developerDataIndex,
@@ -97,8 +97,8 @@ class DefinitionMessage {
         developerFields.add(developerField);
         if (fitFile.lineNumber < fitFile.printTo &&
             fitFile.lineNumber >= fitFile.printFrom - 1) {
-          print("    dev ${developerFieldCounter} ${developerField}"
-                " / pointer_after: ${fitFile.pointer}");
+          print('    dev ${developerFieldCounter} ${developerField}'
+                ' / pointer_after: ${fitFile.pointer}');
         };
       }
     }

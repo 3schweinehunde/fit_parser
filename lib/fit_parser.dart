@@ -19,4 +19,3 @@ export 'package:fit_parser/src/file_types/monitoring_file.dart';
 export 'package:fit_parser/src/file_types/other_file.dart';
 
 export 'package:fit_parser/src/fit_type.dart';
-

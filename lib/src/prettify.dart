@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-prettify(map) {
-  JsonEncoder encoder = new JsonEncoder.withIndent('  ');
+String prettify(map) {
+  var encoder = JsonEncoder.withIndent('  ');
   return  encoder.convert(map);
 }

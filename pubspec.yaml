@@ -1,10 +1,10 @@
 name: fit_parser
 description: A starting point for Dart libraries or applications.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/3schweinehunde/fit_parser
 
 environment:
-  sdk: '>=2.2.0 <3.0.0'
+  sdk: '>=2.2.2 <3.0.0'
 
 dependencies:
 

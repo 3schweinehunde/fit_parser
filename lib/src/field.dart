@@ -21,7 +21,7 @@ class Field {
 
   bool get endianAbility => baseTypeByte & 128 == 128;
   int get baseTypeNumber => baseTypeByte & 31;
-  String get baseType => base_types[baseTypeNumber]["type_name"];
+  String get baseType => base_types[baseTypeNumber]['type_name'];
 
   Field({
     this.fieldDefinitionNumber,
@@ -38,34 +38,35 @@ class Field {
 
       messageTypeFields = fileTypeFields[fieldDefinitionNumber];
       if (messageTypeFields != null) {
-        fieldName = messageTypeFields["field_name"];
-        fieldType = messageTypeFields["field_type"];
-        dataType = messageTypeFields["data_type"];
+        fieldName = messageTypeFields['field_name'];
+        fieldType = messageTypeFields['field_type'];
+        dataType = messageTypeFields['data_type'];
         scale =
-        (messageTypeFields["scale"] != null) ? messageTypeFields["scale"]
+        (messageTypeFields['scale'] != null) ? messageTypeFields['scale']
             .toDouble() : 1;
         offset =
-        (messageTypeFields["offset"] != null) ? messageTypeFields["offset"]
+        (messageTypeFields['offset'] != null) ? messageTypeFields['offset']
             .toDouble() : 0;
-        units = messageTypeFields["units"];
+        units = messageTypeFields['units'];
       } else {
-        fieldName = "unknown";
-        fieldType = "unknown";
-        dataType = "unknown";
+        fieldName = 'unknown';
+        fieldType = 'unknown';
+        dataType = 'unknown';
         scale = 1;
         offset = 0;
-        units = "unknown";
+        units = 'unknown';
       }
     }
   }
 
-  toString() {
+  @override
+  String toString() {
     return {
-      "fieldDefinitionNumber": fieldDefinitionNumber,
-      "fieldName": fieldName,
-      "dataType": dataType,
-      "fieldType": fieldType,
-      "messageTypeName": messageTypeName,
+      'fieldDefinitionNumber': fieldDefinitionNumber,
+      'fieldName': fieldName,
+      'dataType': dataType,
+      'fieldType': fieldType,
+      'messageTypeName': messageTypeName,
       'size': size,
       'scale': scale,
       'offset': offset,
