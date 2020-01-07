@@ -23,5 +23,5 @@ import 'package:fit_parser/fit_parser.dart';
 First goal is to read and parse .fit-Files from 
 [Garmin Forerunner 235](https://buy.garmin.com/en-GB/GB/p/529988) running watches.
 
-Please file bugs at the [Github Repo][https://github.com/3schweinehunde/fit_parser].
-
+Please file bugs at the 
+[Github Repo](ttps://github.com/3schweinehunde/fit_parser).

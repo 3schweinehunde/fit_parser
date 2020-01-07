@@ -11,3 +11,7 @@
 ## 0.1.0
 
 - Fixed all health issues.
+
+## 0.1.1
+
+- Fixed all maintenance suggestions.
