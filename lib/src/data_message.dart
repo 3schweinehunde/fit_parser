@@ -25,8 +25,8 @@ class DataMessage {
 
     definitionMessage = fitFile.definitionMessages[localMessageType];
 
-    if (fitFile.lineNumber < fitFile.printTo &&
-        fitFile.lineNumber >= fitFile.printFrom - 1) {
+    if (fitFile.lineNumber < fitFile.debugPrintTo &&
+        fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
       print('  globalMessageNumber: ${definitionMessage.globalMessageNumber}');
     }
 
@@ -69,8 +69,8 @@ class DataMessage {
         values.map((value) => value.resolveReference(values: values)).toList();
 
     values.asMap().forEach((number, value) {
-      if (fitFile.lineNumber < fitFile.printTo &&
-          fitFile.lineNumber >= fitFile.printFrom - 1) {
+      if (fitFile.lineNumber < fitFile.debugPrintTo &&
+          fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
         print(
             '    ${number + 1} ${value.fieldName}: ${value.value} ${value.units} / pointer: ${value.pointer}');
       }

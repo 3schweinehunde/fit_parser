@@ -40,8 +40,8 @@ class DefinitionMessage {
     numberOfFields = data.getUint8(fitFile.pointer);
     fitFile.pointer += 1;
 
-    if (fitFile.lineNumber < fitFile.printTo &&
-        fitFile.lineNumber >= fitFile.printFrom - 1) {
+    if (fitFile.lineNumber < fitFile.debugPrintTo &&
+        fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
       print('  developerData: ${developerData}, '
           'localMessageType: ${localMessageType}, '
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
@@ -67,8 +67,8 @@ class DefinitionMessage {
           globalMessageNumber: globalMessageNumber);
 
       fields.add(field);
-      if (fitFile.lineNumber < fitFile.printTo &&
-          fitFile.lineNumber >= fitFile.printFrom - 1) {
+      if (fitFile.lineNumber < fitFile.debugPrintTo &&
+          fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
         print('    ${fieldCounter} ${field}'
             ' / pointer_after: ${fitFile.pointer}');
       }
@@ -98,8 +98,8 @@ class DefinitionMessage {
           globalMessageName: globalMessageName,
         );
         developerFields.add(developerField);
-        if (fitFile.lineNumber < fitFile.printTo &&
-            fitFile.lineNumber >= fitFile.printFrom - 1) {
+        if (fitFile.lineNumber < fitFile.debugPrintTo &&
+            fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
           print('    dev ${developerFieldCounter} ${developerField}'
               ' / pointer_after: ${fitFile.pointer}');
         }

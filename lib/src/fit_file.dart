@@ -17,8 +17,8 @@ class FitFile {
   int lineNumber = 0;
   String dataType;
   int crc;
-  int printFrom = 4996;
-  int printTo = 5000;
+  int debugPrintFrom;
+  int debugPrintTo;
 
   ByteBuffer buffer;
   List<int> _fileBytes;
@@ -30,35 +30,38 @@ class FitFile {
   List<DataMessage> dataMessages = [];
   List<Developer> developers = [];
 
-  void parse() {
+  FitFile({
+    this.path,
+    this.debugPrintFrom = 0,
+    this.debugPrintTo = 0,
+  });
+
+  FitFile parse() {
     var file = File(path);
     _fileBytes = file.readAsBytesSync();
     buffer = Int8List.fromList(_fileBytes).buffer;
     byteData = ByteData.view(buffer);
 
-    get_file_header();
+    _get_file_header();
 
     while (pointer < fileHeaderLength + dataSize) {
-      get_next_record();
+      _get_next_record();
     }
+
+    return this;
   }
 
-  FitFile({String path}) {
-    this.path = path;
-    parse();
-  }
-
-  void get_file_header() {
+  void _get_file_header() {
     fileHeaderLength = byteData.getUint8(0);
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);
-    print('protocolVersion: ${protocolVersion}');
+    if (debugPrintFrom < debugPrintTo) print('protocolVersion: ${protocolVersion}');
     profileVersion = byteData.getUint16(2, endianness);
-    print('profileVersion: ${profileVersion}');
+    if (debugPrintFrom < debugPrintTo) print('profileVersion: ${profileVersion}');
     dataSize = byteData.getUint32(4, endianness);
-    print('dataSize: ${dataSize}');
+    if (debugPrintFrom < debugPrintTo) print('dataSize: ${dataSize}');
     dataType = AsciiDecoder().convert(buffer.asUint8List(8, 4));
-    print('dataType: ${dataType}');
+    if (debugPrintFrom < debugPrintTo) print('dataType: ${dataType}');
 
     if (fileHeaderLength == 14) {
       crc = byteData.getUint16(12, endianness);
@@ -66,13 +69,13 @@ class FitFile {
     }
   }
 
-  void get_next_record({debug = false}) {
+  void _get_next_record({debug = false}) {
     var recordHeader = byteData.getUint8(pointer);
     pointer += 1;
     lineNumber += 1;
 
     if (recordHeader & 64 == 64) {
-      if (lineNumber < printTo && lineNumber >= printFrom - 1) {
+      if (lineNumber < debugPrintTo && lineNumber >= debugPrintFrom - 1) {
         print('${lineNumber + 1} DefinitionMessage');
       }
       var definitionMessage =
@@ -80,7 +83,7 @@ class FitFile {
       definitionMessages[definitionMessage.localMessageType] =
           definitionMessage;
     } else {
-      if (lineNumber < printTo && lineNumber >= printFrom - 1) {
+      if (lineNumber < debugPrintTo && lineNumber >= debugPrintFrom - 1) {
         print('${lineNumber + 1} DataMessage');
       }
       var dataMessage = DataMessage(fitFile: this, recordHeader: recordHeader);
