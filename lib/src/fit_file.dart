@@ -55,9 +55,13 @@ class FitFile {
     fileHeaderLength = byteData.getUint8(0);
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);
-    if (debugPrintFrom < debugPrintTo) print('protocolVersion: ${protocolVersion}');
+    if (debugPrintFrom < debugPrintTo) {
+      print('protocolVersion: ${protocolVersion}');
+    }
     profileVersion = byteData.getUint16(2, endianness);
-    if (debugPrintFrom < debugPrintTo) print('profileVersion: ${profileVersion}');
+    if (debugPrintFrom < debugPrintTo) {
+      print('profileVersion: ${profileVersion}');
+    }
     dataSize = byteData.getUint32(4, endianness);
     if (debugPrintFrom < debugPrintTo) print('dataSize: ${dataSize}');
     dataType = AsciiDecoder().convert(buffer.asUint8List(8, 4));
