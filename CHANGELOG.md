@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.4 (2020-01-13)
+
+* Exposing dataMessage via api.
+
 ## 0.1.2, 0.1.3 (2020-01-08)
 
 * Make debug output range optional Parameters
