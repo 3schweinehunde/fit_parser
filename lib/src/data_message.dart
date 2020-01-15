@@ -76,4 +76,12 @@ class DataMessage {
       }
     });
   }
+
+  dynamic get(String fieldName) {
+    return values.singleWhere((value) => value.fieldName == fieldName).value;
+  }
+
+  dynamic any(String fieldName) {
+    return values.any((value) => value.fieldName == fieldName);
+  }
 }

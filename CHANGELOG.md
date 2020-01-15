@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.5 (2020-01-15)
+
+* get and any methods for easier access to values for dataMessage.
+* Typo in session_fields fixed.
+
 ## 0.1.4 (2020-01-13)
 
 * Exposing dataMessage via api.

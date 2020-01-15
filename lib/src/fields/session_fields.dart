@@ -26,7 +26,7 @@ Map session_fields = {
     'units': 'semicircles',
   },
   4: {
-    'field_name': 'start_posision_long',
+    'field_name': 'start_position_long',
     'data_type': 'sint32',
     'units': 'semicircles',
   },
