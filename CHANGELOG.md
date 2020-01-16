@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.6 (2020-01-15)
+
+* fail-safe to null for dataMessage.get() 
+
 ## 0.1.5 (2020-01-15)
 
 * get and any methods for easier access to values for dataMessage.

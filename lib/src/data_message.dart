@@ -78,7 +78,10 @@ class DataMessage {
   }
 
   dynamic get(String fieldName) {
-    return values.singleWhere((value) => value.fieldName == fieldName).value;
+    return values
+        .singleWhere((value) => value.fieldName == fieldName,
+            orElse: () => null)
+        ?.value;
   }
 
   dynamic any(String fieldName) {
