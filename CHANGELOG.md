@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.7 (2020-03-16)
+
+* Segment lap fields are used by certain Garmin watches.
+* Bug in messageTypeFieldResolution fixed.
+
 ## 0.1.6 (2020-01-15)
 
 * fail-safe to null for dataMessage.get() 
