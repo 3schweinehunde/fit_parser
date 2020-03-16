@@ -30,7 +30,7 @@ class Value {
 
   Value resolveReference({List<Value> values}) {
     if (messageTypeFields != null) {
-      String referenceFieldName = messageTypeFields['reference_field_name'];
+      var referenceFieldName = messageTypeFields['reference_field_name'];
       Value referenceValue;
 
       // Reference field replacement
