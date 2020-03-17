@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8 (2020-03-17)
+
+* Enabled workouts in activities, but we ignore the records.
+
 ## 0.1.7 (2020-03-16)
 
 * Segment lap fields are used by certain Garmin watches.

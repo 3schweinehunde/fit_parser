@@ -14,7 +14,7 @@ class Value {
   int baseTypeByte;
   FitFile fitFile;
   dynamic _numericValue;
-  double scale;
+  dynamic scale;
   double offset;
   String units;
   dynamic value;
