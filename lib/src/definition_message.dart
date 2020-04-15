@@ -106,4 +106,14 @@ class DefinitionMessage {
       }
     }
   }
+
+  Object toJson() => {
+        'developerData': developerData,
+        'localMessageType': localMessageType,
+        'globalMessageNumber': globalMessageNumber,
+        'numberOfFields': numberOfFields,
+        'numberOfDeveloperFields': developerFields,
+        'fields': fields,
+        'developerFields': developerFields,
+      };
 }

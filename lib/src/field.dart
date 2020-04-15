@@ -85,4 +85,18 @@ class Field {
       'globalMessageNumber': globalMessageNumber,
     }.toString();
   }
+
+  Object toJson() => {
+        'fieldDefinitionNumber': fieldDefinitionNumber,
+        'fieldName': fieldName,
+        'dataType': dataType,
+        'fieldType': fieldType,
+        'messageTypeName': messageTypeName,
+        'size': size,
+        'scale': scale,
+        'offset': offset,
+        'unit': units,
+        'baseTypeByte': baseTypeByte,
+        'globalMessageNumber': globalMessageNumber,
+      };
 }

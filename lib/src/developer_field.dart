@@ -42,4 +42,15 @@ class DeveloperField {
       'nativeMesgName': nativeMesgName,
     }.toString();
   }
+
+  Object toJson() => {
+        'fieldNumber': fieldNumber,
+        'fieldName': fieldName,
+        'dataType': dataType,
+        'size': size,
+        'nativeFieldNum': nativeFieldNum,
+        'unit': units,
+        'developerDataIndex': developerDataIndex,
+        'nativeMesgName': nativeMesgName,
+      };
 }

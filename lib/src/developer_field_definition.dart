@@ -15,4 +15,14 @@ class DeveloperFieldDefinition {
       this.dataType,
       this.units,
       this.nativeMesgName});
+
+  Object toJson() => {
+        'fieldNumber': fieldNumber,
+        'developerDataIndex': developerDataIndex,
+        'fieldName': fieldName,
+        'nativeFieldNum': nativeFieldNum,
+        'dataType': dataType,
+        'units': units,
+        'nativeMesgName': nativeMesgName,
+      };
 }

@@ -87,4 +87,13 @@ class DataMessage {
   dynamic any(String fieldName) {
     return values.any((value) => value.fieldName == fieldName);
   }
+
+  Object toJson() => {
+        'localMessageType': localMessageType,
+        'timeOffset': timeOffset,
+        'definitionMessage': definitionMessage,
+        'fields': fields,
+        'values': values,
+        'developerFields': developerFields,
+      };
 }
