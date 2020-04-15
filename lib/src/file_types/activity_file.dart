@@ -2,6 +2,8 @@ import 'package:fit_parser/src/fields/accelerometer_data_fieds.dart';
 import 'package:fit_parser/src/fields/aviation_attitude_fields.dart';
 import 'package:fit_parser/src/fields/barometer_data_fields.dart';
 import 'package:fit_parser/src/fields/camera_event_fields.dart';
+import 'package:fit_parser/src/fields/course_fields.dart';
+import 'package:fit_parser/src/fields/course_point_fields.dart';
 import 'package:fit_parser/src/fields/device_info_fields.dart';
 import 'package:fit_parser/src/fields/event_fields.dart';
 import 'package:fit_parser/src/fields/activity_fields.dart';
@@ -13,11 +15,13 @@ import 'package:fit_parser/src/fields/length_fields_fields.dart';
 import 'package:fit_parser/src/fields/magnetometer_data_fields.dart';
 import 'package:fit_parser/src/fields/nmea_sentence_fields.dart';
 import 'package:fit_parser/src/fields/obdii_data_fields.dart';
+import 'package:fit_parser/src/fields/ohr_settings_fields.dart';
 import 'package:fit_parser/src/fields/one_d_sensor_calibration_fields.dart';
 import 'package:fit_parser/src/fields/record_fields.dart';
 import 'package:fit_parser/src/fields/session_fields.dart';
 import 'package:fit_parser/src/fields/set_fields.dart';
 import 'package:fit_parser/src/fields/three_d_sensor_calibration_fields.dart';
+import 'package:fit_parser/src/fields/totals_fields.dart';
 import 'package:fit_parser/src/fields/training_file_fields.dart';
 import 'package:fit_parser/src/fields/video_fields.dart';
 import 'package:fit_parser/src/fields/video_clip_fields.dart';
@@ -57,5 +61,9 @@ class ActivityFile {
     'video_frame': video_frame_fields,
     'one_d_sensor_calibration': one_d_sensor_calibration_fields,
     'three_d_sensor_calibration': three_d_sensor_calibration_fields,
+    'course': course_fields,
+    'course_point': course_point_fields,
+    'totals': totals_fields,
+    'ohr_settings': ohr_settings_fields,
   };
 }
