@@ -106,9 +106,9 @@ class FitFile {
       };
 
   Object _defMessagesToJson() {
-    var obj = {};
+    var obj = [];
     for (var key in definitionMessages.keys) {
-      obj[key.toString()] = definitionMessages[key];
+      obj.add(definitionMessages[key]);
     }
     return obj;
   }
