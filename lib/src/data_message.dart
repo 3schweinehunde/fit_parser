@@ -60,7 +60,7 @@ class DataMessage {
             valueMap['field_name'].replaceAll(String.fromCharCode(0x00000), ''),
         units: valueMap['units'].replaceAll(String.fromCharCode(0x00000), ''),
         dataType: valueMap['fit_base_type_id'],
-        nativeFieldNum: valueMap['native_field_num']?ex.round(),
+        nativeFieldNum: valueMap['native_field_num']?.round(),
       );
       fitFile.developerFieldDefinitions.add(developerFieldDefinition);
     }
