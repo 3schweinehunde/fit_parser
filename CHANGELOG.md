@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.1.9 (2020-08-12)
+
+* Ignoring missing native_field_number in developer fields
+* Allow for Exercise Titles
+
 ## 0.1.8 (2020-03-17)
 
 * Enabled workouts in activities, but we ignore the records.
