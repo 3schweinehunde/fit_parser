@@ -7,7 +7,7 @@ Map slave_device_fields = {
     'field_name': 'product',
     'data_type': 'uint16',
     'reference_field_name': 'manufacturer',
-    'reference_field_name': {
+    'reference_field_value': {
       'favero_electronics': {
         'field_name': 'favero_product',
         'data_type': 'favero_product',

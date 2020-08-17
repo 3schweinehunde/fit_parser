@@ -2,7 +2,6 @@ Map activity_fields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',
-    'data_type': 'uint32',
   },
   0: {
     'field_name': 'total_timer_time',
