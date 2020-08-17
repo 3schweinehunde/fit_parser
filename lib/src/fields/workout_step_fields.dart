@@ -180,7 +180,7 @@ Map workout_step_fields = {
     'field_name': 'custom_target_value_low',
     'data_type': 'uint32',
     'reference_field_name': 'target_type',
-    'reference_field_name': {
+    'reference_field_value': {
       'speed': {
         'field_name': 'custom_target_speed_low',
         'data_type': 'uint32',
@@ -208,7 +208,7 @@ Map workout_step_fields = {
     'field_name': 'custom_target_value_high',
     'data_type': 'uint32',
     'reference_field_name': 'target_type',
-    'reference_field_name': {
+    'reference_field_value': {
       'speed': {
         'field_name': 'custom_target_speed_high',
         'data_type': 'uint32',
