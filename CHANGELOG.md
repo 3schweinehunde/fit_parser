@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.2.0 (2020-08-17)
+
+* Allow for sub_sport 255
+* Fix some duplicate values, mostly typos.
+
 ## 0.1.8 (2020-03-17)
 
 * Enabled workouts in activities, but we ignore the records.
