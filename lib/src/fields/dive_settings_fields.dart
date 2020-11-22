@@ -100,7 +100,7 @@ Map dive_settings_fields = {
     'field_name': 'heart_rate_source',
     'data_type': 'uint8',
     'reference_field_name': 'heart_rate_source_type',
-    'reference_field_name': {
+    'reference_field_value': {
       'antplus': {
         'field_name': 'heart_rate_antplus_device_type',
         'field_type': 'antplus_device_type',

@@ -63,7 +63,7 @@ Map segment_lap_fields = {
     'data_type': 'uint32',
     'units': 'cycles',
     'reference_field_name': 'sport',
-    'reference_field_name': {
+    'reference_field_value': {
       'cycling': {
         'field_name': 'total_strokes',
         'data_type': 'uint32',

@@ -60,4 +60,5 @@ Map sub_sport_values = {
   58: 'virtual_activity',
   59: 'obstacle',
   254: 'all',
+  255: 'unknown,'
 };
