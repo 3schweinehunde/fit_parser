@@ -1,3 +1,4 @@
+import 'package:fit_parser/src/fields/bike_profile_fields.dart';
 import 'package:fit_parser/src/fields/connectivity_fields.dart';
 import 'package:fit_parser/src/fields/device_settings_fields.dart';
 import 'package:fit_parser/src/fields/hrm_profile_fields.dart';
@@ -15,5 +16,6 @@ class SettingsFile {
     'connectivity': connectivity_fields,
     'watchface_settings': watchface_settings_fields,
     'ohr_settings': ohr_settings_fields,
+    'bike_profile': bike_profile_fields,
   };
 }

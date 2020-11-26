@@ -2,6 +2,9 @@ import 'package:fit_parser/src/fields/base_types.dart';
 import 'package:fit_parser/src/file_types/common_file.dart';
 import 'package:fit_parser/src/file_types/activity_file.dart';
 import 'package:fit_parser/src/file_types/garmin_activity_file.dart';
+import 'package:fit_parser/src/file_types/monitoring_file.dart';
+import 'package:fit_parser/src/file_types/settings_file.dart';
+import 'package:fit_parser/src/file_types/sport_settings_file.dart';
 import 'package:fit_parser/src/fit_type.dart';
 
 class Field {
@@ -33,9 +36,17 @@ class Field {
     if (messageTypeName != null) {
       fileTypeFields = CommonFile().messages[messageTypeName] ??
           ActivityFile().messages[messageTypeName] ??
-          GarminActivityFile().messages[messageTypeName];
+          GarminActivityFile().messages[messageTypeName] ??
+          SportSettingsFile().messages[messageTypeName] ??
+          SettingsFile().messages[messageTypeName] ??
+          MonitoringFile().messages[messageTypeName];
 
-      messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      if (fileTypeFields != null) {
+        messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      } else {
+        print('Unknown messageTypeName $messageTypeName');
+      }
+
       if (messageTypeFields != null) {
         fieldName = messageTypeFields['field_name'];
         fieldType = messageTypeFields['field_type'];
@@ -74,4 +85,18 @@ class Field {
       'globalMessageNumber': globalMessageNumber,
     }.toString();
   }
+
+  Object toJson() => {
+        'fieldDefinitionNumber': fieldDefinitionNumber,
+        'fieldName': fieldName,
+        'dataType': dataType,
+        'fieldType': fieldType,
+        'messageTypeName': messageTypeName,
+        'size': size,
+        'scale': scale,
+        'offset': offset,
+        'unit': units,
+        'baseTypeByte': baseTypeByte,
+        'globalMessageNumber': globalMessageNumber,
+      };
 }

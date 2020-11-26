@@ -94,4 +94,22 @@ class FitFile {
       dataMessages.add(dataMessage);
     }
   }
+
+  Object toJson() => {
+        'path': path,
+        'protocolVersion': protocolVersion,
+        'profileVersion': profileVersion,
+        'dataSize': dataSize,
+        'dataType': dataType,
+        'definitionMessages': _defMessagesToJson(),
+        'dataMessages': dataMessages,
+      };
+
+  Object _defMessagesToJson() {
+    var obj = [];
+    for (var key in definitionMessages.keys) {
+      obj.add(definitionMessages[key]);
+    }
+    return obj;
+  }
 }

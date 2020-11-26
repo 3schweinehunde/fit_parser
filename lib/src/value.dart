@@ -249,4 +249,15 @@ class Value {
     offset = 0;
     value = determineValue();
   }
+
+  Object toJson() => {
+        'fieldName': fieldName,
+        'fieldType': fieldType,
+        'dataType': dataType,
+        'size': size,
+        'baseTypeByte': baseTypeByte,
+        'scale': scale,
+        'units': units,
+        'value': value,
+      };
 }
