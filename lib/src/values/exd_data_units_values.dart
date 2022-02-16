@@ -1,4 +1,4 @@
-Map exd_data_units_values = {
+Map exdDataUnitsValues = {
   0: 'no_units',
   1: 'laps',
   2: 'miles_per_hour',

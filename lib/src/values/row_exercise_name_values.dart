@@ -1,4 +1,4 @@
-Map row_exercise_name_values = {
+Map rowExerciseNameValues = {
   0: 'barbell_straight_leg_deadlift_to_row',
   1: 'cable_row_standing',
   2: 'dumbbell_row',

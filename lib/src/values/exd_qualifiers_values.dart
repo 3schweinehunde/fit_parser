@@ -1,4 +1,4 @@
-Map exd_qualifiers_values = {
+Map exdQualifiersValues = {
   0: 'no_qualifier',
   1: 'instantaneous',
   2: 'average',

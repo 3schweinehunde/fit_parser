@@ -1,4 +1,4 @@
-Map hyperextension_exercise_name_values = {
+Map hyperextensionExerciseNameValues = {
   0: 'back_extension_with_opposite_arm_and_leg_reach',
   1: 'weighted_back_extension_with_opposite_arm_and_leg_reach',
   2: 'base_rotations',

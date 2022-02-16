@@ -1,4 +1,4 @@
-Map exd_display_type_values = {
+Map exdDisplayTypeValues = {
   0: 'numerical',
   1: 'simple',
   2: 'graph',

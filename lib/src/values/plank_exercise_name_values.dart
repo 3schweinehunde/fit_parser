@@ -1,4 +1,4 @@
-Map plank_exercise_name_values = {
+Map plankExerciseNameValues = {
   0: '45_degree_plank',
   1: 'weighted_45_degree_plank',
   2: '90_degree_static_hold',

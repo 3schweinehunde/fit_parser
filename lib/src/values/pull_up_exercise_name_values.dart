@@ -1,4 +1,4 @@
-Map pull_up_exercise_name_values = {
+Map pullUpExerciseNameValues = {
   0: 'banded_pull_ups',
   1: '30_degree_lat_pulldown',
   2: 'band_assisted_chin_up',

@@ -1,4 +1,4 @@
-Map fit_base_type_values = {
+Map fitBaseTypeValues = {
   0: 'enum',
   1: 'sint8',
   2: 'uint8',

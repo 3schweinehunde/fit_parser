@@ -1,4 +1,4 @@
-Map hr_type_values = {
+Map hrTypeValues = {
   0: 'normal',
   1: 'irregular',
 };

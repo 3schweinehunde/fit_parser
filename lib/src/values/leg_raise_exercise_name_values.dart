@@ -1,4 +1,4 @@
-Map leg_raise_exercise_name_values = {
+Map legRaiseExerciseNameValues = {
   0: 'hanging_knee_raise',
   1: 'hanging_leg_raise',
   2: 'weighted_hanging_leg_raise',

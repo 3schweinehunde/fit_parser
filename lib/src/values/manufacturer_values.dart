@@ -1,4 +1,4 @@
-Map manufacturer_values = {
+Map manufacturerValues = {
   1: 'garmin',
   2: 'garmin_fr405_antfs',
   3: 'zephyr',

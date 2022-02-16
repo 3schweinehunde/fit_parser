@@ -1,4 +1,4 @@
-Map file_values = {
+Map fileValues = {
   1: 'device',
   2: 'settings',
   3: 'sport',

@@ -1,4 +1,4 @@
-Map olympic_lift_exercise_name_values = {
+Map olympicLiftExerciseNameValues = {
   0: 'barbell_hang_power_clean',
   1: 'barbell_hang_squat_clean',
   2: 'barbell_power_clean',

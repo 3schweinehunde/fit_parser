@@ -1,4 +1,4 @@
-Map event_type_values = {
+Map eventTypeValues = {
   0: 'start',
   1: 'stop',
   2: 'consecutive_depreciated',

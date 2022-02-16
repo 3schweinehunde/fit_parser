@@ -1,4 +1,4 @@
-Map hip_stability_exercise_name_values = {
+Map hipStabilityExerciseNameValues = {
   0: 'band_side_lying_leg_raise',
   1: 'dead_bug',
   2: 'weighted_dead_bug',

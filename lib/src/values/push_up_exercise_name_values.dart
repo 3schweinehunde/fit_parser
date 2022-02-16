@@ -1,4 +1,4 @@
-Map push_up_exercise_name_values = {
+Map pushUpExerciseNameValues = {
   0: 'chest_press_with_band',
   1: 'alternating_staggered_push_up',
   2: 'weighted_alternating_staggered_push_up',

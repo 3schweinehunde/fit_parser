@@ -1,4 +1,4 @@
-Map language_bits_0_values = {
+Map languageBits_0Values = {
   0x01: 'english',
   0x02: 'french',
   0x04: 'italian',

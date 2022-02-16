@@ -1,4 +1,4 @@
-Map flye_exercise_name_values = {
+Map flyeExerciseNameValues = {
   0: 'cable_crossover',
   1: 'decline_dumbbell_flye',
   2: 'dumbbell_flye',

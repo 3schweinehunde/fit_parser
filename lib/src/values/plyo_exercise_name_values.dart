@@ -1,4 +1,4 @@
-Map plyo_exercise_name_values = {
+Map plyoExerciseNameValues = {
   0: 'alternating_jump_lunge',
   1: 'weighted_alternating_jump_lunge',
   2: 'barbell_jump_squat',

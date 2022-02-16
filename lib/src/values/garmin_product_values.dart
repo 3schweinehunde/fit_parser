@@ -1,4 +1,4 @@
-Map garmin_product_values = {
+Map garminProductValues = {
   1: 'hrm1',
   2: 'axh01',
   3: 'axb01',

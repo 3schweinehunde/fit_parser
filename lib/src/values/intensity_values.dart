@@ -1,4 +1,4 @@
-Map intensity_values = {
+Map intensityValues = {
   0: 'active',
   1: 'rest',
   2: 'warmup',

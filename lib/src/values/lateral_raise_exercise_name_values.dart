@@ -1,4 +1,4 @@
-Map lateral_raise_exercise_name_values = {
+Map lateralRaiseExerciseNameValues = {
   0: '45_degree_cable_external_rotation',
   1: 'alternating_lateral_raise_with_static_hold',
   2: 'bar_muscle_up',

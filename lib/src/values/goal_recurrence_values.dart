@@ -1,4 +1,4 @@
-Map goal_recurrence_values = {
+Map goalRecurrenceValues = {
   0: 'off',
   1: 'daily',
   2: 'weekly',

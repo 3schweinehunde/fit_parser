@@ -1,4 +1,4 @@
-Map lunge_exercise_name_values = {
+Map lungeExerciseNameValues = {
   0: 'overhead_lunge',
   1: 'lunge_matrix',
   2: 'weighted_lunge_matrix',

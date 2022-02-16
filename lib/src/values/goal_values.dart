@@ -1,4 +1,4 @@
-Map goal_values = {
+Map goalValues = {
   0: 'time',
   1: 'distance',
   2: 'calories',

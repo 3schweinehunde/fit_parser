@@ -1,4 +1,4 @@
-Map exd_layout_values = {
+Map exdLayoutValues = {
   0: 'full_screen',
   1: 'half_vertical',
   2: 'half_horizontal',

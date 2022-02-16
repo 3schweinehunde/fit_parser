@@ -1,4 +1,4 @@
-Map hip_raise_exercise_name_values = {
+Map hipRaiseExerciseNameValues = {
   0: 'barbell_hip_thrust_on_floor',
   1: 'barbell_hip_thrust_with_bench',
   2: 'bent_knee_swiss_ball_reverse_hip_raise',

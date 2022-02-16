@@ -1,4 +1,4 @@
-Map leg_curl_exercise_name_values = {
+Map legCurlExerciseNameValues = {
   0: 'leg_curl',
   1: 'weighted_leg_curl',
   2: 'good_morning',

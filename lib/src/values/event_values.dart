@@ -1,4 +1,4 @@
-Map event_values = {
+Map eventValues = {
   0: 'timer',
   3: 'workout',
   4: 'workout_step',

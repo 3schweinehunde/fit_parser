@@ -1,4 +1,4 @@
-Map left_right_balance_values = {
+Map leftRightBalanceValues = {
   0x7F: 'mask',
   0x80: 'right',
 };

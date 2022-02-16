@@ -1,4 +1,4 @@
-Map dive_alarm_type_values = {
+Map diveAlarmTypeValues = {
   0: 'depth',
   1: 'time',
 };

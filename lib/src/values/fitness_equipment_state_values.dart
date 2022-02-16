@@ -1,4 +1,4 @@
-Map fitness_equipment_state_values = {
+Map fitnessEquipmentStateValues = {
   0: 'ready',
   1: 'in_use',
   2: 'paused',

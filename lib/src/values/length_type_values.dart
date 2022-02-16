@@ -1,4 +1,4 @@
-Map length_type_values = {
+Map lengthTypeValues = {
   0: 'idle',
   1: 'active',
 };

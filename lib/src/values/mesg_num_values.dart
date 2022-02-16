@@ -1,4 +1,4 @@
-Map mesg_num_values = {
+Map mesgNumValues = {
   0: 'file_id',
   1: 'capabilities',
   2: 'device_settings',

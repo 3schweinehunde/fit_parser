@@ -1,4 +1,4 @@
-Map exercise_category_values = {
+Map exerciseCategoryValues = {
   0: 'bench_press',
   1: 'calf_raise',
   2: 'cardio',

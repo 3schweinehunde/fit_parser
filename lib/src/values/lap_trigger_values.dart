@@ -1,4 +1,4 @@
-Map lap_trigger_values = {
+Map lapTriggerValues = {
   0: 'manual',
   1: 'time',
   2: 'distance',

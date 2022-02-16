@@ -1,4 +1,4 @@
-Map language_values = {
+Map languageValues = {
   0: 'english',
   1: 'french',
   2: 'italian',

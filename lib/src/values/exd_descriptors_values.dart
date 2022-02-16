@@ -1,4 +1,4 @@
-Map exd_descriptors_values = {
+Map exdDescriptorsValues = {
   0: 'bike_light_battery_status',
   1: 'beam_angle_status',
   2: 'batery_level',
