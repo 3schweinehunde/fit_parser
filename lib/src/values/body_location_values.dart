@@ -1,4 +1,4 @@
-Map body_location_values = {
+Map bodyLocationValues = {
   0: 'left_leg',
   1: 'left_calf',
   2: 'left_shin',

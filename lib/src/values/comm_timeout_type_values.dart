@@ -1,4 +1,4 @@
-Map comm_timeout_type_values = {
+Map commTimeoutTypeValues = {
   0: 'wildcard_pairing_timeout',
   1: 'pairing_timeout',
   2: 'connection_lost',

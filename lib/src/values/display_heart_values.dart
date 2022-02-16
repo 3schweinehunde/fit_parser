@@ -1,4 +1,4 @@
-Map display_heart_values = {
+Map displayHeartValues = {
   0: 'bpm',
   1: 'max',
   2: 'reserve',

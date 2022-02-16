@@ -1,4 +1,4 @@
-Map antplus_device_type_values = {
+Map antplusDeviceTypeValues = {
   1: 'antfs',
   11: 'bike_power',
   12: 'environment_sensor_legacy',

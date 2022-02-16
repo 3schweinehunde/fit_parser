@@ -1,4 +1,4 @@
-Map attitude_stage_values = {
+Map attitudeStageValues = {
   0: 'failed',
   1: 'aligning',
   2: 'degraded',

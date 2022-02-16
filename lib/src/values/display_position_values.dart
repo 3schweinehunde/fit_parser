@@ -1,4 +1,4 @@
-Map display_position_values = {
+Map displayPositionValues = {
   0: 'degree',
   1: 'degree_minute',
   2: 'degree_minute_second',

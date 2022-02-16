@@ -1,4 +1,4 @@
-Map day_of_week_values = {
+Map dayOfWeekValues = {
   0: 'sunday',
   1: 'monday',
   2: 'tuesday',

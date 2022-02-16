@@ -1,4 +1,4 @@
-Map bench_press_exercise_name_values = {
+Map benchPressExerciseNameValues = {
   0: 'alternating_dumbbell_chest_press_on_swiss_ball',
   1: 'barbell_bench_press',
   2: 'barbell_board_bench_press',

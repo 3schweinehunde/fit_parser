@@ -1,4 +1,4 @@
-Map bp_status_values = {
+Map bpStatusValues = {
   0: 'no_error',
   1: 'error_incomplete_data',
   2: 'error_no_measurement',

@@ -1,4 +1,4 @@
-Map backlight_mode_values = {
+Map backlightModeValues = {
   0: 'off',
   1: 'manual',
   2: 'key_and_messages',

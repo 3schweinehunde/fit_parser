@@ -1,4 +1,4 @@
-Map display_power_values = {
+Map displayPowerValues = {
   0: 'watts',
   1: 'percent_ftp',
 };

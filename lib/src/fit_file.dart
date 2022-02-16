@@ -42,7 +42,7 @@ class FitFile {
     buffer = Int8List.fromList(_fileBytes).buffer;
     byteData = ByteData.view(buffer);
 
-    _get_file_header();
+    _getFileHeader();
 
     while (pointer < fileHeaderLength + dataSize) {
       _getNextRecord();
@@ -51,7 +51,7 @@ class FitFile {
     return this;
   }
 
-  void _get_file_header() {
+  void _getFileHeader() {
     fileHeaderLength = byteData.getUint8(0);
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);

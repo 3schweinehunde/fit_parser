@@ -1,4 +1,4 @@
-Map activity_class_values = {
+Map activityClassValues = {
 //  0x7F: 'level',
   127: 'level',
   100: 'level_max',

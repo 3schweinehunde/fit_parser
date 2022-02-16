@@ -1,4 +1,4 @@
-Map course_point_values = {
+Map coursePointValues = {
   0: 'generic',
   1: 'summit',
   2: 'valley',

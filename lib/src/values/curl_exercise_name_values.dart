@@ -1,4 +1,4 @@
-Map curl_exercise_name_values = {
+Map curlExerciseNameValues = {
   0: 'alternating_dumbbell_biceps_curl',
   1: 'alternating_dumbbell_biceps_curl_on_swiss_ball',
   2: 'alternating_incline_dumbbell_biceps_curl',

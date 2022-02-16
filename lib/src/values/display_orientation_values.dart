@@ -1,4 +1,4 @@
-Map display_orientation_values = {
+Map displayOrientationValues = {
   0: 'auto',
   1: 'portrait',
   2: 'landscape',

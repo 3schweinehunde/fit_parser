@@ -1,4 +1,4 @@
-Map connectivity_capabilities_values = {
+Map connectivityCapabilitiesValues = {
   0x00000001: 'bluetooth',
   0x00000002: 'bluetooth_le',
   0x00000004: 'ant',

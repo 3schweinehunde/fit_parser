@@ -1,4 +1,4 @@
-Map calf_raise_exercise_name_values = {
+Map calfRaiseExerciseNameValues = {
   0: '3_way_calf_raise',
   1: '3_way_weighted_calf_raise',
   2: '3_way_single_leg_calf_raise',

@@ -1,4 +1,4 @@
-Map camera_event_type_values = {
+Map cameraEventTypeValues = {
   0: 'video_start',
   1: 'video_split',
   2: 'video_end',

@@ -1,4 +1,4 @@
-Map core_exercise_name_values = {
+Map coreExerciseNameValues = {
   0: 'abs_jabs',
   1: 'weighted_abs_jabs',
   2: 'alternating_plate_reach',

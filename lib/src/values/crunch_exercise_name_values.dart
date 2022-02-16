@@ -1,4 +1,4 @@
-Map crunch_exercise_name_values = {
+Map crunchExerciseNameValues = {
   0: 'bicycle_crunch',
   1: 'cable_crunch',
   2: 'circular_arm_crunch',

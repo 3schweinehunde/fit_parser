@@ -1,4 +1,4 @@
-Map carry_exercise_name_values = {
+Map carryExerciseNameValues = {
   0: 'bar_holds',
   1: 'farmers_walk',
   2: 'farmers_walk_on_toes',

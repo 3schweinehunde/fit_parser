@@ -61,7 +61,7 @@ class Value {
   dynamic lookupValue() {
     if (FitType.type[fieldType] != null) {
       // fieldType parsing
-      _numericValue ??= getInt(signed: false, data_type_size: size);
+      _numericValue ??= getInt(signed: false, dataTypeSize: size);
       dynamic _lookup = FitType.type[fieldType][_numericValue] ?? _numericValue;
       return _lookup;
     } else if (fieldType == 'unknown') {
@@ -112,9 +112,9 @@ class Value {
           return getIntegers(signed: false, dataTypeSize: 8);
 
         case 'float32':
-          return getFloats(data_type_size: 4);
+          return getFloats(dataTypeSize: 4);
         case 'float64':
-          return getFloats(data_type_size: 8);
+          return getFloats(dataTypeSize: 8);
 
         case 'string':
           return getString();
@@ -133,14 +133,14 @@ class Value {
     if (duplicity > 1) {
       var values = [];
       for (var counter = 1; counter <= duplicity; counter++) {
-        value = getInt(signed: signed, data_type_size: dataTypeSize);
+        value = getInt(signed: signed, dataTypeSize: dataTypeSize);
         value = value / scale - offset.round();
         values.add(value);
         fitFile.pointer += dataTypeSize;
       }
       return values;
     } else {
-      _numericValue = getInt(signed: signed, data_type_size: dataTypeSize);
+      _numericValue = getInt(signed: signed, dataTypeSize: dataTypeSize);
       value = _numericValue / scale - offset.round();
       fitFile.pointer += dataTypeSize;
       return value;
@@ -158,8 +158,8 @@ class Value {
     return tempValue;
   }
 
-  int getInt({signed, data_type_size}) {
-    switch (data_type_size) {
+  int getInt({signed, dataTypeSize}) {
+    switch (dataTypeSize) {
       case 1:
         return signed
             ? fitFile.byteData.getInt8(fitFile.pointer)
@@ -181,29 +181,29 @@ class Value {
     }
   }
 
-  dynamic getFloats({data_type_size}) {
-    var duplicity = size ~/ data_type_size;
+  dynamic getFloats({dataTypeSize}) {
+    var duplicity = size ~/ dataTypeSize;
     double value;
 
     if (duplicity > 1) {
       var values = [];
       for (var counter = 1; counter <= duplicity; counter++) {
-        value = getFloat(data_type_size: data_type_size);
+        value = getFloat(dataTypeSize: dataTypeSize);
         value = value / scale - offset;
         values.add(value);
-        fitFile.pointer += data_type_size;
+        fitFile.pointer += dataTypeSize;
       }
       return values;
     } else {
-      value = getFloat(data_type_size: data_type_size);
+      value = getFloat(dataTypeSize: dataTypeSize);
       value = value / scale - offset;
-      fitFile.pointer += data_type_size;
+      fitFile.pointer += dataTypeSize;
       return value;
     }
   }
 
-  double getFloat({signed, data_type_size}) {
-    switch (data_type_size) {
+  double getFloat({signed, dataTypeSize}) {
+    switch (dataTypeSize) {
       case 4:
         return fitFile.byteData.getFloat32(fitFile.pointer, architecture);
       case 8:

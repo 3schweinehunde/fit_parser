@@ -1,4 +1,4 @@
-Map auto_sync_frequency_values = {
+Map autoSyncFrequencyValues = {
   0: 'never',
   1: 'occasionally',
   2: 'frequent',

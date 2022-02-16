@@ -1,4 +1,4 @@
-Map auto_activity_detect_values = {
+Map autoActivityDetectValues = {
   0x00000000: 'none',
   0x00000001: 'running',
   0x00000002: 'cycling',

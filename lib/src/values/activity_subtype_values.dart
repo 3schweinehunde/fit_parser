@@ -1,4 +1,4 @@
-Map activity_subtype_values = {
+Map activitySubtypeValues = {
   0: 'generic',
   1: 'treadmill',
   2: 'street',

@@ -1,4 +1,4 @@
-Map bike_light_beam_angle_mode_values = {
+Map bikeLightBeamAngleModeValues = {
   0: 'manual',
   1: 'auto',
 };

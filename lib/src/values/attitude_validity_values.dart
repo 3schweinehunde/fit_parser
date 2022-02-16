@@ -1,4 +1,4 @@
-Map attitude_validity_values = {
+Map attitudeValidityValues = {
   0x0001: 'track_angle_heading_valid',
   0x0002: 'pitch_valid',
   0x0004: 'roll_valid',

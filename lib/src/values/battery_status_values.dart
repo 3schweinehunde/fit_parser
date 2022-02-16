@@ -1,4 +1,4 @@
-Map battery_status_values = {
+Map batteryStatusValues = {
   1: 'new',
   2: 'good',
   3: 'ok',

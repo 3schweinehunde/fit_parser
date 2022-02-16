@@ -1,4 +1,4 @@
-Map activity_type_values = {
+Map activityTypeValues = {
   0: 'generic',
   1: 'running',
   2: 'cycling',

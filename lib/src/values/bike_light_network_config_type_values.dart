@@ -1,4 +1,4 @@
-Map bike_light_network_config_type_values = {
+Map bikeLightNetworkConfigTypeValues = {
   0: 'auto',
   4: 'individual',
   5: 'high_visibility',

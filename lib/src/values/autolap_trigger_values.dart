@@ -1,4 +1,4 @@
-Map autolap_trigger_values = {
+Map autolapTriggerValues = {
   0: 'time',
   1: 'distance',
   2: 'position_start',

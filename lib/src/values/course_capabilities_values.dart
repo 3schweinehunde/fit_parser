@@ -1,4 +1,4 @@
-Map course_capabilities_values = {
+Map courseCapabilitiesValues = {
   0x00000001: 'processed',
   0x00000002: 'valid',
   0x00000004: 'time',

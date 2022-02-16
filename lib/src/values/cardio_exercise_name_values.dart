@@ -1,4 +1,4 @@
-Map cardio_exercise_name_values = {
+Map cardioExerciseNameValues = {
   0: 'bob_and_weave_circle',
   1: 'weighted_bob_and_weave_circle',
   2: 'cardio_core_crawl',

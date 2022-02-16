@@ -1,4 +1,4 @@
-Map deadlift_exercise_name_values = {
+Map deadliftExerciseNameValues = {
   0: 'barbell_deadlift',
   1: 'barbell_straight_leg_deadlift',
   2: 'dumbbell_deadlift',

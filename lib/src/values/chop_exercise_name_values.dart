@@ -1,4 +1,4 @@
-Map chop_exercise_name_values = {
+Map chopExerciseNameValues = {
   0: 'cable_pull_through',
   1: 'cable_rotational_lift',
   2: 'cable_woodchop',
