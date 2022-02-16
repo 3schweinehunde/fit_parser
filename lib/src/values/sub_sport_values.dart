@@ -1,4 +1,4 @@
-Map sub_sport_values = {
+Map subSportValues = {
   0: 'generic',
   1: 'treadmill',
   2: 'street',

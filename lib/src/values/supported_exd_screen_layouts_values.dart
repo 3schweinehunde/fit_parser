@@ -1,4 +1,4 @@
-Map supported_exd_screen_layouts_values = {
+Map supportedExdScreenLayoutsValues = {
   0x00000001: 'full_screen',
   0x00000002: 'half_vertical',
   0x00000004: 'half_horizontal',

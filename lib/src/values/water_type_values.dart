@@ -1,4 +1,4 @@
-Map water_type_values = {
+Map waterTypeValues = {
   0: 'fresh',
   1: 'salt',
   2: 'en13319',

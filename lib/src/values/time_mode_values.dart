@@ -1,4 +1,4 @@
-Map time_mode_values = {
+Map timeModeValues = {
   0: 'hour12',
   1: 'hour24',
   2: 'military',

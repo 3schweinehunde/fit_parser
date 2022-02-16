@@ -1,4 +1,4 @@
-Map squat_exercise_name_values = {
+Map squatExerciseNameValues = {
   0: 'leg_press',
   1: 'back_squat_with_body_bar',
   2: 'back_squats',

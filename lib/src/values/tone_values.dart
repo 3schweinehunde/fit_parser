@@ -1,4 +1,4 @@
-Map tone_values = {
+Map toneValues = {
   0: 'off',
   1: 'tone',
   2: 'vibrate',

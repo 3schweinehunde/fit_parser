@@ -1,4 +1,4 @@
-Map set_type_values = {
+Map setTypeValues = {
   0: 'rest',
   1: 'active',
 };

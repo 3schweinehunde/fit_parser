@@ -1,4 +1,4 @@
-Map wkt_step_target_values = {
+Map wktStepTargetValues = {
   0: 'speed',
   1: 'heart_rate',
   2: 'open',

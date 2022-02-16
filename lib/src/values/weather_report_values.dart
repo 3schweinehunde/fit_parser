@@ -1,4 +1,4 @@
-Map weather_report_values = {
+Map weatherReportValues = {
   0: 'current',
 // deprecated
 //  1: 'forecast',

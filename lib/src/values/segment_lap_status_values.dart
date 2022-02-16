@@ -1,4 +1,4 @@
-Map segment_lap_status_values = {
+Map segmentLapStatusValues = {
   0: 'end',
   1: 'fail',
 };

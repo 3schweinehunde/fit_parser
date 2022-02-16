@@ -1,4 +1,4 @@
-Map weather_severity_values = {
+Map weatherSeverityValues = {
   0: 'unknown',
   1: 'warning',
   2: 'watch',

@@ -1,4 +1,4 @@
-Map sensor_type_values = {
+Map sensorTypeValues = {
   0: 'accelerometer',
   1: 'gyroscope',
   2: 'compass',

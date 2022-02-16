@@ -1,4 +1,4 @@
-Map schedule_values = {
+Map scheduleValues = {
   0: 'workout',
   1: 'course',
 };

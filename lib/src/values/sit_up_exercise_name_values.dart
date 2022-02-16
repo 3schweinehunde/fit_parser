@@ -1,4 +1,4 @@
-Map sit_up_exercise_name_values = {
+Map sitUpExerciseNameValues = {
   0: 'alternating_sit_up',
   1: 'weighted_alternating_sit_up',
   2: 'bent_knee_v_up',

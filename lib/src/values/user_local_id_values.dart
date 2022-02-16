@@ -1,4 +1,4 @@
-Map user_local_id_values = {
+Map userLocalIdValues = {
   0x0000: 'local_min',
   0x000F: 'local_max',
   0x0010: 'stationary_min',

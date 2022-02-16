@@ -1,4 +1,4 @@
-Map stroke_type_values = {
+Map strokeTypeValues = {
   0: 'no_event',
   1: 'other',
   2: 'serve',

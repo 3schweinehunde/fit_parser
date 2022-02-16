@@ -1,4 +1,4 @@
-Map total_body_exercise_name_values = {
+Map totalBodyExerciseNameValues = {
   0: 'burpee',
   1: 'weighted_burpee',
   2: 'burpee_box_jump',

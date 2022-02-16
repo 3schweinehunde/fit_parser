@@ -1,4 +1,4 @@
-Map shoulder_stability_exercise_name_values = {
+Map shoulderStabilityExerciseNameValues = {
   0: '90_degree_cable_external_rotation',
   1: 'band_external_rotation',
   2: 'band_internal_rotation',

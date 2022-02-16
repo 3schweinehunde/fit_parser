@@ -1,4 +1,4 @@
-Map segment_leaderboard_type_values = {
+Map segmentLeaderboardTypeValues = {
   0: 'overall',
   1: 'personal_best',
   2: 'connections',

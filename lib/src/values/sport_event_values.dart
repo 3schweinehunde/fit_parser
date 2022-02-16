@@ -1,4 +1,4 @@
-Map sport_event_values = {
+Map sportEventValues = {
   0: 'uncategorized',
   1: 'geocaching',
   2: 'fitness',

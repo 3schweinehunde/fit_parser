@@ -1,4 +1,4 @@
-Map weather_status_values = {
+Map weatherStatusValues = {
   0: 'clear',
   1: 'partly_cloudy',
   2: 'mostly_cloudy',

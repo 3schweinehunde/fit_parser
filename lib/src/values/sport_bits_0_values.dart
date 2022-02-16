@@ -1,4 +1,4 @@
-Map sport_bits_0_values = {
+Map sportBits0Values = {
   0x01: 'generic',
   0x02: 'running',
   0x04: 'cycling',

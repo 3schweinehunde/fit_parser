@@ -1,4 +1,4 @@
-Map warm_up_exercise_name_values = {
+Map warmUpExerciseNameValues = {
   0: 'quadruped_rocking',
   1: 'neck_tilts',
   2: 'ankle_circles',

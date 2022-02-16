@@ -1,4 +1,4 @@
-Map turn_type_values = {
+Map turnTypeValues = {
   0: 'arriving_idx',
   1: 'arriving_left_idx',
   2: 'arriving_right_idx',

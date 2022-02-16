@@ -1,4 +1,4 @@
-Map weather_severe_type_values = {
+Map weatherSevereTypeValues = {
   0: 'unspecified',
   1: 'tornado',
   2: 'tsunami',

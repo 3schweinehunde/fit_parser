@@ -1,4 +1,4 @@
-Map swim_stroke_values = {
+Map swimStrokeValues = {
   0: 'freestyle',
   1: 'backstroke',
   2: 'breaststroke',

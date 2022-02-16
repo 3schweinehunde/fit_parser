@@ -1,4 +1,4 @@
-Map source_type_values = {
+Map sourceTypeValues = {
   0: 'ant',
   1: 'antplus',
   2: 'bluetooth',

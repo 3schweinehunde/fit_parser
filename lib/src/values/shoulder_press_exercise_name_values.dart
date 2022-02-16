@@ -1,4 +1,4 @@
-Map shoulder_press_exercise_name_values = {
+Map shoulderPressExerciseNameValues = {
   0: 'alternating_dumbbell_shoulder_press',
   1: 'arnold_press',
   2: 'barbell_front_squat_to_push_press',

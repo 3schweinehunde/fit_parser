@@ -1,4 +1,4 @@
-Map shrug_exercise_name_values = {
+Map shrugExerciseNameValues = {
   0: 'barbell_jump_shrug',
   1: 'barbell_shrug',
   2: 'barbell_upright_row',

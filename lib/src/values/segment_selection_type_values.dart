@@ -1,4 +1,4 @@
-Map segment_selection_type_values = {
+Map segmentSelectionTypeValues = {
   0: 'starred',
   1: 'suggested',
 };
