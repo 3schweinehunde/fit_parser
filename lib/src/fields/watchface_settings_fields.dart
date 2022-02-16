@@ -1,4 +1,4 @@
-Map watchface_settings_fields = {
+Map watchfaceSettingsFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

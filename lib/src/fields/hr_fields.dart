@@ -1,4 +1,4 @@
-Map hr_fields = {
+Map hrFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

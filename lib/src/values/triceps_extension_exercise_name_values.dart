@@ -1,4 +1,4 @@
-Map triceps_extension_exercise_name_values = {
+Map tricepsExtensionExerciseNameValues = {
   0: 'bench_dip',
   1: 'weighted_bench_dip',
   2: 'body_weight_dip',

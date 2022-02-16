@@ -6,10 +6,10 @@ import 'package:fit_parser/src/fields/developer_data_id_fields.dart';
 
 class CommonFile {
   Map messages = {
-    'file_id': file_id_fields,
-    'file_creator': file_creator_fields,
-    'timestamp_correlation': timestamp_correlation_fields,
-    'developer_data_id': developer_data_id_fields,
-    'field_description': field_description_fields,
+    'file_id': fileIdFields,
+    'file_creator': fileCreatorFields,
+    'timestamp_correlation': timestampCorrelationFields,
+    'developer_data_id': developerDataIdFields,
+    'field_description': fieldDescriptionFields,
   };
 }

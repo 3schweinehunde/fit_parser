@@ -5,9 +5,9 @@ import 'package:fit_parser/src/fields/workout_step_fields.dart';
 
 class WorkoutFile {
   Map messages = {
-    'workout': workout_fields,
-    'workout_session': workout_session_fields,
-    'workout_step': workout_step_fields,
-    'exercise_title': exercise_title_fields,
+    'workout': workoutFields,
+    'workout_session': workoutSessionFields,
+    'workout_step': workoutStepFields,
+    'exercise_title': exerciseTitleFields,
   };
 }

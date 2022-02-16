@@ -1,4 +1,4 @@
-Map gps_metadata_fields = {
+Map gpsMetadataFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

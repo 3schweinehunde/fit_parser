@@ -1,4 +1,4 @@
-Map device_settings_fields = {
+Map deviceSettingsFields = {
   0: {
     'field_name': 'active_time_zone',
     'data_type': 'uint8',

@@ -1,4 +1,4 @@
-Map video_description_fields = {
+Map videoDescriptionFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

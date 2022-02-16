@@ -31,24 +31,24 @@ class DataMessage {
     }
 
     fields = definitionMessage.fields;
-    fields.forEach((field) {
+    for (var field in fields) {
       var value = Value(
         fitFile: fitFile,
         field: field,
         architecture: definitionMessage.architecture,
       );
       values.add(value);
-    });
+    }
 
     developerFields = definitionMessage.developerFields;
-    developerFields.forEach((developerField) {
+    for (var developerField in developerFields) {
       var value = Value.fromDeveloperField(
         fitFile: fitFile,
         developerField: developerField,
         architecture: definitionMessage.architecture,
       );
       values.add(value);
-    });
+    }
 
     if (definitionMessage.globalMessageNumber == 206) {
       var valueMap = {for (var value in values) value.fieldName: value.value};

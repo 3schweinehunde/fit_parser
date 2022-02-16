@@ -1,4 +1,4 @@
-Map barometer_data_fields = {
+Map barometerDataFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

@@ -7,11 +7,11 @@ import 'package:fit_parser/src/fields/software_fields.dart';
 
 class DeviceFile {
   Map messages = {
-    'software': software_fields,
-    'slave_device': slave_device_fields,
-    'capabilities': capabilities_fields,
-    'file_capabilities': file_capabilities_fields,
-    'mesg_capabilities': mesg_capabilities_fields,
-    'field_capabilities': field_capabilities_fields,
+    'software': softwareFields,
+    'slave_device': slaveDeviceFields,
+    'capabilities': capabilitiesFields,
+    'file_capabilities': fileCapabilitiesFields,
+    'mesg_capabilities': mesgCapabilitiesFields,
+    'field_capabilities': fieldCapabilitiesFields,
   };
 }

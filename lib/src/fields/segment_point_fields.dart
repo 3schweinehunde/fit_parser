@@ -1,4 +1,4 @@
-Map segment_point_fields = {
+Map segmentPointFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

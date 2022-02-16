@@ -1,4 +1,4 @@
-Map slave_device_fields = {
+Map slaveDeviceFields = {
   0: {
     'field_name': 'manufacturer',
     'data_type': 'manufacturer',

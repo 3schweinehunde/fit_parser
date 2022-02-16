@@ -1,4 +1,4 @@
-Map sport_fields = {
+Map sportFields = {
   0: {
     'field_name': 'sport',
     'field_type': 'sport',

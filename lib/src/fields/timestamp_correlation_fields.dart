@@ -1,4 +1,4 @@
-Map timestamp_correlation_fields = {
+Map timestampCorrelationFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

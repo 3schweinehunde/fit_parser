@@ -1,4 +1,4 @@
-Map exd_data_concept_configuration_fields = {
+Map exdDataConceptConfigurationFields = {
   0: {
     'field_name': 'screen_index',
     'data_type': 'uint8',

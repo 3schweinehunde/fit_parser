@@ -1,4 +1,4 @@
-Map connectivity_fields = {
+Map connectivityFields = {
   0: {
     'field_name': 'bluetooth_enabled',
     'data_type': 'bool',

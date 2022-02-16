@@ -1,4 +1,4 @@
-Map weather_alert_fields = {
+Map weatherAlertFields = {
   253: {
     'fied_name': 'timestamp',
     'data_type': 'date_time',

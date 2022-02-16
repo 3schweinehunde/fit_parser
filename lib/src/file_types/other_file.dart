@@ -11,15 +11,15 @@ import 'package:fit_parser/src/fields/memo_glob_fields.dart';
 
 class OtherFile {
   Map messages = {
-    'memo_glob': memo_glob_fields,
-    'ant_channel_id': ant_channel_id_fields,
-    'ant_rx': ant_rx_fields,
-    'ant_tx': ant_tx_fields,
-    'exd_screen_configuration': exd_screen_configuration_fields,
-    'exd_data_field_configuration': exd_data_field_configuration_fields,
-    'exd_data_concept_configuration': exd_data_concept_configuration_fields,
-    'field_description': field_description_fields,
-    'developer_data_id': developer_data_id_fields,
-    'dive_summary': dive_summary_fields,
+    'memo_glob': memoGlobFields,
+    'ant_channel_id': antChannelIdFields,
+    'ant_rx': antRxFields,
+    'ant_tx': antTxFields,
+    'exd_screen_configuration': exdScreenConfigurationFields,
+    'exd_data_field_configuration': exdDataFieldConfigurationFields,
+    'exd_data_concept_configuration': exdDataConceptConfigurationFields,
+    'field_description': fieldDescriptionFields,
+    'developer_data_id': developerDataIdFields,
+    'dive_summary': diveSummaryFields,
   };
 }

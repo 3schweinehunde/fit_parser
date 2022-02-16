@@ -1,4 +1,4 @@
-Map nmea_sentence_fields = {
+Map nmeaSentenceFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

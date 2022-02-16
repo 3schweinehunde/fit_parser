@@ -1,4 +1,4 @@
-Map hrm_profile_fields = {
+Map hrmProfileFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

@@ -1,4 +1,4 @@
-Map video_clip_fields = {
+Map videoClipFields = {
   0: {
     'field_name': 'clip_number',
     'data_type': 'uint16',

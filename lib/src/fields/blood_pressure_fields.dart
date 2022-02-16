@@ -1,4 +1,4 @@
-Map blood_pressure_fields = {
+Map bloodPressureFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

@@ -1,4 +1,4 @@
-Map ant_rx_fields = {
+Map antRxFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

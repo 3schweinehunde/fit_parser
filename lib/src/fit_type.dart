@@ -312,14 +312,14 @@ class FitType {
     'switch': switch_values,
 // T
     'time_mode': time_mode_values,
-    'time_zone': time_zone_values,
-    'timer_trigger': timer_trigger_values,
+    'time_zone': timeZoneValues,
+    'timer_trigger': timerTriggerValues,
     'tissue_model_type': {
       0: 'zhl_16c',
     },
     'tone': tone_values,
     'total_body_exercise_name': total_body_exercise_name_values,
-    'triceps_extension_exercise_name': triceps_extension_exercise_name_values,
+    'triceps_extension_exercise_name': tricepsExtensionExerciseNameValues,
     'turn_type': turn_type_values,
 // U
     'user_local_id': user_local_id_values,
@@ -334,10 +334,10 @@ class FitType {
     'weight': {
       0xFFFE: 'calculating',
     },
-    'wkt_step_duration': wkt_step_duration_values,
+    'wkt_step_duration': wktStepDurationValues,
     'wkt_step_target': wkt_step_target_values,
-    'workout_capabilities': workout_capabilities_values,
-    'workout_equipment': workout_equipment_values,
+    'workout_capabilities': workoutCapabilitiesValues,
+    'workout_equipment': workoutEquipmentValues,
     'workout_hr': {
       100: 'bpm_offset',
     },

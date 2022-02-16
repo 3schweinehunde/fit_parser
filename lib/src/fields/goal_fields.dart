@@ -1,4 +1,4 @@
-Map goal_fields = {
+Map goalFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

@@ -1,4 +1,4 @@
-Map video_frame_fields = {
+Map videoFrameFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

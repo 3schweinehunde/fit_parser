@@ -1,4 +1,4 @@
-Map lap_fields = {
+Map lapFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

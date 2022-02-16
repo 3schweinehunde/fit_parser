@@ -1,4 +1,4 @@
-Map time_zone_values = {
+Map timeZoneValues = {
   0: 'almaty',
   1: 'bangkok',
   2: 'bombay',

@@ -1,4 +1,4 @@
-Map event_fields = {
+Map eventFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

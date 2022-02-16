@@ -1,4 +1,4 @@
-Map ohr_settings_fields = {
+Map ohrSettingsFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

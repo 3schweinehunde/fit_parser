@@ -1,4 +1,4 @@
-Map workout_capabilities_values = {
+Map workoutCapabilitiesValues = {
   0x00000001: 'interval',
   0x00000002: 'custom',
   0x00000004: 'fitness_equipment',

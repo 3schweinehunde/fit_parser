@@ -1,4 +1,4 @@
-Map capabilities_fields = {
+Map capabilitiesFields = {
   0: {
     'field_name': 'languages',
     'data_type': 'uint8z',

@@ -1,4 +1,4 @@
-Map obdii_data_fields = {
+Map obdiiDataFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

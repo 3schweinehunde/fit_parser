@@ -1,4 +1,4 @@
-Map memo_glob_fields = {
+Map memoGlobFields = {
   250: {
     'field_name': 'part_index',
     'data_type': 'uint32',

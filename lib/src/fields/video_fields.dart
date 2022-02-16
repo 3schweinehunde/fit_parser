@@ -1,4 +1,4 @@
-Map video_fields = {
+Map videoFields = {
   0: {
     'field_name': 'url',
     'data_type': 'string',

@@ -1,4 +1,4 @@
-Map stress_level_fields = {
+Map stressLevelFields = {
   0: {
     'field_name': 'stress_level_value',
     'data_type': 'sint16',

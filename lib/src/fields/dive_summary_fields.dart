@@ -1,4 +1,4 @@
-Map dive_summary_fields = {
+Map diveSummaryFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

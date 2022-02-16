@@ -9,13 +9,13 @@ import 'package:fit_parser/src/fields/exercise_title_fields.dart';
 
 class GarminActivityFile {
   Map messages = {
-    'user_profile': user_profile_fields,
-    'device_settings': device_settings_fields,
-    'sport': sport_fields,
-    'zones_target': zones_target_fields,
-    'segment_lap': segment_lap_fields,
-    'workout': workout_fields,
-    'workout_step': workout_step_fields,
-    'exercise_title': exercise_title_fields,
+    'user_profile': userProfileFields,
+    'device_settings': deviceSettingsFields,
+    'sport': sportFields,
+    'zones_target': zonesTargetFields,
+    'segment_lap': segmentLapFields,
+    'workout': workoutFields,
+    'workout_step': workoutStepFields,
+    'exercise_title': exerciseTitleFields,
   };
 }

@@ -45,7 +45,7 @@ class FitFile {
     _get_file_header();
 
     while (pointer < fileHeaderLength + dataSize) {
-      _get_next_record();
+      _getNextRecord();
     }
 
     return this;
@@ -56,24 +56,24 @@ class FitFile {
     pointer = fileHeaderLength;
     protocolVersion = byteData.getUint8(1);
     if (debugPrintFrom < debugPrintTo) {
-      print('protocolVersion: ${protocolVersion}');
+      print('protocolVersion: $protocolVersion');
     }
     profileVersion = byteData.getUint16(2, endianness);
     if (debugPrintFrom < debugPrintTo) {
-      print('profileVersion: ${profileVersion}');
+      print('profileVersion: $profileVersion');
     }
     dataSize = byteData.getUint32(4, endianness);
-    if (debugPrintFrom < debugPrintTo) print('dataSize: ${dataSize}');
+    if (debugPrintFrom < debugPrintTo) print('dataSize: $dataSize');
     dataType = AsciiDecoder().convert(buffer.asUint8List(8, 4));
-    if (debugPrintFrom < debugPrintTo) print('dataType: ${dataType}');
+    if (debugPrintFrom < debugPrintTo) print('dataType: $dataType');
 
     if (fileHeaderLength == 14) {
       crc = byteData.getUint16(12, endianness);
-      print('crc: ${crc}');
+      print('crc: $crc');
     }
   }
 
-  void _get_next_record() {
+  void _getNextRecord() {
     var recordHeader = byteData.getUint8(pointer);
     pointer += 1;
     lineNumber += 1;

@@ -1,4 +1,4 @@
-Map power_zone_fields = {
+Map powerZoneFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

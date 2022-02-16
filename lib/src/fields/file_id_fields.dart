@@ -1,4 +1,4 @@
-Map file_id_fields = {
+Map fileIdFields = {
   0: {
     'field_name': 'type',
     'field_type': 'file',

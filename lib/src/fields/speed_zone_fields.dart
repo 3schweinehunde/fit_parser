@@ -1,4 +1,4 @@
-Map speed_zone_fields = {
+Map speedZoneFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

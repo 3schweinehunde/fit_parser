@@ -42,12 +42,12 @@ class DefinitionMessage {
 
     if (fitFile.lineNumber < fitFile.debugPrintTo &&
         fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
-      print('  developerData: ${developerData}, '
-          'localMessageType: ${localMessageType}, '
+      print('  developerData: $developerData, '
+          'localMessageType: $localMessageType, '
           "architecture: ${architecture == Endian.little ? "little" : "big"}, "
-          'globalMessageNumber: ${globalMessageNumber}, '
-          'globalMessageName: ${globalMessageName}, '
-          'numberOfFields: ${numberOfFields}');
+          'globalMessageNumber: $globalMessageNumber, '
+          'globalMessageName: $globalMessageName, '
+          'numberOfFields: $numberOfFields');
     }
 
     for (var fieldCounter = 1; fieldCounter <= numberOfFields; fieldCounter++) {
@@ -69,7 +69,7 @@ class DefinitionMessage {
       fields.add(field);
       if (fitFile.lineNumber < fitFile.debugPrintTo &&
           fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
-        print('    ${fieldCounter} ${field}'
+        print('    $fieldCounter $field'
             ' / pointer_after: ${fitFile.pointer}');
       }
     }
@@ -100,7 +100,7 @@ class DefinitionMessage {
         developerFields.add(developerField);
         if (fitFile.lineNumber < fitFile.debugPrintTo &&
             fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
-          print('    dev ${developerFieldCounter} ${developerField}'
+          print('    dev $developerFieldCounter $developerField'
               ' / pointer_after: ${fitFile.pointer}');
         }
       }

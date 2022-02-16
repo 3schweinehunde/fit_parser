@@ -1,4 +1,4 @@
-Map schedule_fields = {
+Map scheduleFields = {
   0: {
     'field_name': 'manufacturer',
     'field_type': 'manufacturer',

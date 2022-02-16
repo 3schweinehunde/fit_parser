@@ -8,12 +8,12 @@ import 'package:fit_parser/src/fields/watchface_settings_fields.dart';
 
 class SettingsFile {
   Map messages = {
-    'device_settings': device_settings_fields,
-    'user_profile': user_profile_fields,
-    'hrm_profile': hrm_profile_fields,
-    'sdm_profile': sdm_profile_fields,
-    'connectivity': connectivity_fields,
-    'watchface_settings': watchface_settings_fields,
-    'ohr_settings': ohr_settings_fields,
+    'device_settings': deviceSettingsFields,
+    'user_profile': userProfileFields,
+    'hrm_profile': hrmProfileFields,
+    'sdm_profile': sdmProfileFields,
+    'connectivity': connectivityFields,
+    'watchface_settings': watchfaceSettingsFields,
+    'ohr_settings': ohrSettingsFields,
   };
 }

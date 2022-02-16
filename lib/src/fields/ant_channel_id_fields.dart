@@ -1,4 +1,4 @@
-Map ant_channel_id_fields = {
+Map antChannelIdFields = {
   0: {
     'field_name': 'channel_number',
     'data_type': 'uint8',

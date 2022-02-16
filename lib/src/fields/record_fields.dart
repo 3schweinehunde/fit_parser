@@ -1,4 +1,4 @@
-Map record_fields = {
+Map recordFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

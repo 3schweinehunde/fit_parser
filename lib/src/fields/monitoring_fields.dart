@@ -1,4 +1,4 @@
-Map monitoring_fields = {
+Map monitoringFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

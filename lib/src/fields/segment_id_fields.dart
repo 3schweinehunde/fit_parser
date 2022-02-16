@@ -1,4 +1,4 @@
-Map segment_id_fields = {
+Map segmentIdFields = {
   0: {
     'field_name': 'name',
     'data_type': 'string',

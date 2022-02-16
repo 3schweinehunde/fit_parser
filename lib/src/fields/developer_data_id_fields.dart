@@ -1,4 +1,4 @@
-Map developer_data_id_fields = {
+Map developerDataIdFields = {
   0: {
     'field_name': 'developer_id',
     'data_type': 'byte',

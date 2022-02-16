@@ -25,8 +25,8 @@ class Value {
   Endian architecture;
 
   int get baseTypeNumber => baseTypeByte & 31;
-  int get baseType => base_types[baseTypeNumber]['type_name'];
-  int get baseTypeSize => base_types[baseTypeNumber]['size'];
+  int get baseType => baseTypes[baseTypeNumber]['type_name'];
+  int get baseTypeSize => baseTypes[baseTypeNumber]['size'];
 
   Value resolveReference({List<Value> values}) {
     if (messageTypeFields != null) {
@@ -83,33 +83,33 @@ class Value {
         case 'bool':
           return getBool();
         case 'sint8':
-          return getIntegers(signed: true, data_type_size: 1);
+          return getIntegers(signed: true, dataTypeSize: 1);
         case 'byte':
         case 'enum':
         case 'uint8':
         case 'uint8z':
-          return getIntegers(signed: false, data_type_size: 1);
+          return getIntegers(signed: false, dataTypeSize: 1);
 
         case 'sint16':
-          return getIntegers(signed: true, data_type_size: 2);
+          return getIntegers(signed: true, dataTypeSize: 2);
         case 'uint16':
         case 'uint16z':
-          return getIntegers(signed: false, data_type_size: 2);
+          return getIntegers(signed: false, dataTypeSize: 2);
 
         case 'sint32':
-          return getIntegers(signed: true, data_type_size: 4);
+          return getIntegers(signed: true, dataTypeSize: 4);
         case 'date_time':
         case 'local_date_time':
         case 'localtime_into_day':
         case 'uint32':
         case 'uint32z':
-          return getIntegers(signed: false, data_type_size: 4);
+          return getIntegers(signed: false, dataTypeSize: 4);
 
         case 'sint64':
-          return getIntegers(signed: true, data_type_size: 8);
+          return getIntegers(signed: true, dataTypeSize: 8);
         case 'uint64':
         case 'uint64z':
-          return getIntegers(signed: false, data_type_size: 8);
+          return getIntegers(signed: false, dataTypeSize: 8);
 
         case 'float32':
           return getFloats(data_type_size: 4);
@@ -126,23 +126,23 @@ class Value {
     }
   }
 
-  dynamic getIntegers({signed, data_type_size}) {
-    var duplicity = size ~/ data_type_size;
+  dynamic getIntegers({signed, dataTypeSize}) {
+    var duplicity = size ~/ dataTypeSize;
     dynamic value;
 
     if (duplicity > 1) {
       var values = [];
       for (var counter = 1; counter <= duplicity; counter++) {
-        value = getInt(signed: signed, data_type_size: data_type_size);
+        value = getInt(signed: signed, data_type_size: dataTypeSize);
         value = value / scale - offset.round();
         values.add(value);
-        fitFile.pointer += data_type_size;
+        fitFile.pointer += dataTypeSize;
       }
       return values;
     } else {
-      _numericValue = getInt(signed: signed, data_type_size: data_type_size);
+      _numericValue = getInt(signed: signed, data_type_size: dataTypeSize);
       value = _numericValue / scale - offset.round();
-      fitFile.pointer += data_type_size;
+      fitFile.pointer += dataTypeSize;
       return value;
     }
   }

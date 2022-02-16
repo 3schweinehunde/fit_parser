@@ -1,4 +1,4 @@
-Map device_info_fields = {
+Map deviceInfoFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

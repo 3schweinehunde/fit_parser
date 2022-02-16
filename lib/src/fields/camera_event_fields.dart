@@ -1,4 +1,4 @@
-Map camera_event_fields = {
+Map cameraEventFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

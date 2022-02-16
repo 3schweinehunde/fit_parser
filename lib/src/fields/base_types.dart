@@ -1,4 +1,4 @@
-Map base_types = {
+Map baseTypes = {
   0: {
     'type_name': 'enum',
     'endian_ability': 0,

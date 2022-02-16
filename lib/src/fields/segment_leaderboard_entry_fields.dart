@@ -1,4 +1,4 @@
-Map segment_leaderboard_entry_fields = {
+Map segmentLeaderboardEntryFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

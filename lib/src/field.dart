@@ -21,7 +21,7 @@ class Field {
 
   bool get endianAbility => baseTypeByte & 128 == 128;
   int get baseTypeNumber => baseTypeByte & 31;
-  String get baseType => base_types[baseTypeNumber]['type_name'];
+  String get baseType => baseTypes[baseTypeNumber]['type_name'];
 
   Field(
       {this.fieldDefinitionNumber,

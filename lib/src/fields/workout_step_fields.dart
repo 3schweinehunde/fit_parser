@@ -1,4 +1,4 @@
-Map workout_step_fields = {
+Map workoutStepFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

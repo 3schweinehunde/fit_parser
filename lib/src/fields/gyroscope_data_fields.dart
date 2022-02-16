@@ -1,4 +1,4 @@
-Map gyroscope_data_fields = {
+Map gyroscopeDataFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

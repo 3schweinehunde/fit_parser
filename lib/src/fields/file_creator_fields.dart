@@ -1,4 +1,4 @@
-Map file_creator_fields = {
+Map fileCreatorFields = {
   0: {
     'field_name': 'software_version',
     'data_type': 'uint16',

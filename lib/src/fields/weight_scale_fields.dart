@@ -1,4 +1,4 @@
-Map weight_scale_fields = {
+Map weightScaleFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

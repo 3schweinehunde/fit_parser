@@ -1,4 +1,4 @@
-Map one_d_sensor_calibration_fields = {
+Map oneDSensorCalibrationFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

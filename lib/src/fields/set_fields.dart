@@ -1,4 +1,4 @@
-Map set_fields = {
+Map setFields = {
   254: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

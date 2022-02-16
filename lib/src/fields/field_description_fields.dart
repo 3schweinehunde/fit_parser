@@ -1,4 +1,4 @@
-Map field_description_fields = {
+Map fieldDescriptionFields = {
   0: {
     'field_name': 'developer_data_index',
     'data_type': 'uint8',

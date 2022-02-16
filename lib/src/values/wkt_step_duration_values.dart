@@ -1,4 +1,4 @@
-Map wkt_step_duration_values = {
+Map wktStepDurationValues = {
   0: 'time',
   1: 'distance',
   2: 'hr_less_than',

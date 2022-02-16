@@ -1,4 +1,4 @@
-Map dive_gas_fields = {
+Map diveGasFields = {
   254: {
     'field_name': 'message_index',
     'field_type': 'message_index',

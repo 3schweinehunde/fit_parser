@@ -1,4 +1,4 @@
-Map aviation_attitude_fields = {
+Map aviationAttitudeFields = {
   253: {
     'field_name': 'timestamp',
     'data_type': 'date_time',

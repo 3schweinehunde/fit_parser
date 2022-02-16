@@ -1,4 +1,4 @@
-Map zones_target_fields = {
+Map zonesTargetFields = {
   1: {
     'field_name': 'max_heart_rate',
     'data_type': 'uint8',

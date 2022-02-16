@@ -1,4 +1,4 @@
-Map software_fields = {
+Map softwareFields = {
   254: {
     'field_name': 'message_index',
     'data_type': 'message_index',
