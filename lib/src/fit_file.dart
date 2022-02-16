@@ -73,7 +73,7 @@ class FitFile {
     }
   }
 
-  void _get_next_record({debug = false}) {
+  void _get_next_record() {
     var recordHeader = byteData.getUint8(pointer);
     pointer += 1;
     lineNumber += 1;
