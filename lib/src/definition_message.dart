@@ -6,18 +6,20 @@ import 'package:fit_parser/src/fit_type.dart';
 import 'developer_field.dart';
 
 class DefinitionMessage {
-  bool developerData;
-  int localMessageType;
-  Endian architecture;
-  int globalMessageNumber;
-  int numberOfFields;
-  int numberOfDeveloperFields;
+  late bool developerData;
+  int? localMessageType;
+  Endian? architecture;
+  int? globalMessageNumber;
+  late int numberOfFields;
+  late int numberOfDeveloperFields;
   List<Field> fields = [];
   List<DeveloperField> developerFields = [];
 
-  String get globalMessageName => FitType.type['mesg_num'][globalMessageNumber];
+  String? get globalMessageName =>
+      FitType.type['mesg_num'][globalMessageNumber];
 
-  DefinitionMessage({FitFile fitFile, int recordHeader, int lineNumber}) {
+  DefinitionMessage(
+      {required FitFile fitFile, required int recordHeader, int? lineNumber}) {
     developerData = recordHeader & 32 == 32;
     localMessageType = recordHeader & 15;
     var data = fitFile.byteData;
@@ -34,7 +36,7 @@ class DefinitionMessage {
     fitFile.endianness = architecture;
     fitFile.pointer += 1;
 
-    globalMessageNumber = data.getUint16(fitFile.pointer, fitFile.endianness);
+    globalMessageNumber = data.getUint16(fitFile.pointer, fitFile.endianness!);
     fitFile.pointer += 2;
 
     numberOfFields = data.getUint8(fitFile.pointer);

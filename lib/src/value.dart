@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:fit_parser/src/developer_field.dart';
 import 'package:fit_parser/src/field.dart';
 import 'package:fit_parser/src/fields/base_types.dart';
@@ -7,42 +8,42 @@ import 'package:fit_parser/src/fit_type.dart';
 import 'dart:typed_data';
 
 class Value {
-  String fieldName;
-  String fieldType;
-  String dataType;
-  int size;
-  int baseTypeByte;
+  String? fieldName;
+  String? fieldType;
+  String? dataType;
+  int? size;
+  int? baseTypeByte;
   FitFile fitFile;
   dynamic _numericValue;
   dynamic scale;
-  double offset;
-  String units;
+  double? offset;
+  String? units;
   dynamic value;
-  Field field;
-  DeveloperField developerField;
-  Map messageTypeFields;
-  int pointer;
-  Endian architecture;
+  late Field field;
+  late DeveloperField developerField;
+  Map? messageTypeFields;
+  int? pointer;
+  Endian? architecture;
 
-  int get baseTypeNumber => baseTypeByte & 31;
-  int get baseType => baseTypes[baseTypeNumber]['type_name'];
-  int get baseTypeSize => baseTypes[baseTypeNumber]['size'];
+  int get baseTypeNumber => baseTypeByte! & 31;
+  int? get baseType => baseTypes[baseTypeNumber]['type_name'];
+  int? get baseTypeSize => baseTypes[baseTypeNumber]['size'];
 
-  Value resolveReference({List<Value> values}) {
+  Value resolveReference({List<Value>? values}) {
     if (messageTypeFields != null) {
-      var referenceFieldName = messageTypeFields['reference_field_name'];
-      Value referenceValue;
+      var referenceFieldName = messageTypeFields!['reference_field_name'];
+      Value? referenceValue;
 
       // Reference field replacement
       if (referenceFieldName != null) {
-        referenceValue = values.firstWhere((currentValue) {
+        referenceValue = values!.firstWhereOrNull((currentValue) {
           return (currentValue.messageTypeFields != null) &&
-              (currentValue.messageTypeFields['field_name'] ==
+              (currentValue.messageTypeFields!['field_name'] ==
                   referenceFieldName);
-        }, orElse: () => null);
+        });
         if (referenceValue != null) {
-          Map reference =
-              messageTypeFields['reference_field_value'][referenceValue.value];
+          Map? reference =
+              messageTypeFields!['reference_field_value'][referenceValue.value];
           if (reference != null) {
             fieldName = reference['field_name'] ?? fieldName;
             fieldType = reference['field_type'] ?? fieldType;
@@ -75,7 +76,7 @@ class Value {
     // Data parsing
     if (fieldType != null) {
       dynamic lookedUpValue = lookupValue();
-      fitFile.pointer += size;
+      fitFile.pointer += size!;
       return lookedUpValue;
     } else if (dataType != null) {
       // dataType parsing
@@ -121,27 +122,27 @@ class Value {
       }
     } else {
       // Neither data type nor field type available!
-      fitFile.pointer += size;
+      fitFile.pointer += size!;
       return null;
     }
   }
 
-  dynamic getIntegers({signed, dataTypeSize}) {
-    var duplicity = size ~/ dataTypeSize;
+  dynamic getIntegers({signed, required int dataTypeSize}) {
+    var duplicity = size! ~/ dataTypeSize;
     dynamic value;
 
     if (duplicity > 1) {
       var values = [];
       for (var counter = 1; counter <= duplicity; counter++) {
         value = getInt(signed: signed, dataTypeSize: dataTypeSize);
-        value = value / scale - offset.round();
+        value = value / scale - offset!.round();
         values.add(value);
         fitFile.pointer += dataTypeSize;
       }
       return values;
     } else {
       _numericValue = getInt(signed: signed, dataTypeSize: dataTypeSize);
-      value = _numericValue / scale - offset.round();
+      value = _numericValue / scale - offset!.round();
       fitFile.pointer += dataTypeSize;
       return value;
     }
@@ -166,37 +167,37 @@ class Value {
             : fitFile.byteData.getUint8(fitFile.pointer);
       case 2:
         return signed
-            ? fitFile.byteData.getInt16(fitFile.pointer, architecture)
-            : fitFile.byteData.getUint16(fitFile.pointer, architecture);
+            ? fitFile.byteData.getInt16(fitFile.pointer, architecture!)
+            : fitFile.byteData.getUint16(fitFile.pointer, architecture!);
       case 4:
         return signed
-            ? fitFile.byteData.getInt32(fitFile.pointer, architecture)
-            : fitFile.byteData.getUint32(fitFile.pointer, architecture);
+            ? fitFile.byteData.getInt32(fitFile.pointer, architecture!)
+            : fitFile.byteData.getUint32(fitFile.pointer, architecture!);
       case 8:
         return signed
-            ? fitFile.byteData.getInt64(fitFile.pointer, architecture)
-            : fitFile.byteData.getUint64(fitFile.pointer, architecture);
+            ? fitFile.byteData.getInt64(fitFile.pointer, architecture!)
+            : fitFile.byteData.getUint64(fitFile.pointer, architecture!);
       default:
         throw ('No valid data type size in getInt');
     }
   }
 
-  dynamic getFloats({dataTypeSize}) {
-    var duplicity = size ~/ dataTypeSize;
+  dynamic getFloats({required int dataTypeSize}) {
+    var duplicity = size! ~/ dataTypeSize;
     double value;
 
     if (duplicity > 1) {
       var values = [];
       for (var counter = 1; counter <= duplicity; counter++) {
         value = getFloat(dataTypeSize: dataTypeSize);
-        value = value / scale - offset;
+        value = value / scale - offset!;
         values.add(value);
         fitFile.pointer += dataTypeSize;
       }
       return values;
     } else {
       value = getFloat(dataTypeSize: dataTypeSize);
-      value = value / scale - offset;
+      value = value / scale - offset!;
       fitFile.pointer += dataTypeSize;
       return value;
     }
@@ -205,9 +206,9 @@ class Value {
   double getFloat({signed, dataTypeSize}) {
     switch (dataTypeSize) {
       case 4:
-        return fitFile.byteData.getFloat32(fitFile.pointer, architecture);
+        return fitFile.byteData.getFloat32(fitFile.pointer, architecture!);
       case 8:
-        return fitFile.byteData.getFloat64(fitFile.pointer, architecture);
+        return fitFile.byteData.getFloat64(fitFile.pointer, architecture!);
       default:
         throw ('No valid data type size in getFloat');
     }
@@ -217,11 +218,11 @@ class Value {
     var value = AsciiCodec().decode(
         fitFile.buffer.asUint8List(fitFile.pointer, size),
         allowInvalid: true);
-    fitFile.pointer += size;
+    fitFile.pointer += size!;
     return value;
   }
 
-  Value({this.fitFile, this.field, this.architecture}) {
+  Value({required this.fitFile, required this.field, this.architecture}) {
     pointer = fitFile.pointer;
     messageTypeFields = field.messageTypeFields;
     fieldName = field.fieldName;
@@ -236,8 +237,8 @@ class Value {
   }
 
   Value.fromDeveloperField({
-    this.fitFile,
-    this.developerField,
+    required this.fitFile,
+    required this.developerField,
     this.architecture,
   }) {
     pointer = fitFile.pointer;

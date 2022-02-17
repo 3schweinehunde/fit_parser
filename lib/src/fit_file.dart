@@ -7,23 +7,23 @@ import 'developer.dart';
 import 'developer_field_definition.dart';
 
 class FitFile {
-  String path;
-  Endian endianness = Endian.little;
+  String? path;
+  Endian? endianness = Endian.little;
 
-  int fileHeaderLength;
-  int protocolVersion;
-  int profileVersion;
-  int dataSize;
+  int fileHeaderLength = 0;
+  int? protocolVersion;
+  int? profileVersion;
+  late int dataSize;
   int lineNumber = 0;
-  String dataType;
-  int crc;
+  String? dataType;
+  int crc = 0;
   int debugPrintFrom;
   int debugPrintTo;
 
-  ByteBuffer buffer;
-  List<int> _fileBytes;
-  ByteData byteData;
-  int pointer;
+  late ByteBuffer buffer;
+  late List<int> _fileBytes;
+  late ByteData byteData;
+  int pointer = 0;
 
   Map definitionMessages = {};
   List<DeveloperFieldDefinition> developerFieldDefinitions = [];
@@ -37,7 +37,7 @@ class FitFile {
   });
 
   FitFile parse() {
-    var file = File(path);
+    var file = File(path!);
     _fileBytes = file.readAsBytesSync();
     buffer = Int8List.fromList(_fileBytes).buffer;
     byteData = ByteData.view(buffer);
@@ -58,17 +58,17 @@ class FitFile {
     if (debugPrintFrom < debugPrintTo) {
       print('protocolVersion: $protocolVersion');
     }
-    profileVersion = byteData.getUint16(2, endianness);
+    profileVersion = byteData.getUint16(2, endianness!);
     if (debugPrintFrom < debugPrintTo) {
       print('profileVersion: $profileVersion');
     }
-    dataSize = byteData.getUint32(4, endianness);
+    dataSize = byteData.getUint32(4, endianness!);
     if (debugPrintFrom < debugPrintTo) print('dataSize: $dataSize');
     dataType = AsciiDecoder().convert(buffer.asUint8List(8, 4));
     if (debugPrintFrom < debugPrintTo) print('dataType: $dataType');
 
     if (fileHeaderLength == 14) {
-      crc = byteData.getUint16(12, endianness);
+      crc = byteData.getUint16(12, endianness!);
       print('crc: $crc');
     }
   }

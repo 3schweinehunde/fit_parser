@@ -1,11 +1,11 @@
 class DeveloperFieldDefinition {
-  int fieldNumber;
-  int developerDataIndex;
-  String fieldName;
-  int nativeFieldNum;
-  String dataType;
-  String units;
-  String nativeMesgName;
+  int? fieldNumber;
+  int? developerDataIndex;
+  String? fieldName;
+  int? nativeFieldNum;
+  String? dataType;
+  String? units;
+  String? nativeMesgName;
 
   DeveloperFieldDefinition(
       {this.fieldNumber,

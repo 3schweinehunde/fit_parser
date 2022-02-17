@@ -5,23 +5,23 @@ import 'package:fit_parser/src/file_types/garmin_activity_file.dart';
 import 'package:fit_parser/src/fit_type.dart';
 
 class Field {
-  int fieldDefinitionNumber;
-  int size;
-  int baseTypeByte;
-  double scale;
-  double offset;
-  String dataType;
-  String units;
-  String fieldName;
-  String fieldType;
-  int globalMessageNumber;
-  String messageTypeName;
-  Map fileTypeFields;
-  Map messageTypeFields;
+  int? fieldDefinitionNumber;
+  int? size;
+  int? baseTypeByte;
+  double? scale;
+  double? offset;
+  String? dataType;
+  String? units;
+  String? fieldName;
+  String? fieldType;
+  int? globalMessageNumber;
+  String? messageTypeName;
+  Map? fileTypeFields;
+  Map? messageTypeFields;
 
-  bool get endianAbility => baseTypeByte & 128 == 128;
-  int get baseTypeNumber => baseTypeByte & 31;
-  String get baseType => baseTypes[baseTypeNumber]['type_name'];
+  bool get endianAbility => baseTypeByte! & 128 == 128;
+  int get baseTypeNumber => baseTypeByte! & 31;
+  String? get baseType => baseTypes[baseTypeNumber]['type_name'];
 
   Field(
       {this.fieldDefinitionNumber,
@@ -35,18 +35,18 @@ class Field {
           ActivityFile().messages[messageTypeName] ??
           GarminActivityFile().messages[messageTypeName];
 
-      messageTypeFields = fileTypeFields[fieldDefinitionNumber];
+      messageTypeFields = fileTypeFields![fieldDefinitionNumber];
       if (messageTypeFields != null) {
-        fieldName = messageTypeFields['field_name'];
-        fieldType = messageTypeFields['field_type'];
-        dataType = messageTypeFields['data_type'];
-        scale = (messageTypeFields['scale'] != null)
-            ? messageTypeFields['scale'].toDouble()
+        fieldName = messageTypeFields!['field_name'];
+        fieldType = messageTypeFields!['field_type'];
+        dataType = messageTypeFields!['data_type'];
+        scale = (messageTypeFields!['scale'] != null)
+            ? messageTypeFields!['scale'].toDouble()
             : 1;
-        offset = (messageTypeFields['offset'] != null)
-            ? messageTypeFields['offset'].toDouble()
+        offset = (messageTypeFields!['offset'] != null)
+            ? messageTypeFields!['offset'].toDouble()
             : 0;
-        units = messageTypeFields['units'];
+        units = messageTypeFields!['units'];
       } else {
         fieldName = 'unknown';
         fieldType = 'unknown';

@@ -1,3 +1,4 @@
+import 'package:collection/collection.dart' show IterableExtension;
 import 'package:fit_parser/src/definition_message.dart';
 import 'package:fit_parser/src/developer_field_definition.dart';
 import 'package:fit_parser/src/field.dart';
@@ -6,15 +7,15 @@ import 'package:fit_parser/src/value.dart';
 import 'developer_field.dart';
 
 class DataMessage {
-  bool compressedHeader;
-  int localMessageType;
-  int timeOffset;
-  DefinitionMessage definitionMessage;
+  late bool compressedHeader;
+  int? localMessageType;
+  int? timeOffset;
+  DefinitionMessage? definitionMessage;
   List<Field> fields = [];
   List<Value> values = [];
   List<DeveloperField> developerFields = [];
 
-  DataMessage({FitFile fitFile, int recordHeader}) {
+  DataMessage({required FitFile fitFile, required int recordHeader}) {
     compressedHeader = recordHeader & 128 == 128;
     if (compressedHeader) {
       localMessageType = recordHeader & 96;
@@ -27,30 +28,30 @@ class DataMessage {
 
     if (fitFile.lineNumber < fitFile.debugPrintTo &&
         fitFile.lineNumber >= fitFile.debugPrintFrom - 1) {
-      print('  globalMessageNumber: ${definitionMessage.globalMessageNumber}');
+      print('  globalMessageNumber: ${definitionMessage!.globalMessageNumber}');
     }
 
-    fields = definitionMessage.fields;
+    fields = definitionMessage!.fields;
     for (var field in fields) {
       var value = Value(
         fitFile: fitFile,
         field: field,
-        architecture: definitionMessage.architecture,
+        architecture: definitionMessage!.architecture,
       );
       values.add(value);
     }
 
-    developerFields = definitionMessage.developerFields;
+    developerFields = definitionMessage!.developerFields;
     for (var developerField in developerFields) {
       var value = Value.fromDeveloperField(
         fitFile: fitFile,
         developerField: developerField,
-        architecture: definitionMessage.architecture,
+        architecture: definitionMessage!.architecture,
       );
       values.add(value);
     }
 
-    if (definitionMessage.globalMessageNumber == 206) {
+    if (definitionMessage!.globalMessageNumber == 206) {
       var valueMap = {for (var value in values) value.fieldName: value.value};
       var developerFieldDefinition = DeveloperFieldDefinition(
         nativeMesgName: valueMap['native_mesg_num'],
@@ -79,8 +80,7 @@ class DataMessage {
 
   dynamic get(String fieldName) {
     return values
-        .singleWhere((value) => value.fieldName == fieldName,
-            orElse: () => null)
+        .singleWhereOrNull((value) => value.fieldName == fieldName)
         ?.value;
   }
 

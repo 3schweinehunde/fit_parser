@@ -1,12 +1,12 @@
 name: fit_parser
 description: "A .fit file format parsing library. fit stands for Flexible and
-             Interoperable Data Transfer. It is a file format for tracking 
-             sports activities with smart watches and the like."
-version: 0.2.0
+  Interoperable Data Transfer. It is a file format for tracking
+  sports activities with smart watches and the like."
+version: 2.0.0
 homepage: https://github.com/3schweinehunde/fit_parser
 
 environment:
-  sdk: '>=2.2.2 <3.0.0'
+  sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
 
