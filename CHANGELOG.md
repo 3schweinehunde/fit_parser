@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.0.0 (2022-02-17)
+
+* Updating to null safety (and indicating with the version number, that we are now Dart 2 compatible)
+
 ## 0.2.0 (2020-08-17)
 
 * Allow for sub_sport 255
@@ -21,7 +25,7 @@
 
 ## 0.1.6 (2020-01-15)
 
-* fail-safe to null for dataMessage.get() 
+* fail-safe to null for dataMessage.get()
 
 ## 0.1.5 (2020-01-15)
 
