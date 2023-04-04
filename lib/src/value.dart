@@ -63,8 +63,8 @@ class Value {
     if (FitType.type[fieldType] != null) {
       // fieldType parsing
       _numericValue ??= getInt(signed: false, dataTypeSize: size);
-      dynamic _lookup = FitType.type[fieldType][_numericValue] ?? _numericValue;
-      return _lookup;
+      dynamic lookup = FitType.type[fieldType][_numericValue] ?? _numericValue;
+      return lookup;
     } else if (fieldType == 'unknown') {
       return null;
     } else {
