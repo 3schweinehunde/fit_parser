@@ -58,8 +58,7 @@ class Field {
     }
   }
 
-  @override
-  String toString() {
+  Map toMap() {
     return {
       'fieldDefinitionNumber': fieldDefinitionNumber,
       'fieldName': fieldName,
@@ -72,6 +71,11 @@ class Field {
       'unit': units,
       'baseTypeByte': baseTypeByte,
       'globalMessageNumber': globalMessageNumber,
-    }.toString();
+    };
+  }
+
+  @override
+  String toString() {
+    return toMap().toString();
   }
 }

@@ -29,8 +29,7 @@ class DeveloperField {
     units = developerFieldDefinition.units;
   }
 
-  @override
-  String toString() {
+  Map toMap() {
     return {
       'fieldNumber': fieldNumber,
       'fieldName': fieldName,
@@ -40,6 +39,11 @@ class DeveloperField {
       'unit': units,
       'developerDataIndex': developerDataIndex,
       'nativeMesgName': nativeMesgName,
-    }.toString();
+    };
+  }
+
+  @override
+  String toString() {
+    return toMap().toString();
   }
 }

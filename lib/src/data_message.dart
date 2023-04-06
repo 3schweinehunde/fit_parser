@@ -87,4 +87,14 @@ class DataMessage {
   dynamic any(String fieldName) {
     return values.any((value) => value.fieldName == fieldName);
   }
+
+  Map toMap() {
+    return {
+      'fields': fields.map((field) => field.toMap()).toList(),
+      'developerFields': developerFields
+          .map((developerField) => developerField.toMap())
+          .toList(),
+      'values': values.map((value) => value.value).toList()
+    };
+  }
 }

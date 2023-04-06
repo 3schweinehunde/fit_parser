@@ -10,6 +10,7 @@ environment:
 
 dependencies:
   collection: ^1.15.0
+  pretty_print_json: ^1.0.1
 
 dev_dependencies:
   lints: ^2.0.1
